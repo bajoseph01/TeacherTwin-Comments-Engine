@@ -15,6 +15,30 @@ const App: React.FC = () => {
     setPhase(Phase.PRODUCTION);
   };
 
+  const handleImportPersona = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files.length > 0) {
+      const file = e.target.files[0];
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        try {
+          const parsed = JSON.parse(event.target?.result as string);
+          if (parsed.tone && parsed.vocabulary && parsed.structure) {
+            handleAnalysisComplete({
+              ...parsed,
+              isReady: true,
+              rawSamples: parsed.rawSamples || "(Imported from JSON Persona File)"
+            });
+          } else {
+            alert("Invalid JSON Persona file format.");
+          }
+        } catch (err) {
+          alert("Failed to parse JSON file.");
+        }
+      };
+      reader.readAsText(file);
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-offWhite text-nearBlack selection:bg-chartreuse selection:text-nearBlack overflow-x-hidden">
       {/* Header */}
@@ -30,7 +54,15 @@ const App: React.FC = () => {
             </div>
           </div>
           
-          <nav className="hidden md:flex gap-8">
+          <nav className="hidden md:flex gap-8 items-center">
+            {phase === Phase.ANALYSIS && (
+                <>
+                    <input type="file" accept=".json" className="hidden" id="persona-import" onChange={handleImportPersona} />
+                    <label htmlFor="persona-import" className="cursor-pointer font-mono text-xs uppercase text-sage hover:text-prussian underline decoration-chartreuse">
+                        Import Persona
+                    </label>
+                </>
+            )}
             <div className={`flex flex-col items-end ${phase === Phase.ANALYSIS ? 'opacity-100' : 'opacity-40'}`}>
               <span className="font-mono text-xs uppercase text-sage mb-1">Phase 01</span>
               <span className="font-bold text-prussian">ANALYSIS</span>

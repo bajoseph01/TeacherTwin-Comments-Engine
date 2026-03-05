@@ -236,7 +236,7 @@ export const CommentGenerator: React.FC<Props> = ({ persona }) => {
                 type="file" 
                 ref={fileInputRef}
                 className="hidden" 
-                accept="image/*,application/pdf"
+                accept="image/*,application/pdf,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/msword,text/plain"
                 multiple // Enable multiple files
                 onChange={handleFileUpload}
             />
