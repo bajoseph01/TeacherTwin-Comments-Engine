@@ -4,6 +4,8 @@
 
 Build a new teacher profile from local files without using Gemini, then review that draft profile before using it in the app or terminal export flow.
 
+If you need a higher-fidelity, review-gated voice pack from real prose comment sheets, use [DEEP_PROFILE_WORKFLOW.md](./DEEP_PROFILE_WORKFLOW.md) instead of this lightweight path.
+
 ## What the offline script produces
 
 Run `npm run profile:offline` to create three local files in `Saved Profiles/`:

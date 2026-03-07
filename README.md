@@ -15,11 +15,12 @@ This repo now supports two strategic tracks:
 2. [Development Cycle and Branching](./docs/DEV_CYCLE.md)
 3. [Chat-First Local Workflow](./docs/CHAT_LOCAL_WORKFLOW.md)
 4. [Offline Teacher Profile Workflow](./docs/OFFLINE_PROFILE_WORKFLOW.md)
-5. [Repo Organization](./docs/REPO_ORGANIZATION.md)
-6. [Gem A Prompt: Style Extractor](./docs/templates/GEM_STYLE_EXTRACTOR_PROMPT.md)
-7. [Gem B Prompt: Comment Writer](./docs/templates/GEM_COMMENT_WRITER_PROMPT.md)
-8. [Gem Instructions Template (Generic)](./docs/templates/GEM_INSTRUCTIONS_TEMPLATE.md)
-9. [Release Checklist](./docs/templates/RELEASE_CHECKLIST.md)
+5. [Deep Profile Workflow](./docs/DEEP_PROFILE_WORKFLOW.md)
+6. [Repo Organization](./docs/REPO_ORGANIZATION.md)
+7. [Gem A Prompt: Style Extractor](./docs/templates/GEM_STYLE_EXTRACTOR_PROMPT.md)
+8. [Gem B Prompt: Comment Writer](./docs/templates/GEM_COMMENT_WRITER_PROMPT.md)
+9. [Gem Instructions Template (Generic)](./docs/templates/GEM_INSTRUCTIONS_TEMPLATE.md)
+10. [Release Checklist](./docs/templates/RELEASE_CHECKLIST.md)
 
 ## Primary Working Mode
 
@@ -117,6 +118,24 @@ Review the generated profile JSON before using it in the app or the terminal com
 To avoid local tool path issues, set these in `.env.local` and run a preflight check:
 
 `npm run profile:check-tools`
+
+## Build A Deep Review-Gated Profile
+
+Use the deep profile script when you want a higher-fidelity persona pack from real prose comments:
+
+`npm run profile:deep -- --teacher "Teacher Name" --profile "teacher_slug" --outdir "workspace\profiles" "C:\path\to\comments.pdf" "C:\path\to\comments.xls" "C:\path\to\older_persona.json"`
+
+It supports standard `Subject Comments` sheets as well as exported alternating-row workbooks where a learner row is followed by a prose comment row.
+
+This produces:
+
+1. app-compatible minimal persona JSON
+2. comprehensive analysis JSON
+3. phrase bank JSON
+4. normalized corpus JSON
+5. review markdown
+
+The minimal profile stays review-gated with `isReady: false` until the human review step is accepted.
 
 ## Verify A Comment Batch Locally
 

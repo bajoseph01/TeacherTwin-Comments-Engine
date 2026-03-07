@@ -38,6 +38,7 @@ The app is for teacher comment generation using a teacher persona plus marksheet
 9. Local workspace organization is now supported via `TEACHERTWIN_LOCAL_ROOT`, `TEACHERTWIN_PROFILE_DIR`, and `TEACHERTWIN_EXPORT_DIR`.
 10. DOCX export now supports `--batch-label` and collision-safe filenames to avoid overwriting multiple grade batches on the same day.
 11. A Codex batch-prep script now packages persona + marks into a chat-ready prompt and template JSON without using any external model API from code.
+12. A deep-profile ingest script now supports PDF + Excel COM comment extraction, phrase-bank output, corpus analysis, and a review-gated persona workflow for high-fidelity teacher voice work.
 
 ## Key Files
 
@@ -55,11 +56,13 @@ New export and script path:
 - [utils/docxExport.ts](d:\2026_Coding\TeacherTwin-Comments-Engine\utils\docxExport.ts)
 - [scripts/generate-comments-docx.mjs](d:\2026_Coding\TeacherTwin-Comments-Engine\scripts\generate-comments-docx.mjs)
 - [scripts/build-offline-profile.mjs](d:\2026_Coding\TeacherTwin-Comments-Engine\scripts\build-offline-profile.mjs)
+- [scripts/build-deep-profile.mjs](d:\2026_Coding\TeacherTwin-Comments-Engine\scripts\build-deep-profile.mjs)
 - [scripts/verify-comments-batch.mjs](d:\2026_Coding\TeacherTwin-Comments-Engine\scripts\verify-comments-batch.mjs)
 - [scripts/prepare-codex-batch.mjs](d:\2026_Coding\TeacherTwin-Comments-Engine\scripts\prepare-codex-batch.mjs)
 - [package.json](d:\2026_Coding\TeacherTwin-Comments-Engine\package.json)
 - [README.md](d:\2026_Coding\TeacherTwin-Comments-Engine\README.md)
 - [docs/OFFLINE_PROFILE_WORKFLOW.md](d:\2026_Coding\TeacherTwin-Comments-Engine\docs\OFFLINE_PROFILE_WORKFLOW.md)
+- [docs/DEEP_PROFILE_WORKFLOW.md](d:\2026_Coding\TeacherTwin-Comments-Engine\docs\DEEP_PROFILE_WORKFLOW.md)
 - [docs/CHAT_LOCAL_WORKFLOW.md](d:\2026_Coding\TeacherTwin-Comments-Engine\docs\CHAT_LOCAL_WORKFLOW.md)
 
 Gem / documentation path:
@@ -160,6 +163,14 @@ Offline teacher-profile ingest:
 ```powershell
 npm run profile:offline -- --teacher "Teacher Name" --profile "teacher_name" --source-dir "C:\path\to\teacher-samples"
 ```
+
+Deep review-gated teacher-profile ingest:
+
+```powershell
+npm run profile:deep -- --teacher "Teacher Name" --profile "teacher_slug" --outdir "workspace\profiles" "C:\path\to\comments.pdf" "C:\path\to\comments.xls" "C:\path\to\older_persona.json"
+```
+
+The deep profile ingest supports both standard `Subject Comments` worksheets and alternating-row exported sheets where the learner row is immediately followed by the comment row.
 
 Local verification gate before export:
 
