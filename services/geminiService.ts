@@ -154,9 +154,9 @@ export const generateBulkComments = async (
   };
 
   try {
-    // Using gemini-3-pro-preview for advanced visual reasoning capabilities
+    // Use Gemini 3.1 Flash-Lite Preview to stay on the free-tier path.
     const response = await ai.models.generateContent({
-      model: 'gemini-3-pro-preview',
+      model: 'gemini-3.1-flash-lite-preview',
       contents: { parts },
       config: {
         systemInstruction: SYSTEM_INSTRUCTION_CORE,
