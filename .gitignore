@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local teacher/student data and generated report exports
+Saved Profiles/
+exports/

@@ -1,5 +1,6 @@
 import { GoogleGenAI, Type, Schema } from "@google/genai";
 import { PersonaProfile, AnalysisResponse, FileInput, StudentData } from '../types';
+import { getErrorMessage } from '../utils/errorMessage';
 
 const apiKey = process.env.API_KEY || ''; 
 const ai = new GoogleGenAI({ apiKey });
@@ -297,6 +298,6 @@ export const generateStudentComment = async (
     return ensureParentAlertInComment(response.text || "Error generating comment.", riskAreas);
   } catch (error) {
     console.error("Generation failed:", error);
-    return "Generation failed. Please check API key or quota.";
+    return `Generation failed: ${getErrorMessage(error, "Unknown API error")}`;
   }
 };

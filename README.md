@@ -28,6 +28,17 @@ This repo contains two parallel delivery paths for teachers:
 3. Run the app:
    `npm run dev`
 
+## Generate Comments + DOCX Without Opening the App
+
+Use the terminal pipeline:
+
+`npm run generate:docx -- --persona "Saved Profiles/<profile>.json" --teacher "Teacher Name" --subject "Subject" "<marksheet-file-1>" "<marksheet-file-2>"`
+
+Output files are created in `exports/`:
+
+1. Modern Word `.docx`
+2. Matching `.json` with generated comments
+
 ## Deployment
 
 Push to `main` to trigger GitHub Actions deployment to GitHub Pages.

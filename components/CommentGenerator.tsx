@@ -4,6 +4,8 @@ import { Button } from './ui/Button';
 import { Input } from './ui/Input';
 import { generateStudentComment, generateBulkComments } from '../services/geminiService';
 import { PersonaProfile, StudentData, FileInput } from '../types';
+import { getErrorMessage } from '../utils/errorMessage';
+import { exportCommentsToDocx } from '../utils/docxExport';
 import { IconProduction, IconUpload, IconProcessing, IconCopyAll, IconDoc } from './Icons';
 
 interface Props {
@@ -47,6 +49,8 @@ export const CommentGenerator: React.FC<Props> = ({ persona }) => {
   const [processingError, setProcessingError] = useState<string | null>(null);
   const [selectedFileCount, setSelectedFileCount] = useState(0);
   const [copySuccess, setCopySuccess] = useState<string | null>(null);
+  const [teacherName, setTeacherName] = useState('Teacher Name');
+  const [subjectName, setSubjectName] = useState('Subject');
   
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -116,7 +120,7 @@ export const CommentGenerator: React.FC<Props> = ({ persona }) => {
               setStudents(prev => [...prev, ...generatedStudents]);
           }
       } catch (err) {
-          setProcessingError("Bulk generation failed. Verify API quota or image clarity.");
+          setProcessingError(`Bulk generation failed: ${getErrorMessage(err, "Unknown API error")}`);
       } finally {
           setIsBulkProcessing(false);
           if (fileInputRef.current) fileInputRef.current.value = '';
@@ -146,6 +150,8 @@ export const CommentGenerator: React.FC<Props> = ({ persona }) => {
       updatedStudents[idx].generatedComment = comment;
       setStudents(updatedStudents);
     } catch (error) {
+      const message = getErrorMessage(error, "Unknown API error");
+      setProcessingError(`Regeneration failed: ${message}`);
       console.error(error);
     } finally {
       setIsGenerating(null);
@@ -174,43 +180,17 @@ export const CommentGenerator: React.FC<Props> = ({ persona }) => {
     });
   };
 
-  // Export to Word (HTML Hack)
-  const handleExportDoc = () => {
+  const handleExportDoc = async () => {
       if (students.length === 0) return;
-
-      const content = `
-        <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
-        <head>
-            <meta charset="utf-8">
-            <title>TeacherTwin Report Export</title>
-            <style>
-                body { font-family: 'Calibri', 'Arial', sans-serif; font-size: 11pt; }
-                .student-block { margin-bottom: 24pt; page-break-inside: avoid; }
-                h2 { color: #002D62; font-size: 14pt; border-bottom: 1px solid #6D8C84; padding-bottom: 4pt; margin-bottom: 12pt; }
-                p { line-height: 1.5; text-align: justify; }
-            </style>
-        </head>
-        <body>
-            <h1 style="color: #002D62; font-size: 18pt; text-align: center; margin-bottom: 30pt;">Class Report Comments</h1>
-            ${students.filter(s => s.generatedComment).map(s => `
-                <div class="student-block">
-                    <h2>${s.name}</h2>
-                    <p>${s.generatedComment}</p>
-                </div>
-            `).join('')}
-        </body>
-        </html>
-      `;
-
-      const blob = new Blob([content], { type: 'application/msword' });
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = `Report_Comments_${new Date().toISOString().slice(0, 10)}.doc`;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      URL.revokeObjectURL(url);
+      try {
+        await exportCommentsToDocx(students, {
+          teacherName: teacherName.trim() || 'Teacher Name',
+          subjectName: subjectName.trim() || 'Subject',
+          exportDate: new Date(),
+        });
+      } catch (error) {
+        setProcessingError(`Export failed: ${getErrorMessage(error, 'Could not create .docx export.')}`);
+      }
   };
 
   return (
@@ -424,6 +404,22 @@ export const CommentGenerator: React.FC<Props> = ({ persona }) => {
                 <div className="font-mono text-xs text-sage uppercase tracking-widest">
                     Bulk Actions ({students.filter(s => s.generatedComment).length} generated)
                 </div>
+                <div className="flex flex-wrap items-center gap-2">
+                    <input
+                        type="text"
+                        value={teacherName}
+                        onChange={(e) => setTeacherName(e.target.value)}
+                        placeholder="Teacher name"
+                        className="px-2 py-1 text-xs text-prussian bg-offWhite border border-sage/30 focus:outline-none"
+                    />
+                    <input
+                        type="text"
+                        value={subjectName}
+                        onChange={(e) => setSubjectName(e.target.value)}
+                        placeholder="Subject"
+                        className="px-2 py-1 text-xs text-prussian bg-offWhite border border-sage/30 focus:outline-none"
+                    />
+                </div>
                 <div className="flex gap-4">
                     <button 
                         onClick={handleCopyAll}
@@ -433,11 +429,11 @@ export const CommentGenerator: React.FC<Props> = ({ persona }) => {
                         Copy All
                     </button>
                     <button 
-                        onClick={handleExportDoc}
+                        onClick={() => void handleExportDoc()}
                         className="flex items-center gap-2 px-4 py-2 hover:bg-chartreuse hover:text-prussian transition-colors font-mono text-xs uppercase border-l border-sage/30"
                     >
                         <IconDoc className="w-4 h-4" />
-                        Export to Word
+                        Export .docx
                     </button>
                 </div>
                 {copySuccess && (

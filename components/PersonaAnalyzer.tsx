@@ -4,6 +4,7 @@ import { Button } from './ui/Button';
 import { TextArea, Input } from './ui/Input';
 import { analyzeWritingStyle } from '../services/geminiService';
 import { PersonaProfile, FileInput } from '../types';
+import { getErrorMessage } from '../utils/errorMessage';
 import { IconAnalyze, IconProcessing, IconUpload, IconFile, IconImage, IconPdf, IconDownload } from './Icons';
 
 interface Props {
@@ -59,7 +60,7 @@ export const PersonaAnalyzer: React.FC<Props> = ({ onAnalysisComplete }) => {
           rawSamples: contextNote 
       });
     } catch (err) {
-      setError("Analysis protocol failed. Verify file integrity or network connection.");
+      setError(`Analysis failed: ${getErrorMessage(err, "Unknown API error")}`);
     } finally {
       setIsAnalyzing(false);
     }
