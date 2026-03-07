@@ -17,6 +17,8 @@ export interface StudentData {
   name: string;
   subjectData?: Record<string, string>; // e.g., "Exam": "80", "Oral": "60"
   generatedComment?: string;
+  riskAreas?: string[];
+  parentAlertRequired?: boolean;
 }
 
 export interface AnalysisResponse {

@@ -13,8 +13,10 @@ This repo contains two parallel delivery paths for teachers:
 
 1. [Parallel Gem Workflow](./docs/GEM_WORKFLOW.md)
 2. [Development Cycle and Branching](./docs/DEV_CYCLE.md)
-3. [Gem Instructions Template](./docs/templates/GEM_INSTRUCTIONS_TEMPLATE.md)
-4. [Release Checklist](./docs/templates/RELEASE_CHECKLIST.md)
+3. [Gem A Prompt: Style Extractor](./docs/templates/GEM_STYLE_EXTRACTOR_PROMPT.md)
+4. [Gem B Prompt: Comment Writer](./docs/templates/GEM_COMMENT_WRITER_PROMPT.md)
+5. [Gem Instructions Template (Generic)](./docs/templates/GEM_INSTRUCTIONS_TEMPLATE.md)
+6. [Release Checklist](./docs/templates/RELEASE_CHECKLIST.md)
 
 ## Run Locally
 

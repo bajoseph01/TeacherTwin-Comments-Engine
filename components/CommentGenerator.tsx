@@ -10,6 +10,34 @@ interface Props {
   persona: PersonaProfile;
 }
 
+const FAILING_THRESHOLD = 50;
+const BORDERLINE_THRESHOLD = 55;
+
+const parseNumericMark = (value: string): number | null => {
+  const match = value.match(/-?\d+(\.\d+)?/);
+  if (!match) return null;
+  const parsed = Number(match[0]);
+  return Number.isFinite(parsed) ? parsed : null;
+};
+
+const detectRiskAreas = (subjectData: Record<string, string>): string[] => {
+  const riskAreas: string[] = [];
+  Object.entries(subjectData).forEach(([subject, value]) => {
+    const mark = parseNumericMark(value);
+    if (mark === null) return;
+
+    if (mark < FAILING_THRESHOLD) {
+      riskAreas.push(`${subject} (${mark}%) - below pass mark`);
+      return;
+    }
+
+    if (mark <= BORDERLINE_THRESHOLD) {
+      riskAreas.push(`${subject} (${mark}%) - close to pass threshold`);
+    }
+  });
+  return riskAreas;
+};
+
 export const CommentGenerator: React.FC<Props> = ({ persona }) => {
   const [students, setStudents] = useState<StudentData[]>([]);
   const [currentName, setCurrentName] = useState('');
@@ -29,11 +57,14 @@ export const CommentGenerator: React.FC<Props> = ({ persona }) => {
       const [key, value] = pair.split(':');
       if (key && value) subjectData[key.trim()] = value.trim();
     });
+    const riskAreas = detectRiskAreas(subjectData);
 
     const newStudent: StudentData = {
       id: Date.now().toString(),
       name: currentName,
       subjectData,
+      riskAreas,
+      parentAlertRequired: riskAreas.length > 0,
     };
 
     setStudents([...students, newStudent]);
@@ -318,6 +349,20 @@ export const CommentGenerator: React.FC<Props> = ({ persona }) => {
                         <span className="text-[10px] font-mono text-sage">{student.id.split('-')[1] || 'MANUAL'}</span>
                         {student.subjectData && (
                             <span className="block mt-2 text-[10px] font-mono text-sage bg-sage/10 p-1 w-fit">Manual Entry Data</span>
+                        )}
+                        {student.parentAlertRequired && student.riskAreas && student.riskAreas.length > 0 && (
+                            <div className="mt-2">
+                                <span className="inline-block text-[10px] font-mono uppercase tracking-wider text-red-700 bg-red-100 border border-red-300 px-2 py-1">
+                                  Parent Alert Required
+                                </span>
+                                <div className="mt-2 flex flex-col gap-1">
+                                  {student.riskAreas.map((risk, idx) => (
+                                    <span key={idx} className="text-[10px] font-mono text-red-700 bg-red-50 border border-red-200 px-2 py-1">
+                                      {risk}
+                                    </span>
+                                  ))}
+                                </div>
+                            </div>
                         )}
                     </td>
                     

@@ -17,30 +17,35 @@ Run a no-code Gemini Gem workflow in parallel with the web app so teachers can c
 
 ## Gemini Gem setup
 
-1. Create a new Gem in Gemini app.
-2. Name it `TeacherTwin Report Comments`.
-3. Use the template from `docs/templates/GEM_INSTRUCTIONS_TEMPLATE.md`.
-4. Save and share it with approved teachers.
-5. Add one owner and one backup owner.
+1. Create Gem A: `TeacherTwin Style Extractor`.
+2. Use `docs/templates/GEM_STYLE_EXTRACTOR_PROMPT.md` for Gem A instructions.
+3. Create Gem B: `TeacherTwin Comment Writer`.
+4. Use `docs/templates/GEM_COMMENT_WRITER_PROMPT.md` for Gem B instructions.
+5. Save and share both Gems with approved teachers.
+6. Add one owner and one backup owner.
 
 ## Teacher run process (Gem path)
 
-1. Upload:
+1. In Gem A, upload:
 - Current term marksheet
 - Previous term marksheet (if available)
-- Optional teacher style samples
+- Teacher style samples (required for first setup)
 
-2. Prompt the Gem:
-- Ask for one comment per learner
-- Enforce UK/South African English
-- Ask for plain text output per learner
+2. In Gem A, generate a `STYLE_PROFILE_JSON`.
 
-3. Review:
+3. In Gem B, upload:
+- Current term marksheet
+- Previous term marksheet (if available)
+- The `STYLE_PROFILE_JSON` from Gem A
+
+4. In Gem B, generate one comment per learner in the requested format.
+
+5. Review:
 - Check names and pronouns
 - Check claims match source data
 - Edit ambiguous cases manually
 
-4. Export:
+6. Export:
 - Copy responses into school reporting format
 - Keep a dated archive in school drive
 
