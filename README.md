@@ -4,10 +4,10 @@
 
 # TeacherTwin Comments Engine
 
-This repo contains two parallel delivery paths for teachers:
+This repo now supports two strategic tracks:
 
-1. Web app (GitHub Pages deployment from this repo)
-2. Gemini Gem workflow (for teachers using Gemini Pro Edu accounts)
+1. Local operator workflow for the repo owner using Codex in VS Code plus local scripts
+2. Future deployable app workflow for colleagues, still supported in the repo but no longer the primary day-to-day path
 
 ## Workflow docs
 
@@ -20,6 +20,17 @@ This repo contains two parallel delivery paths for teachers:
 7. [Gem B Prompt: Comment Writer](./docs/templates/GEM_COMMENT_WRITER_PROMPT.md)
 8. [Gem Instructions Template (Generic)](./docs/templates/GEM_INSTRUCTIONS_TEMPLATE.md)
 9. [Release Checklist](./docs/templates/RELEASE_CHECKLIST.md)
+
+## Primary Working Mode
+
+The primary working mode is now:
+
+1. prepare marks and profile locally
+2. generate comments with Codex in VS Code chat
+3. verify locally
+4. export locally to `.docx`
+
+This path is designed to avoid extra model API spend during reporting periods.
 
 ## Recommended Local Workspace
 
@@ -46,10 +57,12 @@ Existing `Saved Profiles/` and `exports/` paths still work.
 
 **Prerequisites:** Node.js
 
+For the local Codex-assisted workflow, no Gemini API key is required.
+
 1. Install dependencies:
    `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
+2. If you want to use the web app or Gemini-backed script path, set `GEMINI_API_KEY` in [.env.local](.env.local)
+3. Run the app if needed:
    `npm run dev`
 
 ## Generate Comments + DOCX Without Opening the App
@@ -66,6 +79,26 @@ Output files are created in `exports/`:
 
 1. Modern Word `.docx`
 2. Matching `.json` with generated comments
+
+## Prepare A Codex Chat Batch
+
+Use this when you want the repo to package the marks and teacher profile for a human-in-the-loop Codex session:
+
+`npm run codex:prepare -- --teacher "Teacher Name" --subject "Subject" --persona "Saved Profiles\<profile>.json" --marks-json "exports\<marks>.json" --batch-label "Gr5_Term1_2026"`
+
+This creates:
+
+1. `*_codex_packet.json`
+2. `*_codex_prompt.md`
+3. `*_comments_template.json`
+
+The intended flow is:
+
+1. prepare batch
+2. generate comments in Codex chat
+3. save comment JSON
+4. verify
+5. export DOCX
 
 ## Build A Teacher Profile Offline
 

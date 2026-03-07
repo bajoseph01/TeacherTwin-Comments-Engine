@@ -14,11 +14,24 @@ Generate report comments in this Codex chat, verify them locally, and export `.d
 
 1. Build or load teacher profile from local source files.
 2. Ingest marksheet source into local text/structured data.
-3. Generate comments in chat (Codex writes `exports/<batch>.json`).
-4. Run verification script.
-5. Export `.docx` from verified JSON.
+3. Prepare a Codex batch package from persona + structured marks.
+4. Generate comments in chat (Codex writes `exports/<batch>.json`).
+5. Run verification script.
+6. Export `.docx` from verified JSON.
 
 ## Commands
+
+Prepare Codex chat batch:
+
+```powershell
+npm run codex:prepare -- --teacher "Teacher Name" --subject "Subject" --persona "workspace\profiles\teacher_name.json" --marks-json "workspace\exports\subject_term_marks_structured.json" --batch-label "Gr5_Term1_2026"
+```
+
+Outputs:
+
+1. `*_codex_packet.json`
+2. `*_codex_prompt.md`
+3. `*_comments_template.json`
 
 Build offline profile:
 
@@ -55,3 +68,11 @@ npm run generate:docx -- --comments-json "exports\subject_term_comments.json" --
 ## Scope note
 
 `verify:comments` is a consistency and risk-threshold checker. It does not replace teacher professional review; it enforces baseline quality gates before export.
+
+## Product split
+
+This workflow is the primary operator mode for the repo owner:
+
+1. Codex chat handles reasoning and comment drafting.
+2. Local scripts handle packaging, verification, and export.
+3. The deployable app path remains a later product track for colleagues.

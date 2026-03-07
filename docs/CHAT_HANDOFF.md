@@ -13,7 +13,7 @@ If you are a new assistant session, read this file first, then inspect the refer
 
 ## Current Product State
 
-This repo now supports four practical workflows:
+This repo now supports four practical workflows, with the local Codex-assisted path treated as the primary operating mode for the repo owner:
 
 1. Web app workflow
 2. No-UI terminal workflow for generating report comments and exporting a modern `.docx`
@@ -37,6 +37,7 @@ The app is for teacher comment generation using a teacher persona plus marksheet
 8. Offline profile ingest now supports tool-path preflight (`npm run profile:check-tools`) and loads Poppler/Tesseract path overrides from `.env.local`.
 9. Local workspace organization is now supported via `TEACHERTWIN_LOCAL_ROOT`, `TEACHERTWIN_PROFILE_DIR`, and `TEACHERTWIN_EXPORT_DIR`.
 10. DOCX export now supports `--batch-label` and collision-safe filenames to avoid overwriting multiple grade batches on the same day.
+11. A Codex batch-prep script now packages persona + marks into a chat-ready prompt and template JSON without using any external model API from code.
 
 ## Key Files
 
@@ -55,6 +56,7 @@ New export and script path:
 - [scripts/generate-comments-docx.mjs](d:\2026_Coding\TeacherTwin-Comments-Engine\scripts\generate-comments-docx.mjs)
 - [scripts/build-offline-profile.mjs](d:\2026_Coding\TeacherTwin-Comments-Engine\scripts\build-offline-profile.mjs)
 - [scripts/verify-comments-batch.mjs](d:\2026_Coding\TeacherTwin-Comments-Engine\scripts\verify-comments-batch.mjs)
+- [scripts/prepare-codex-batch.mjs](d:\2026_Coding\TeacherTwin-Comments-Engine\scripts\prepare-codex-batch.mjs)
 - [package.json](d:\2026_Coding\TeacherTwin-Comments-Engine\package.json)
 - [README.md](d:\2026_Coding\TeacherTwin-Comments-Engine\README.md)
 - [docs/OFFLINE_PROFILE_WORKFLOW.md](d:\2026_Coding\TeacherTwin-Comments-Engine\docs\OFFLINE_PROFILE_WORKFLOW.md)
@@ -123,8 +125,9 @@ Known issues encountered in this session:
 
 Current practical rule:
 
-- If Gemini quota is available, use the no-UI script with `--persona` and marksheet files.
-- If Gemini quota is not available, generate or curate comments offline and use `--comments-json` to export `.docx`.
+- Prefer the local Codex-assisted workflow for the repo owner when avoiding extra model API cost.
+- If Gemini quota is available and later needed, the no-UI script with `--persona` still exists.
+- If model API use is undesirable or unavailable, prepare/generate comments offline and use `--comments-json` to export `.docx`.
 
 ## Commands
 
@@ -138,6 +141,12 @@ Tool preflight for offline profile ingest:
 
 ```powershell
 npm run profile:check-tools
+```
+
+Prepare Codex operator batch:
+
+```powershell
+npm run codex:prepare -- --teacher "Teacher Name" --subject "Subject" --persona "workspace\profiles\<teacher_profile>.json" --marks-json "workspace\exports\<marks_batch>.json" --batch-label "Gr5_Term1_2026"
 ```
 
 No-UI generation using Gemini:
