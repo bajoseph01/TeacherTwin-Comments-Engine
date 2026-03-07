@@ -7,7 +7,11 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "generate:docx": "node scripts/generate-comments-docx.mjs"
+    "generate:docx": "node scripts/generate-comments-docx.mjs",
+    "profile:offline": "node scripts/build-offline-profile.mjs",
+    "profile:check-tools": "node scripts/build-offline-profile.mjs --check-tools",
+    "verify:comments": "node scripts/verify-comments-batch.mjs",
+    "workspace:init": "node scripts/init-local-workspace.mjs"
   },
   "dependencies": {
     "react-dom": "^19.2.0",

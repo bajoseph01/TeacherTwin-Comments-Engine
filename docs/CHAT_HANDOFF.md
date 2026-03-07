@@ -13,10 +13,12 @@ If you are a new assistant session, read this file first, then inspect the refer
 
 ## Current Product State
 
-This repo now supports two practical workflows:
+This repo now supports four practical workflows:
 
 1. Web app workflow
 2. No-UI terminal workflow for generating report comments and exporting a modern `.docx`
+3. Offline teacher-profile ingestion workflow for drafting a new persona JSON from local files
+4. Chat-first local workflow where Codex writes comment JSON and local scripts verify/export without model API calls
 
 The app is for teacher comment generation using a teacher persona plus marksheet input.
 
@@ -30,6 +32,11 @@ The app is for teacher comment generation using a teacher persona plus marksheet
 3. A no-UI script was added so comment generation and `.docx` export can run from terminal without opening the app UI.
 4. An offline export path was added so a prepared comments JSON file can be turned into a `.docx` even when Gemini quota is unavailable.
 5. Risk handling has been tightened so learners below `55%` can receive explicit parent-facing concern language.
+6. A local offline profile-ingest script now creates app-compatible teacher persona JSON files from sample folders/files without using Gemini.
+7. A local verification script now checks generated comment batches for structure, risk-alert consistency, and optional marks cross-check before DOCX export.
+8. Offline profile ingest now supports tool-path preflight (`npm run profile:check-tools`) and loads Poppler/Tesseract path overrides from `.env.local`.
+9. Local workspace organization is now supported via `TEACHERTWIN_LOCAL_ROOT`, `TEACHERTWIN_PROFILE_DIR`, and `TEACHERTWIN_EXPORT_DIR`.
+10. DOCX export now supports `--batch-label` and collision-safe filenames to avoid overwriting multiple grade batches on the same day.
 
 ## Key Files
 
@@ -46,8 +53,12 @@ New export and script path:
 
 - [utils/docxExport.ts](d:\2026_Coding\TeacherTwin-Comments-Engine\utils\docxExport.ts)
 - [scripts/generate-comments-docx.mjs](d:\2026_Coding\TeacherTwin-Comments-Engine\scripts\generate-comments-docx.mjs)
+- [scripts/build-offline-profile.mjs](d:\2026_Coding\TeacherTwin-Comments-Engine\scripts\build-offline-profile.mjs)
+- [scripts/verify-comments-batch.mjs](d:\2026_Coding\TeacherTwin-Comments-Engine\scripts\verify-comments-batch.mjs)
 - [package.json](d:\2026_Coding\TeacherTwin-Comments-Engine\package.json)
 - [README.md](d:\2026_Coding\TeacherTwin-Comments-Engine\README.md)
+- [docs/OFFLINE_PROFILE_WORKFLOW.md](d:\2026_Coding\TeacherTwin-Comments-Engine\docs\OFFLINE_PROFILE_WORKFLOW.md)
+- [docs/CHAT_LOCAL_WORKFLOW.md](d:\2026_Coding\TeacherTwin-Comments-Engine\docs\CHAT_LOCAL_WORKFLOW.md)
 
 Gem / documentation path:
 
@@ -64,6 +75,7 @@ Typical local examples:
 
 - `Saved Profiles/<teacher_profile>.json`
 - `Saved Profiles/<teacher_profile>_comprehensive.json`
+- `Saved Profiles/<teacher_profile>_raw_samples.txt`
 
 ## OCR / Extraction Tooling
 
@@ -122,10 +134,34 @@ Build:
 npm run build
 ```
 
+Tool preflight for offline profile ingest:
+
+```powershell
+npm run profile:check-tools
+```
+
 No-UI generation using Gemini:
 
 ```powershell
 npm run generate:docx -- --persona "Saved Profiles\<teacher_profile>.json" --teacher "Teacher Name" --subject "Subject" "C:\path\to\marksheet.pdf"
+```
+
+Offline teacher-profile ingest:
+
+```powershell
+npm run profile:offline -- --teacher "Teacher Name" --profile "teacher_name" --source-dir "C:\path\to\teacher-samples"
+```
+
+Local verification gate before export:
+
+```powershell
+npm run verify:comments -- --comments-json "exports\<batch>.json" --report-json "exports\<batch>_verify_report.json"
+```
+
+Initialize recommended local workspace layout:
+
+```powershell
+npm run workspace:init
 ```
 
 Offline `.docx` export from prepared comments JSON:
@@ -150,6 +186,8 @@ Before doing git operations in a new chat:
 2. Reduce dependency on Gemini quota during urgent reporting periods
 3. Keep teacher persona output consistent and school-appropriate
 4. Make the workflow simpler for non-technical teachers
+5. Validate the new offline profile-ingest script on a fresh teacher sample set
+6. Operationalize the chat-first local workflow across multiple teachers on deadline
 
 ## Good Next Tasks
 
@@ -157,7 +195,8 @@ Before doing git operations in a new chat:
 2. Add a review screen for comments flagged below `55%`
 3. Support subject-specific templates per teacher
 4. Add a save/load workflow for teacher profiles directly in the app
-5. Commit and push the current working state once reviewed
+5. Add a dedicated UI-assisted review path for offline-generated teacher profiles
+6. Commit and push the current working state once reviewed
 
 ## Start-Here Prompt For A New Chat
 

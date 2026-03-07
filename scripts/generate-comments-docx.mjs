@@ -8,12 +8,13 @@ const encoder = new TextEncoder();
 
 const usage = `
 Usage:
-  npm run generate:docx -- --persona "<path-to-profile.json>" --teacher "<teacher name>" --subject "<subject>" [--outdir "<output-folder>"] [--model "<model>"] "<marksheet-file-1>" "<marksheet-file-2>" ...
-  npm run generate:docx -- --comments-json "<path-to-comments.json>" --teacher "<teacher name>" --subject "<subject>" [--outdir "<output-folder>"]
+  npm run generate:docx -- --persona "<path-to-profile.json>" --teacher "<teacher name>" --subject "<subject>" [--outdir "<output-folder>"] [--batch-label "<label>"] [--model "<model>"] "<marksheet-file-1>" "<marksheet-file-2>" ...
+  npm run generate:docx -- --comments-json "<path-to-comments.json>" --teacher "<teacher name>" --subject "<subject>" [--outdir "<output-folder>"] [--batch-label "<label>"]
 
 Examples:
   npm run generate:docx -- --persona "Saved Profiles/teacher_profile.json" --teacher "Teacher Name" --subject "English" "C:\\marks\\Term1.pdf"
   npm run generate:docx -- --comments-json "exports\\offline-comments.json" --teacher "Teacher Name" --subject "Subject"
+  npm run generate:docx -- --comments-json "exports\\offline-comments.json" --teacher "Teacher Name" --subject "Subject" --batch-label "Gr5_Term1_2026"
 `;
 
 const parseArgs = (argv) => {
@@ -59,10 +60,38 @@ const loadEnvFile = async () => {
   }
 };
 
+const pathExists = async (targetPath) => {
+  try {
+    await fs.access(targetPath);
+    return true;
+  } catch {
+    return false;
+  }
+};
+
 const sanitizeFilenamePart = (value) => {
   const trimmed = String(value || '').trim();
   if (!trimmed) return 'Unknown';
   return trimmed.replace(/[<>:"/\\|?*\x00-\x1F]/g, '').replace(/\s+/g, '_');
+};
+
+const resolveManagedDir = ({ explicitDir, env, specificKey, fallbackSubdir, legacyDefault }) => {
+  if (explicitDir) return path.resolve(explicitDir);
+  if (env[specificKey]) return path.resolve(env[specificKey]);
+  if (env.TEACHERTWIN_LOCAL_ROOT) return path.resolve(env.TEACHERTWIN_LOCAL_ROOT, fallbackSubdir);
+  return path.resolve(legacyDefault);
+};
+
+const getAvailablePath = async (desiredPath) => {
+  if (!(await pathExists(desiredPath))) return desiredPath;
+
+  const parsed = path.parse(desiredPath);
+  for (let suffix = 2; suffix < 1000; suffix += 1) {
+    const candidate = path.join(parsed.dir, `${parsed.name}_${suffix}${parsed.ext}`);
+    if (!(await pathExists(candidate))) return candidate;
+  }
+
+  throw new Error(`Could not find an available output path for ${desiredPath}`);
 };
 
 const escapeXml = (value) =>
@@ -389,7 +418,16 @@ const main = async () => {
   const commentsJsonPath = options['comments-json'];
   const teacherName = options.teacher || 'Teacher Name';
   const subjectName = options.subject || 'Subject';
-  const outdir = options.outdir || 'exports';
+  const envFile = await loadEnvFile();
+  const env = { ...envFile, ...process.env };
+  const outdir = resolveManagedDir({
+    explicitDir: options.outdir,
+    env,
+    specificKey: 'TEACHERTWIN_EXPORT_DIR',
+    fallbackSubdir: 'exports',
+    legacyDefault: 'exports',
+  });
+  const batchLabel = options['batch-label'] ? sanitizeFilenamePart(options['batch-label']) : '';
   const model = options.model || DEFAULT_MODEL;
 
   if ((!personaPath || files.length === 0) && !commentsJsonPath) {
@@ -403,8 +441,7 @@ const main = async () => {
     const commentsRaw = await fs.readFile(path.resolve(commentsJsonPath), 'utf8');
     students = JSON.parse(commentsRaw);
   } else {
-    const envFile = await loadEnvFile();
-    const apiKey = process.env.GEMINI_API_KEY || process.env.API_KEY || envFile.GEMINI_API_KEY || envFile.API_KEY;
+    const apiKey = process.env.GEMINI_API_KEY || process.env.API_KEY || env.GEMINI_API_KEY || env.API_KEY;
     if (!apiKey) {
       console.error('Missing Gemini API key. Set GEMINI_API_KEY (or API_KEY) in .env.local or environment variables.');
       process.exit(1);
@@ -428,8 +465,8 @@ const main = async () => {
 
   const exportDate = new Date().toISOString().slice(0, 10);
   await fs.mkdir(path.resolve(outdir), { recursive: true });
-  const outputName = `${exportDate}_${sanitizeFilenamePart(subjectName)}_${sanitizeFilenamePart(teacherName)}_Report_Comments.docx`;
-  const outputPath = path.resolve(outdir, outputName);
+  const outputStem = `${exportDate}_${sanitizeFilenamePart(subjectName)}_${sanitizeFilenamePart(teacherName)}_Report_Comments${batchLabel ? `_${batchLabel}` : ''}`;
+  const outputPath = await getAvailablePath(path.resolve(outdir, `${outputStem}.docx`));
 
   await createDocx({
     students,

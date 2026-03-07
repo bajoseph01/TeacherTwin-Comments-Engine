@@ -26,3 +26,4 @@ dist-ssr
 # Local teacher/student data and generated report exports
 Saved Profiles/
 exports/
+workspace/
