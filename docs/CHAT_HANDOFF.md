@@ -1,6 +1,6 @@
 # Chat Handoff
 
-Last updated: 2026-03-07
+Last updated: 2026-03-08
 Repo root: `d:\2026_Coding\TeacherTwin-Comments-Engine`
 Primary user: repo owner
 Primary teacher profile currently in use: local teacher profile (gitignored)
@@ -39,6 +39,11 @@ The app is for teacher comment generation using a teacher persona plus marksheet
 10. DOCX export now supports `--batch-label` and collision-safe filenames to avoid overwriting multiple grade batches on the same day.
 11. A Codex batch-prep script now packages persona + marks into a chat-ready prompt and template JSON without using any external model API from code.
 12. A deep-profile ingest script now supports PDF + Excel COM comment extraction, phrase-bank output, corpus analysis, and a review-gated persona workflow for high-fidelity teacher voice work.
+13. Codex batch-prep now supports optional subject-context JSON and includes section-level assessment evidence, anti-repetition guardrails, and subject-specific voice hints in the generated prompt when available.
+14. Mel's local comprehensive profile now includes a maths variation bank for evidence-first, less-robotic marks-only drafting.
+15. Closing-line drafting for Mel maths batches now includes an address-consistency rule: if the encouragement line addresses the learner directly, the reflection sentence must stay in second person or the full close must remain in third person.
+16. Codex batch-prep now includes batch-level structure-diversity guidance by default so future profiles are pushed to vary sentence count, sentence order, and closing style rather than only swapping opener phrases.
+17. Local verification now includes style-diversity warnings for dominant sentence count, dominant development position, dominant closing pattern, and overuse of teacher-reflection endings.
 
 ## Key Files
 
@@ -82,6 +87,14 @@ Typical local examples:
 - `Saved Profiles/<teacher_profile>_comprehensive.json`
 - `Saved Profiles/<teacher_profile>_raw_samples.txt`
 
+Current local deep-profile example prepared for next work:
+
+- `workspace/profiles/b_joseph.json`
+- `workspace/profiles/b_joseph_comprehensive.json`
+- `workspace/profiles/b_joseph_corpus.json`
+- `workspace/profiles/b_joseph_phrase_bank.json`
+- `workspace/profiles/b_joseph_review.md`
+
 ## OCR / Extraction Tooling
 
 These tools are available locally on the user machine:
@@ -105,18 +118,38 @@ Important practical note:
 
 Source marksheet:
 
-- `<local path>\Subject_Term_Marksheet.pdf`
+- `4W Maths- Melony Willemse_2026_Term 1.pdf`
 
 Outputs created:
 
-- `exports/<marksheet>_ocr.txt`
-- `exports/<subject>_offline_comments.json`
-- `exports/<date>_<subject>_<teacher>_Report_Comments.docx`
-- `exports/<date>_<subject>_<teacher>_Report_Comments.json`
+- `exports/mel_4w_maths_term1_2026_pdftotext.txt`
+- `exports/mel_4w_maths_term1_2026_marks_structured.json`
+- `exports/mel_4w_maths_term1_2026_comments.json`
+- `exports/mel_4w_maths_term1_2026_verify_report.json`
+- `exports/mel_4w_maths_term1_2026_v2_codex_packet.json`
+- `exports/mel_4w_maths_term1_2026_v2_codex_prompt.md`
+- `exports/mel_4w_maths_term1_2026_v2_comments_template.json`
+- `exports/mel_4w_maths_term1_2026_v3_codex_packet.json`
+- `exports/mel_4w_maths_term1_2026_v3_codex_prompt.md`
+- `exports/mel_4w_maths_term1_2026_v3_comments_template.json`
+- `exports/mel_4w_maths_term1_2026_v4_codex_packet.json`
+- `exports/mel_4w_maths_term1_2026_v4_codex_prompt.md`
+- `exports/mel_4w_maths_term1_2026_v4_comments_template.json`
+- `exports/2026-03-08_Mathematics_Melony_Willemse_Report_Comments_4W_Term1_2026_rewrite.docx`
+- `exports/2026-03-08_Mathematics_Melony_Willemse_Report_Comments_4W_Term1_2026_rewrite.json`
+- `exports/2026-03-08_Mathematics_Melony_Willemse_Report_Comments_4W_Term1_2026_address_fix.docx`
+- `exports/2026-03-08_Mathematics_Melony_Willemse_Report_Comments_4W_Term1_2026_address_fix.json`
+- `exports/2026-03-08_Mathematics_Melony_Willemse_Report_Comments_4W_Term1_2026_structure_diversity.docx`
+- `exports/2026-03-08_Mathematics_Melony_Willemse_Report_Comments_4W_Term1_2026_structure_diversity.json`
 
 Important limitation of that run:
 
-- Comments were generated offline from OCR plus persona style, not from Gemini API, because quota reliability was a constraint.
+- This PDF was text-readable via `pdftotext`, so OCR was not needed for this batch.
+- Some learners had blank TimesTables columns on the marksheet; those blank cells were left omitted from the structured marks and were not referenced in the generated comments.
+- The first Mel Maths draft was too repetitive, so the batch was rewritten with opener-family variation, evidence-first phrasing, and explicit Grade 4 rounding framing for weaker `Review 2` performance.
+- A follow-up pass corrected clunky addressee switches in closings such as direct learner address followed by third-person reflection; the future prompt context now carries a closing address-consistency rule.
+- A later pass reduced obvious batch rhythm by varying sentence count, moving development sentences around the paragraph, and using mixed closing types instead of ending almost every row with encouragement plus reflection.
+- Verification for the current Mel maths batch passes with zero errors and zero warnings even after the style-diversity checks were added.
 
 ## Gemini / API State
 
@@ -202,12 +235,12 @@ Before doing git operations in a new chat:
 
 ## Current Priorities
 
-1. Improve confidence and accuracy of marksheet parsing
-2. Reduce dependency on Gemini quota during urgent reporting periods
-3. Keep teacher persona output consistent and school-appropriate
-4. Make the workflow simpler for non-technical teachers
-5. Validate the new offline profile-ingest script on a fresh teacher sample set
-6. Operationalize the chat-first local workflow across multiple teachers on deadline
+1. Pivot to B. Joseph report comments next using the local deep-profile pack in `workspace/profiles`.
+2. Keep the workflow chat-first and local; do not default to Gemini/API use.
+3. Reuse the existing JSON -> verify -> DOCX path for B. Joseph once the marksheet is supplied.
+4. Carry forward the new structure-diversity rules so B. Joseph comments do not fall into obvious batch patterning.
+5. Continue verifying comments against structured marks before export.
+6. Preserve local ignored data and existing profile assets.
 
 ## Good Next Tasks
 
@@ -226,7 +259,7 @@ Paste this into a new chat:
 Read docs/CHAT_HANDOFF.md first, then inspect the referenced files before making changes.
 This repo is at d:\2026_Coding\TeacherTwin-Comments-Engine.
 Preserve the current working tree.
-My next task is: <replace this sentence with the exact task>.
+My next task is: prepare B. Joseph comments using the full local deep-profile pack in workspace/profiles, staying chat-first and local, and reuse the existing JSON -> verify -> DOCX workflow once I provide the marksheet.
 ```
 
 ## Maintenance Rule

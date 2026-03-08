@@ -63,11 +63,12 @@ npm run generate:docx -- --comments-json "exports\subject_term_comments.json" --
 2. All learner names accounted for.
 3. Flagged risk learners include explicit parent-facing support language.
 4. No comments referencing evidence absent from marks/source files.
-5. Manual pass on pronouns and high-risk learners before final DOCX.
+5. No obvious batch-level rhythm where most comments use the same sentence count, development position, and closing pattern.
+6. Manual pass on pronouns, closings, and high-risk learners before final DOCX.
 
 ## Scope note
 
-`verify:comments` is a consistency and risk-threshold checker. It does not replace teacher professional review; it enforces baseline quality gates before export.
+`verify:comments` is a consistency, risk-threshold, and style-diversity checker. It does not replace teacher professional review; it enforces baseline quality gates before export.
 
 ## Product split
 

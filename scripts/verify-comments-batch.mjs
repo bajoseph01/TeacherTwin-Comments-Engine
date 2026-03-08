@@ -79,6 +79,110 @@ const collectComment = (row) =>
     .replace(/\s+/g, ' ')
     .trim();
 
+const splitSentences = (text) =>
+  String(text || '')
+    .match(/[^.!?]+[.!?]+|[^.!?]+$/g)
+    ?.map((item) => item.trim())
+    .filter(Boolean) || [];
+
+const classifySentenceRole = (sentence, index) => {
+  const value = String(sentence || '').trim().toLowerCase();
+  if (!value) return 'other';
+  if (/^i am (very )?(pleased|proud)/.test(value)) return 'reflection';
+  if (/^(keep up|keep working|well done|continue to work|keep going)/.test(value)) return 'encouragement';
+  if (
+    /^(to improve|to improve further|to keep improving|to continue improving|to do even better|with more focus|his main next step|her main next step|their main next step|he would benefit|she would benefit|they would benefit|he needs|she needs|they need|he should|she should|they should)/.test(value)
+  ) {
+    return 'development';
+  }
+  if (
+    /overall result|overall performance|results show|classwork results show|produced a .*overall|working from a very strong|across the assessments|across the different sections|classwork shows that|these strengths have helped|several of the term's concepts are secure/.test(value)
+  ) {
+    return 'consolidation';
+  }
+  return index === 0 ? 'opening' : 'support';
+};
+
+const detectStructureWarnings = (rows) => {
+  if (!Array.isArray(rows) || rows.length < 4) return [];
+
+  const warnings = [];
+  const commentMeta = rows.map((row) => {
+    const comment = collectComment(row);
+    const sentences = splitSentences(comment);
+    const roles = sentences.map((sentence, index) => classifySentenceRole(sentence, index));
+    return { name: row?.name || '', sentences, roles };
+  });
+
+  const countMap = (items) => {
+    const counts = new Map();
+    items.forEach((item) => {
+      if (item === null || item === undefined || item === '') return;
+      counts.set(item, (counts.get(item) || 0) + 1);
+    });
+    return counts;
+  };
+
+  const findDominant = (counts) => {
+    let winner = null;
+    counts.forEach((count, value) => {
+      if (!winner || count > winner.count) {
+        winner = { value, count };
+      }
+    });
+    return winner;
+  };
+
+  const sentenceCounts = countMap(commentMeta.map((item) => item.sentences.length));
+  const dominantSentenceCount = findDominant(sentenceCounts);
+  if (dominantSentenceCount && dominantSentenceCount.count / commentMeta.length >= 0.7) {
+    warnings.push(
+      `${dominantSentenceCount.count}/${commentMeta.length} comments use ${dominantSentenceCount.value} sentences. Mix shorter and longer shapes across the batch.`,
+    );
+  }
+
+  const developmentPositions = countMap(
+    commentMeta
+      .map((item) => {
+        const index = item.roles.indexOf('development');
+        return index >= 0 ? index + 1 : null;
+      })
+      .filter((value) => value !== null),
+  );
+  const dominantDevelopmentPosition = findDominant(developmentPositions);
+  if (
+    dominantDevelopmentPosition
+    && dominantDevelopmentPosition.count / commentMeta.length >= 0.65
+  ) {
+    warnings.push(
+      `${dominantDevelopmentPosition.count}/${commentMeta.length} comments place the development point in sentence ${dominantDevelopmentPosition.value}. Move the next-step sentence earlier or later in part of the batch.`,
+    );
+  }
+
+  const closingPatterns = countMap(
+    commentMeta.map((item) => {
+      const last = item.roles.at(-1) || 'none';
+      const penultimate = item.roles.at(-2) || 'none';
+      return `${penultimate} > ${last}`;
+    }),
+  );
+  const dominantClosingPattern = findDominant(closingPatterns);
+  if (dominantClosingPattern && dominantClosingPattern.count / commentMeta.length >= 0.7) {
+    warnings.push(
+      `${dominantClosingPattern.count}/${commentMeta.length} comments end with the same closing pattern (${dominantClosingPattern.value}). Vary encouragement-only, reflection-only, and combined closes.`,
+    );
+  }
+
+  const reflectionCount = commentMeta.filter((item) => item.roles.includes('reflection')).length;
+  if (reflectionCount / commentMeta.length >= 0.8) {
+    warnings.push(
+      `${reflectionCount}/${commentMeta.length} comments include a teacher-reflection sentence. Drop or vary that final reflection more often.`,
+    );
+  }
+
+  return warnings;
+};
+
 const loadJson = async (filePath) => {
   const raw = await fs.readFile(path.resolve(filePath), 'utf8');
   return JSON.parse(raw);
@@ -163,6 +267,10 @@ const main = async () => {
     if (comment.length < 120) {
       findings.warnings.push(`Row ${index + 1} (${row.name}): comment is very short (${comment.length} chars).`);
     }
+  });
+
+  detectStructureWarnings(comments).forEach((warning) => {
+    findings.warnings.push(`Style diversity: ${warning}`);
   });
 
   if (marksPath) {
