@@ -23,7 +23,11 @@ dist-ssr
 *.sln
 *.sw?
 
-# Local teacher/student data and generated report exports
+# Local teacher/student data and generated operational outputs
 Saved Profiles/
-exports/
 workspace/
+
+# Curated repo-visible handoff assets
+exports/*
+!exports/bjoseph_Comments/
+!exports/bjoseph_Comments/**

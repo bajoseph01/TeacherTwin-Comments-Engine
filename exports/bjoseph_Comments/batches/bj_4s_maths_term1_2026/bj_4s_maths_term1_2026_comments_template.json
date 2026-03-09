@@ -1,0 +1,169 @@
+[
+  {
+    "name": "Akeem Ally",
+    "class": "4S",
+    "generatedComment": "",
+    "riskAreas": [],
+    "parentAlertRequired": false
+  },
+  {
+    "name": "Jama Booi",
+    "class": "4S",
+    "generatedComment": "",
+    "riskAreas": [],
+    "parentAlertRequired": false
+  },
+  {
+    "name": "Micah Coutts",
+    "class": "4S",
+    "generatedComment": "",
+    "riskAreas": [],
+    "parentAlertRequired": false
+  },
+  {
+    "name": "Caitlin de Beer",
+    "class": "4S",
+    "generatedComment": "",
+    "riskAreas": [],
+    "parentAlertRequired": false
+  },
+  {
+    "name": "Vidya Govender",
+    "class": "4S",
+    "generatedComment": "",
+    "riskAreas": [],
+    "parentAlertRequired": false
+  },
+  {
+    "name": "Noah Jordan",
+    "class": "4S",
+    "generatedComment": "",
+    "riskAreas": [],
+    "parentAlertRequired": false
+  },
+  {
+    "name": "Ngcwalisa Kumbaca",
+    "class": "4S",
+    "generatedComment": "",
+    "riskAreas": [],
+    "parentAlertRequired": false
+  },
+  {
+    "name": "Carlo Lavezzari Prieto",
+    "class": "4S",
+    "generatedComment": "",
+    "riskAreas": [],
+    "parentAlertRequired": false
+  },
+  {
+    "name": "Thenji Mabandla",
+    "class": "4S",
+    "generatedComment": "",
+    "riskAreas": [
+      "Overall (55.4%) - below review threshold (60%)"
+    ],
+    "parentAlertRequired": true
+  },
+  {
+    "name": "Mya Mac Ewan",
+    "class": "4S",
+    "generatedComment": "",
+    "riskAreas": [],
+    "parentAlertRequired": false
+  },
+  {
+    "name": "Ayana Macingwane",
+    "class": "4S",
+    "generatedComment": "",
+    "riskAreas": [],
+    "parentAlertRequired": false
+  },
+  {
+    "name": "Shiba Masoga",
+    "class": "4S",
+    "generatedComment": "",
+    "riskAreas": [],
+    "parentAlertRequired": false
+  },
+  {
+    "name": "Likuye Mdludlu",
+    "class": "4S",
+    "generatedComment": "",
+    "riskAreas": [],
+    "parentAlertRequired": false
+  },
+  {
+    "name": "Niyole Mhlauli",
+    "class": "4S",
+    "generatedComment": "",
+    "riskAreas": [],
+    "parentAlertRequired": false
+  },
+  {
+    "name": "Yanda Mlalandle",
+    "class": "4S",
+    "generatedComment": "",
+    "riskAreas": [],
+    "parentAlertRequired": false
+  },
+  {
+    "name": "Madison Muller",
+    "class": "4S",
+    "generatedComment": "",
+    "riskAreas": [],
+    "parentAlertRequired": false
+  },
+  {
+    "name": "Zimi Ndongeni",
+    "class": "4S",
+    "generatedComment": "",
+    "riskAreas": [],
+    "parentAlertRequired": false
+  },
+  {
+    "name": "Ukho Ndyulo",
+    "class": "4S",
+    "generatedComment": "",
+    "riskAreas": [],
+    "parentAlertRequired": false
+  },
+  {
+    "name": "Ngcwele Sikukula",
+    "class": "4S",
+    "generatedComment": "",
+    "riskAreas": [],
+    "parentAlertRequired": false
+  },
+  {
+    "name": "Olo Siyongwana",
+    "class": "4S",
+    "generatedComment": "",
+    "riskAreas": [
+      "Overall (58.4%) - below review threshold (60%)"
+    ],
+    "parentAlertRequired": true
+  },
+  {
+    "name": "Nola-Maria Smith",
+    "class": "4S",
+    "generatedComment": "",
+    "riskAreas": [],
+    "parentAlertRequired": false
+  },
+  {
+    "name": "Buqaqawuli Somtsewu",
+    "class": "4S",
+    "generatedComment": "",
+    "riskAreas": [
+      "Overall (59%) - below review threshold (60%)"
+    ],
+    "parentAlertRequired": true
+  },
+  {
+    "name": "Ntando Zengethwa",
+    "class": "4S",
+    "generatedComment": "",
+    "riskAreas": [],
+    "parentAlertRequired": false
+  }
+]

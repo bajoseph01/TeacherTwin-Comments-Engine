@@ -1,0 +1,262 @@
+[
+  {
+    "name": "Iyolatha Battie",
+    "class": "4W",
+    "personalisationContext": {
+      "referenceName": "Iyolatha",
+      "confidence": "high",
+      "hobbiesInterests": "Hockey, netball, water polo, swimming; also singing.",
+      "uniqueDetail": "Uses emotional language such as 'filled with love and memories.'",
+      "writingStrengths": "Rich content; strong elaboration; expressive ideas.",
+      "writingNeeds": "Editing for sentence accuracy and clearer list punctuation."
+    }
+  },
+  {
+    "name": "Sienna Blane",
+    "class": "4W",
+    "personalisationContext": {
+      "referenceName": "Sienna",
+      "confidence": "high",
+      "hobbiesInterests": "Playing marimba, playing with friends, making slime.",
+      "uniqueDetail": "Combines music interest with social play and creative play.",
+      "writingStrengths": "Simple, clear ideas; warm tone; good relevance to headings.",
+      "writingNeeds": "Grammar control and sentence expansion for fuller detail."
+    }
+  },
+  {
+    "name": "Aripo Chinyamurindi",
+    "class": "4W",
+    "personalisationContext": {
+      "referenceName": "Aripo",
+      "confidence": "high",
+      "hobbiesInterests": "Acting, playing piano, chess.",
+      "uniqueDetail": "Strong performing-arts and chess combination.",
+      "writingStrengths": "Concise but clear; relevant content; distinct interests.",
+      "writingNeeds": "Needs more elaboration and sentence variety."
+    }
+  },
+  {
+    "name": "Luke Deas",
+    "class": "4W",
+    "personalisationContext": {
+      "referenceName": "Luke",
+      "confidence": "high",
+      "hobbiesInterests": "Maths, playing chess with dad, watching Ninja Sport Network, monkey bars.",
+      "uniqueDetail": "Maths and chess with dad create a clear personal snapshot.",
+      "writingStrengths": "Good factual detail; clear sense of interest; strong personal relevance.",
+      "writingNeeds": "Spelling and sentence punctuation."
+    }
+  },
+  {
+    "name": "Peyton Edwards",
+    "class": "4W",
+    "personalisationContext": {
+      "referenceName": "Peyton",
+      "confidence": "high",
+      "hobbiesInterests": "Water polo, hockey, swimming, netball, dancing with Skyla, art.",
+      "uniqueDetail": "Mom works at Merrifield and dancing with Skyla stands out.",
+      "writingStrengths": "Lots of detail; expressive and conversational voice; meaningful personal content.",
+      "writingNeeds": "Sentence control and organisation of ideas."
+    }
+  },
+  {
+    "name": "Skyla Gaffney",
+    "class": "4W",
+    "personalisationContext": {
+      "referenceName": "Skyla",
+      "confidence": "high",
+      "hobbiesInterests": "Sits on her dad’s lap and drives the car on the farm, swimming, playing with her friend.",
+      "uniqueDetail": "Memorable farm/car detail and proximity to friend.",
+      "writingStrengths": "Interesting personal detail; memorable voice; covers all headings meaningfully.",
+      "writingNeeds": "Punctuation, grammar, and tighter sentence structure."
+    }
+  },
+  {
+    "name": "Unako Jada",
+    "class": "4W",
+    "personalisationContext": {
+      "referenceName": "Unako",
+      "confidence": "high",
+      "hobbiesInterests": "Singing after school, netball on Mondays, hockey on Thursdays.",
+      "uniqueDetail": "Funny beach 'merman' detail makes the writing memorable.",
+      "writingStrengths": "Creative storytelling; energetic voice; strong memorable detail.",
+      "writingNeeds": "Sentence control and editing for clarity."
+    }
+  },
+  {
+    "name": "Pratik Karthikeyan",
+    "class": "4W",
+    "personalisationContext": {
+      "referenceName": "Pratik",
+      "confidence": "medium",
+      "hobbiesInterests": "Sketching cars, riding his bike, hide-and-seek with sister.",
+      "uniqueDetail": "Chess with dad and sketching cars stand out.",
+      "writingStrengths": "Clear sense of personality; engaging hobbies; good personal relevance.",
+      "writingNeeds": "Spelling and place-name clarity; stronger sentence endings."
+    }
+  },
+  {
+    "name": "Selethu Khalishwayo",
+    "class": "4W",
+    "personalisationContext": {
+      "referenceName": "Selethu",
+      "confidence": "medium",
+      "hobbiesInterests": "Rugby and soccer; does not like golf.",
+      "uniqueDetail": "Clear preference statement about sports and not liking golf.",
+      "writingStrengths": "Direct communication; clear interests; stays on topic.",
+      "writingNeeds": "Needs fuller paragraphs and more detail under each heading."
+    }
+  },
+  {
+    "name": "Omphile Lefophana",
+    "class": "4W",
+    "personalisationContext": null
+  },
+  {
+    "name": "Uluthando Lehlehla",
+    "class": "4W",
+    "personalisationContext": {
+      "referenceName": "Uluthando",
+      "confidence": "high",
+      "hobbiesInterests": "Drawing, painting, swimming, gymnastics.",
+      "uniqueDetail": "Strong arts-and-sport combination.",
+      "writingStrengths": "Clear, relevant responses; neat personal profile.",
+      "writingNeeds": "Needs more elaboration and fuller sentences."
+    }
+  },
+  {
+    "name": "Oliver",
+    "class": "4W",
+    "personalisationContext": {
+      "referenceName": "Oliver",
+      "confidence": "high",
+      "hobbiesInterests": "The game 'Subnautica', flying a drone, likes his house.",
+      "uniqueDetail": "Drone and gaming details give a distinctive modern profile.",
+      "writingStrengths": "Humorous voice; memorable phrasing; clear interests.",
+      "writingNeeds": "Sentence formation and fuller development under headings."
+    }
+  },
+  {
+    "name": "Zingce Mbah",
+    "class": "4W",
+    "personalisationContext": {
+      "referenceName": "Zingce",
+      "confidence": "medium",
+      "hobbiesInterests": "Dance, singing, netball, eating; favourite food is sushi.",
+      "uniqueDetail": "Favourite food being sushi stands out; family described as wild.",
+      "writingStrengths": "Distinctive voice; memorable details; strong personality.",
+      "writingNeeds": "Grammar polish and sentence structure refinement."
+    }
+  },
+  {
+    "name": "Iyanna",
+    "class": "4W",
+    "personalisationContext": {
+      "referenceName": "Iyanna",
+      "confidence": "high",
+      "hobbiesInterests": "Golf, swimming, art, drama, scouts, nature, camping.",
+      "uniqueDetail": "Scout identity and love for nature/camping are distinctive.",
+      "writingStrengths": "Strong detail; broad interests; mature elaboration.",
+      "writingNeeds": "Editing for grammar and sentence flow."
+    }
+  },
+  {
+    "name": "Hermione-M. Moorcroft",
+    "class": "4W",
+    "personalisationContext": {
+      "referenceName": "Hermione",
+      "confidence": "high",
+      "hobbiesInterests": "Playing piano; soccer, netball, water polo, swimming, cross-country; reading Matilda, Dork Diaries, and Diary of a Wimpy Kid.",
+      "uniqueDetail": "Very strong music identity and specific reading choices.",
+      "writingStrengths": "Rich detail; expressive voice; broad interests.",
+      "writingNeeds": "Needs editing for run-on sentences and punctuation."
+    }
+  },
+  {
+    "name": "Ibanathi Nhlabalsi",
+    "class": "4W",
+    "personalisationContext": {
+      "referenceName": "IBA",
+      "confidence": "medium",
+      "hobbiesInterests": "Soccer, hockey, water polo, cricket, rugby; also listening to music.",
+      "uniqueDetail": "Detailed home description with two garages and pool.",
+      "writingStrengths": "Detailed content; strong factual information; many ideas.",
+      "writingNeeds": "Sentence punctuation and some grammar control."
+    }
+  },
+  {
+    "name": "Olama Olagunju",
+    "class": "4W",
+    "personalisationContext": {
+      "referenceName": "Olama",
+      "confidence": "medium",
+      "hobbiesInterests": "Cycling, gymnastics, swimming, running; does not like tennis; mentions cross-country and games such as Snakes and Ladders and ping pong.",
+      "uniqueDetail": "Interesting mix of sport and board games.",
+      "writingStrengths": "Plenty of content; energetic ideas; attempts elaboration.",
+      "writingNeeds": "Editing for clarity, spelling, and sentence organisation."
+    }
+  },
+  {
+    "name": "Kacey Perna",
+    "class": "4W",
+    "personalisationContext": {
+      "referenceName": "Kacey",
+      "confidence": "high",
+      "hobbiesInterests": "Playing with dad, boxing on a boxing bag, watching TV.",
+      "uniqueDetail": "Mentions her dad lives/drives in Joburg and visits.",
+      "writingStrengths": "Personal detail; clear topic relevance; attempts multiple ideas under each heading.",
+      "writingNeeds": "Sentence punctuation, capitals, and clearer sentence separation."
+    }
+  },
+  {
+    "name": "Ashmika Ramsunder",
+    "class": "4W",
+    "personalisationContext": null
+  },
+  {
+    "name": "Amahle Tebe",
+    "class": "4W",
+    "personalisationContext": null
+  },
+  {
+    "name": "Culiwethu Tople",
+    "class": "4W",
+    "personalisationContext": {
+      "referenceName": "Culiwethu",
+      "confidence": "high",
+      "hobbiesInterests": "Swimming, hockey, singing in room.",
+      "uniqueDetail": "Older sibling position and beach/family time are memorable.",
+      "writingStrengths": "Clear family context; good structure across headings.",
+      "writingNeeds": "Minor grammar and punctuation refinement."
+    }
+  },
+  {
+    "name": "Paige Vosloo",
+    "class": "4W",
+    "personalisationContext": {
+      "referenceName": "Paige",
+      "confidence": "high",
+      "hobbiesInterests": "Dancing, painting, and spending time with friends and family.",
+      "uniqueDetail": "Says dancing moves her body and painting calms her down.",
+      "writingStrengths": "Thoughtful explanation; self-awareness; clear ideas with detail.",
+      "writingNeeds": "Grammar polish and punctuation consistency."
+    }
+  },
+  {
+    "name": "Ibraheem Zaman",
+    "class": "4W",
+    "personalisationContext": null
+  },
+  {
+    "name": "Wona Zantsi",
+    "class": "4W",
+    "personalisationContext": {
+      "referenceName": "Wona/Zantsi",
+      "confidence": "low",
+      "hobbiesInterests": "Cycling on many days of the week; netball, water polo, hockey.",
+      "uniqueDetail": "Funny line about never being late for a flight.",
+      "writingStrengths": "Creative personal detail; strong sporty identity.",
+      "writingNeeds": "Name unclear; sentence editing and grammar support needed."
+    }
+  }
+]

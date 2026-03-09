@@ -1,0 +1,1624 @@
+{
+  "createdAt": "2026-03-08T20:21:22.008Z",
+  "mode": "codex-operator-batch",
+  "teacherName": "B. Joseph",
+  "subjectName": "English",
+  "batchLabel": "4S_English_Term1_2026",
+  "personaPath": "D:\\2026_Coding\\TeacherTwin-Comments-Engine\\workspace\\profiles\\b_joseph.json",
+  "marksJsonPath": "D:\\2026_Coding\\TeacherTwin-Comments-Engine\\workspace\\exports\\bj_4s_english_term1_2026_marks_structured.json",
+  "contextJsonPath": "D:\\2026_Coding\\TeacherTwin-Comments-Engine\\workspace\\exports\\bj_4s_english_term1_2026_context.json",
+  "thresholds": {
+    "failingThreshold": 50,
+    "reviewThreshold": 55
+  },
+  "persona": {
+    "tone": "highly encouraging, aspirational, direct about effort and habits, personal, observant, future-oriented",
+    "vocabulary": [
+      "learner",
+      "year",
+      "afrikaans",
+      "grade",
+      "proud",
+      "work",
+      "study",
+      "positive",
+      "young",
+      "term",
+      "average",
+      "final",
+      "attitude",
+      "maintained",
+      "exam",
+      "excited",
+      "skills",
+      "extra",
+      "lady",
+      "throughout",
+      "confidence",
+      "good",
+      "habits",
+      "pleased",
+      "solid",
+      "efforts",
+      "journey",
+      "maintain",
+      "potential",
+      "support",
+      "assessments",
+      "class",
+      "continue",
+      "ethic",
+      "improved",
+      "increased",
+      "managed",
+      "methods",
+      "performance",
+      "responded"
+    ],
+    "structure": "Usually 3.4 sentences in one paragraph; opens with an overall performance or growth judgment; often includes evidence about attitude, maturity, effort, or aggregate movement; frequently adds a concrete improvement target or study habit; usually closes with encouragement, gratitude, or a next-year transition.",
+    "formatting": "Uses South African/British English spelling and classroom phrasing. Comfortably references percentages, average bands, and stretch targets when motivating learners. Uses exclamation marks for emphasis and praise more than the lightweight persona builder assumes. Frequently uses direct address terms such as \"young man\", \"young lady\", or Afrikaans praise closers."
+  },
+  "subjectPersona": null,
+  "subjectContext": {
+    "grade": "Grade 4S",
+    "term": "Term 1",
+    "subject": "English",
+    "draftingRules": {
+      "evidenceOnly": true,
+      "ignoreBlankAssessments": true,
+      "strengthsToMention": "Lead with 1 to 2 genuine strengths from the strongest English sections, then connect them to the learner's term voice or writing evidence where it is safe to do so.",
+      "mainDevelopmentArea": "Use one main next step only, based on the weakest meaningful English section or the writing-needs note from the 4S voice reference when it aligns with the marks.",
+      "unsupportedClaimsToAvoid": [
+        "behaviour claims not shown in the marks or voice reference",
+        "private home details",
+        "comparisons to previous terms or future grades in a way that implies prior English reports"
+      ]
+    },
+    "assessmentInterpretation": {
+      "language_test": {
+        "header": "Language Test",
+        "meaning": "Use this for formal language-conventions performance, including grammar, punctuation, and written-language control.",
+        "presenceRule": "If this is weak, frame it as language accuracy or editing that still needs steady practice."
+      },
+      "spelling": {
+        "header": "Spelling",
+        "meaning": "Use this for spelling accuracy across the term.",
+        "presenceRule": "If this is stronger than the language test, you may note that basic word knowledge is stronger than full language accuracy."
+      },
+      "speaking": {
+        "header": "Speaking",
+        "meaning": "Use this for oral confidence and spoken expression."
+      },
+      "unprepared_reading": {
+        "header": "Unprepared Reading",
+        "meaning": "Use this for fluency, accuracy, and confidence when reading unseen text aloud."
+      },
+      "listening_comprehension": {
+        "header": "Listening Comprehension",
+        "meaning": "Use this for attentive listening and understanding spoken information."
+      },
+      "comprehension": {
+        "header": "Comprehension",
+        "meaning": "Use this for understanding written texts and answering about meaning."
+      },
+      "read_and_view": {
+        "header": "Read and View",
+        "meaning": "Use this for class reading and viewing tasks that show engagement with texts."
+      },
+      "writing": {
+        "header": "Writing",
+        "meaning": "Use this for written English tasks and written-expression quality."
+      }
+    },
+    "thresholdLanguage": [
+      {
+        "range": "85-100",
+        "preferredDescriptors": [
+          "very strong",
+          "confident",
+          "secure"
+        ]
+      },
+      {
+        "range": "70-84.9",
+        "preferredDescriptors": [
+          "good",
+          "steady",
+          "developing well"
+        ]
+      },
+      {
+        "range": "60-69.9",
+        "preferredDescriptors": [
+          "fair",
+          "in progress",
+          "starting to settle"
+        ]
+      },
+      {
+        "range": "0-59.9",
+        "preferredDescriptors": [
+          "needs more consistency",
+          "will benefit from support",
+          "still being developed"
+        ]
+      }
+    ],
+    "antiRepetition": {
+      "bannedExactOpeners": [
+        "has produced a pleasing English performance in this first term",
+        "has had a good first term in English"
+      ],
+      "maxUsesPerOpenerFamily": 4,
+      "adjacentRepeatPolicy": "Do not let neighbouring learners start with the same sentence skeleton or end with the same encouragement line.",
+      "openerFamilies": [
+        {
+          "pattern": "Name + strongest English section first"
+        },
+        {
+          "pattern": "Name + writing voice / personal detail first, then academic evidence"
+        },
+        {
+          "pattern": "Reading or oral confidence first, then writing next step"
+        },
+        {
+          "pattern": "Balanced sentence that joins two strengths before the development point"
+        }
+      ],
+      "closingFamilies": [
+        "short teacher-confidence close",
+        "encouraging learner-facing close",
+        "measured term-one confidence close without future-grade comparison"
+      ]
+    },
+    "structureVariation": {
+      "goals": [
+        "Keep the batch chat-first, warm, and personalised without losing marks accuracy.",
+        "Use one safe personal sentence for most learners, but skip it when the match is weak or too private."
+      ],
+      "shapeFamilies": [
+        "Academic-first then personal line then next step.",
+        "Personal line first when the writing voice evidence is especially strong, then academic evidence.",
+        "Reading/oral strength first, followed by writing-development advice.",
+        "Concise high-attainment shape with one fine-tuning target."
+      ],
+      "rotationRules": [
+        "Mix 3-, 4-, and 5-sentence comments across the class.",
+        "Do not give every learner a separate overall-result sentence.",
+        "Move the next-step sentence earlier in some comments and later in others."
+      ],
+      "closingRules": [
+        "Some comments should end with simple encouragement only.",
+        "Some comments should end with teacher confidence or pride, but not in every row."
+      ]
+    },
+    "englishVoiceRules": {
+      "termOneOnly": true,
+      "voiceReferenceScope": "Use only the 4S student voice reference for personalisation in this batch.",
+      "personalisationRule": "Add at most one clearly safe personal sentence or clause unless the marks and writing reference together justify two brief personal touches.",
+      "privacyRule": "Do not repeat exact addresses, exact house details, or highly specific family facts."
+    }
+  },
+  "structureVariation": {
+    "goals": [
+      "Do not let the full batch settle into one repeated sentence rhythm.",
+      "Vary the position of strengths, development points, and the final close so the comments do not read like a template run.",
+      "Keep the batch chat-first, warm, and personalised without losing marks accuracy.",
+      "Use one safe personal sentence for most learners, but skip it when the match is weak or too private."
+    ],
+    "shapeFamilies": [
+      "Strength-led: strongest assessed section first, then a next step, then a concise close.",
+      "Progress-led: progress or growing confidence first, then evidence, then a practical target.",
+      "Development-balanced: development area introduced early, then balanced with a credible strength and supportive close.",
+      "Consolidated: strength and overall judgment merged into one sentence, followed by a next step and a short ending.",
+      "High-attainment: strongest sections first, then one fine-tuning target without overstating concern.",
+      "Academic-first then personal line then next step.",
+      "Personal line first when the writing voice evidence is especially strong, then academic evidence.",
+      "Reading/oral strength first, followed by writing-development advice.",
+      "Concise high-attainment shape with one fine-tuning target."
+    ],
+    "rotationRules": [
+      "Mix 3-, 4-, and 5-sentence comments across the batch when natural.",
+      "Do not give every learner a separate overall-result sentence.",
+      "Move the development point earlier in some comments and later in others.",
+      "Use teacher-reflection lines selectively rather than automatically in every comment.",
+      "Mix 3-, 4-, and 5-sentence comments across the class.",
+      "Move the next-step sentence earlier in some comments and later in others."
+    ],
+    "closingRules": [
+      "Some comments may end with direct encouragement only.",
+      "Some comments may end with a teacher reflection only.",
+      "Some comments may combine encouragement and reflection, but not in every row.",
+      "Some comments should end with simple encouragement only.",
+      "Some comments should end with teacher confidence or pride, but not in every row."
+    ]
+  },
+  "learners": [
+    {
+      "name": "Akeem Ally",
+      "class": "4S",
+      "marks": {
+        "Overall": "88.2%"
+      },
+      "summaryScores": {
+        "language": "93.6%",
+        "oral": "81.7%",
+        "reading": "89.6%",
+        "writing": "86.7%",
+        "achievementLevel": 7
+      },
+      "assessmentBreakdown": {
+        "language_test": {
+          "header": "Language Test",
+          "topic": "Language conventions and formal English test work",
+          "raw": "23/25",
+          "percent": "92%"
+        },
+        "spelling": {
+          "header": "Spelling",
+          "topic": "Weekly spelling accuracy across the term",
+          "percent": "100%"
+        },
+        "speaking": {
+          "header": "Speaking",
+          "topic": "Prepared oral speaking task",
+          "raw": "17/20",
+          "percent": "85%"
+        },
+        "unprepared_reading": {
+          "header": "Unprepared Reading",
+          "topic": "Unseen reading fluency and accuracy",
+          "raw": "10/15",
+          "percent": "66.7%"
+        },
+        "listening_comprehension": {
+          "header": "Listening Comprehension",
+          "topic": "Listening, recall, and response",
+          "percent": "90%"
+        },
+        "comprehension": {
+          "header": "Comprehension",
+          "topic": "Reading comprehension and test comprehension",
+          "percent": "89%"
+        },
+        "read_and_view": {
+          "header": "Read and View",
+          "topic": "Class reading and viewing tasks",
+          "percent": "90.1%"
+        },
+        "writing": {
+          "header": "Writing",
+          "topic": "Written English tasks",
+          "percent": "86.7%"
+        }
+      },
+      "inferredRiskAreas": []
+    },
+    {
+      "name": "Jama Booi",
+      "class": "4S",
+      "marks": {
+        "Overall": "86.1%"
+      },
+      "summaryScores": {
+        "language": "90%",
+        "oral": "72.5%",
+        "reading": "89.8%",
+        "writing": "86.7%",
+        "achievementLevel": 7
+      },
+      "assessmentBreakdown": {
+        "language_test": {
+          "header": "Language Test",
+          "topic": "Language conventions and formal English test work",
+          "raw": "22.5/25",
+          "percent": "90%"
+        },
+        "spelling": {
+          "header": "Spelling",
+          "topic": "Weekly spelling accuracy across the term",
+          "percent": "89.9%"
+        },
+        "speaking": {
+          "header": "Speaking",
+          "topic": "Prepared oral speaking task",
+          "raw": "14/20",
+          "percent": "70%"
+        },
+        "unprepared_reading": {
+          "header": "Unprepared Reading",
+          "topic": "Unseen reading fluency and accuracy",
+          "raw": "9/15",
+          "percent": "60%"
+        },
+        "listening_comprehension": {
+          "header": "Listening Comprehension",
+          "topic": "Listening, recall, and response",
+          "percent": "90%"
+        },
+        "comprehension": {
+          "header": "Comprehension",
+          "topic": "Reading comprehension and test comprehension",
+          "percent": "89.5%"
+        },
+        "read_and_view": {
+          "header": "Read and View",
+          "topic": "Class reading and viewing tasks",
+          "percent": "90%"
+        },
+        "writing": {
+          "header": "Writing",
+          "topic": "Written English tasks",
+          "percent": "86.7%"
+        }
+      },
+      "inferredRiskAreas": []
+    },
+    {
+      "name": "Micah Coutts",
+      "class": "4S",
+      "marks": {
+        "Overall": "88.2%"
+      },
+      "summaryScores": {
+        "language": "84%",
+        "oral": "85.8%",
+        "reading": "94%",
+        "writing": "86.7%",
+        "achievementLevel": 7
+      },
+      "assessmentBreakdown": {
+        "language_test": {
+          "header": "Language Test",
+          "topic": "Language conventions and formal English test work",
+          "raw": "20/25",
+          "percent": "80%"
+        },
+        "spelling": {
+          "header": "Spelling",
+          "topic": "Weekly spelling accuracy across the term",
+          "percent": "100%"
+        },
+        "speaking": {
+          "header": "Speaking",
+          "topic": "Prepared oral speaking task",
+          "raw": "17/20",
+          "percent": "85%"
+        },
+        "unprepared_reading": {
+          "header": "Unprepared Reading",
+          "topic": "Unseen reading fluency and accuracy",
+          "raw": "11/15",
+          "percent": "73.3%"
+        },
+        "listening_comprehension": {
+          "header": "Listening Comprehension",
+          "topic": "Listening, recall, and response",
+          "raw": "10/10",
+          "percent": "100%"
+        },
+        "comprehension": {
+          "header": "Comprehension",
+          "topic": "Reading comprehension and test comprehension",
+          "percent": "93%"
+        },
+        "read_and_view": {
+          "header": "Read and View",
+          "topic": "Class reading and viewing tasks",
+          "percent": "95%"
+        },
+        "writing": {
+          "header": "Writing",
+          "topic": "Written English tasks",
+          "percent": "86.7%"
+        }
+      },
+      "inferredRiskAreas": []
+    },
+    {
+      "name": "Caitlin de Beer",
+      "class": "4S",
+      "marks": {
+        "Overall": "82.1%"
+      },
+      "summaryScores": {
+        "language": "74%",
+        "oral": "81.7%",
+        "reading": "95.6%",
+        "writing": "75%",
+        "achievementLevel": 7
+      },
+      "assessmentBreakdown": {
+        "language_test": {
+          "header": "Language Test",
+          "topic": "Language conventions and formal English test work",
+          "raw": "17.5/25",
+          "percent": "70%"
+        },
+        "spelling": {
+          "header": "Spelling",
+          "topic": "Weekly spelling accuracy across the term",
+          "percent": "90.1%"
+        },
+        "speaking": {
+          "header": "Speaking",
+          "topic": "Prepared oral speaking task",
+          "raw": "16/20",
+          "percent": "80%"
+        },
+        "unprepared_reading": {
+          "header": "Unprepared Reading",
+          "topic": "Unseen reading fluency and accuracy",
+          "raw": "10/15",
+          "percent": "66.7%"
+        },
+        "listening_comprehension": {
+          "header": "Listening Comprehension",
+          "topic": "Listening, recall, and response",
+          "raw": "10/10",
+          "percent": "100%"
+        },
+        "comprehension": {
+          "header": "Comprehension",
+          "topic": "Reading comprehension and test comprehension",
+          "percent": "94.5%"
+        },
+        "read_and_view": {
+          "header": "Read and View",
+          "topic": "Class reading and viewing tasks",
+          "percent": "96.6%"
+        },
+        "writing": {
+          "header": "Writing",
+          "topic": "Written English tasks",
+          "percent": "75%"
+        }
+      },
+      "inferredRiskAreas": []
+    },
+    {
+      "name": "Vidya Govender",
+      "class": "4S",
+      "marks": {
+        "Overall": "85.9%"
+      },
+      "summaryScores": {
+        "language": "91.3%",
+        "oral": "82.5%",
+        "reading": "83.1%",
+        "writing": "86.7%",
+        "achievementLevel": 7
+      },
+      "assessmentBreakdown": {
+        "language_test": {
+          "header": "Language Test",
+          "topic": "Language conventions and formal English test work",
+          "raw": "22.5/25",
+          "percent": "90%"
+        },
+        "spelling": {
+          "header": "Spelling",
+          "topic": "Weekly spelling accuracy across the term",
+          "percent": "96.7%"
+        },
+        "speaking": {
+          "header": "Speaking",
+          "topic": "Prepared oral speaking task",
+          "raw": "17/20",
+          "percent": "85%"
+        },
+        "unprepared_reading": {
+          "header": "Unprepared Reading",
+          "topic": "Unseen reading fluency and accuracy",
+          "percent": "60%"
+        },
+        "listening_comprehension": {
+          "header": "Listening Comprehension",
+          "topic": "Listening, recall, and response",
+          "raw": "10/10",
+          "percent": "100%"
+        },
+        "comprehension": {
+          "header": "Comprehension",
+          "topic": "Reading comprehension and test comprehension",
+          "percent": "69.5%"
+        },
+        "read_and_view": {
+          "header": "Read and View",
+          "topic": "Class reading and viewing tasks",
+          "percent": "96.6%"
+        },
+        "writing": {
+          "header": "Writing",
+          "topic": "Written English tasks",
+          "percent": "86.7%"
+        }
+      },
+      "inferredRiskAreas": []
+    },
+    {
+      "name": "Noah Jordan",
+      "class": "4S",
+      "marks": {
+        "Overall": "68.9%"
+      },
+      "summaryScores": {
+        "language": "44.6%",
+        "oral": "72.5%",
+        "reading": "76%",
+        "writing": "75%",
+        "achievementLevel": 5
+      },
+      "assessmentBreakdown": {
+        "language_test": {
+          "header": "Language Test",
+          "topic": "Language conventions and formal English test work",
+          "raw": "10/25",
+          "percent": "40%"
+        },
+        "spelling": {
+          "header": "Spelling",
+          "topic": "Weekly spelling accuracy across the term",
+          "percent": "63.1%"
+        },
+        "speaking": {
+          "header": "Speaking",
+          "topic": "Prepared oral speaking task",
+          "raw": "14/20",
+          "percent": "70%"
+        },
+        "unprepared_reading": {
+          "header": "Unprepared Reading",
+          "topic": "Unseen reading fluency and accuracy",
+          "percent": "80%"
+        },
+        "listening_comprehension": {
+          "header": "Listening Comprehension",
+          "topic": "Listening, recall, and response",
+          "percent": "90%"
+        },
+        "comprehension": {
+          "header": "Comprehension",
+          "topic": "Reading comprehension and test comprehension",
+          "percent": "62%"
+        },
+        "read_and_view": {
+          "header": "Read and View",
+          "topic": "Class reading and viewing tasks",
+          "percent": "90%"
+        },
+        "writing": {
+          "header": "Writing",
+          "topic": "Written English tasks",
+          "percent": "75%"
+        }
+      },
+      "inferredRiskAreas": []
+    },
+    {
+      "name": "Ngcwalisa Kumbaca",
+      "class": "4S",
+      "marks": {
+        "Overall": "88.3%"
+      },
+      "summaryScores": {
+        "language": "90.4%",
+        "oral": "81.7%",
+        "reading": "92%",
+        "writing": "86.7%",
+        "achievementLevel": 7
+      },
+      "assessmentBreakdown": {
+        "language_test": {
+          "header": "Language Test",
+          "topic": "Language conventions and formal English test work",
+          "raw": "22/25",
+          "percent": "88%"
+        },
+        "spelling": {
+          "header": "Spelling",
+          "topic": "Weekly spelling accuracy across the term",
+          "percent": "100%"
+        },
+        "speaking": {
+          "header": "Speaking",
+          "topic": "Prepared oral speaking task",
+          "raw": "16/20",
+          "percent": "80%"
+        },
+        "unprepared_reading": {
+          "header": "Unprepared Reading",
+          "topic": "Unseen reading fluency and accuracy",
+          "raw": "10/15",
+          "percent": "66.7%"
+        },
+        "listening_comprehension": {
+          "header": "Listening Comprehension",
+          "topic": "Listening, recall, and response",
+          "raw": "10/10",
+          "percent": "100%"
+        },
+        "comprehension": {
+          "header": "Comprehension",
+          "topic": "Reading comprehension and test comprehension",
+          "percent": "84%"
+        },
+        "read_and_view": {
+          "header": "Read and View",
+          "topic": "Class reading and viewing tasks",
+          "percent": "100%"
+        },
+        "writing": {
+          "header": "Writing",
+          "topic": "Written English tasks",
+          "percent": "86.7%"
+        }
+      },
+      "inferredRiskAreas": []
+    },
+    {
+      "name": "Carlo Lavezzari Prieto",
+      "class": "4S",
+      "marks": {
+        "Overall": "86.9%"
+      },
+      "summaryScores": {
+        "language": "83.8%",
+        "oral": "81.7%",
+        "reading": "81.5%",
+        "writing": "95%",
+        "achievementLevel": 7
+      },
+      "assessmentBreakdown": {
+        "language_test": {
+          "header": "Language Test",
+          "topic": "Language conventions and formal English test work",
+          "raw": "21.5/25",
+          "percent": "86%"
+        },
+        "spelling": {
+          "header": "Spelling",
+          "topic": "Weekly spelling accuracy across the term",
+          "percent": "75.2%"
+        },
+        "speaking": {
+          "header": "Speaking",
+          "topic": "Prepared oral speaking task",
+          "raw": "17/20",
+          "percent": "85%"
+        },
+        "unprepared_reading": {
+          "header": "Unprepared Reading",
+          "topic": "Unseen reading fluency and accuracy",
+          "raw": "10/15",
+          "percent": "66.7%"
+        },
+        "listening_comprehension": {
+          "header": "Listening Comprehension",
+          "topic": "Listening, recall, and response",
+          "raw": "9/10",
+          "percent": "90%"
+        },
+        "comprehension": {
+          "header": "Comprehension",
+          "topic": "Reading comprehension and test comprehension",
+          "percent": "78%"
+        },
+        "read_and_view": {
+          "header": "Read and View",
+          "topic": "Class reading and viewing tasks",
+          "percent": "84.9%"
+        },
+        "writing": {
+          "header": "Writing",
+          "topic": "Written English tasks",
+          "percent": "95%"
+        }
+      },
+      "inferredRiskAreas": []
+    },
+    {
+      "name": "Thenji Mabandla",
+      "class": "4S",
+      "marks": {
+        "Overall": "82.7%"
+      },
+      "summaryScores": {
+        "language": "84.2%",
+        "oral": "72.5%",
+        "reading": "82.4%",
+        "writing": "86.7%",
+        "achievementLevel": 7
+      },
+      "assessmentBreakdown": {
+        "language_test": {
+          "header": "Language Test",
+          "topic": "Language conventions and formal English test work",
+          "raw": "21.5/25",
+          "percent": "88%"
+        },
+        "spelling": {
+          "header": "Spelling",
+          "topic": "Weekly spelling accuracy across the term",
+          "percent": "76.9%"
+        },
+        "speaking": {
+          "header": "Speaking",
+          "topic": "Prepared oral speaking task",
+          "raw": "14/20",
+          "percent": "70%"
+        },
+        "unprepared_reading": {
+          "header": "Unprepared Reading",
+          "topic": "Unseen reading fluency and accuracy",
+          "percent": "60%"
+        },
+        "listening_comprehension": {
+          "header": "Listening Comprehension",
+          "topic": "Listening, recall, and response",
+          "percent": "90%"
+        },
+        "comprehension": {
+          "header": "Comprehension",
+          "topic": "Reading comprehension and test comprehension",
+          "percent": "71.5%"
+        },
+        "read_and_view": {
+          "header": "Read and View",
+          "topic": "Class reading and viewing tasks",
+          "percent": "93.3%"
+        },
+        "writing": {
+          "header": "Writing",
+          "topic": "Written English tasks",
+          "percent": "86.7%"
+        }
+      },
+      "inferredRiskAreas": []
+    },
+    {
+      "name": "Mya Mac Ewan",
+      "class": "4S",
+      "marks": {
+        "Overall": "80.2%"
+      },
+      "summaryScores": {
+        "language": "87.7%",
+        "oral": "81.7%",
+        "reading": "66.8%",
+        "writing": "86.7%",
+        "achievementLevel": 7
+      },
+      "assessmentBreakdown": {
+        "language_test": {
+          "header": "Language Test",
+          "topic": "Language conventions and formal English test work",
+          "raw": "22/25",
+          "percent": "88%"
+        },
+        "spelling": {
+          "header": "Spelling",
+          "topic": "Weekly spelling accuracy across the term",
+          "percent": "86.6%"
+        },
+        "speaking": {
+          "header": "Speaking",
+          "topic": "Prepared oral speaking task",
+          "raw": "16/20",
+          "percent": "80%"
+        },
+        "unprepared_reading": {
+          "header": "Unprepared Reading",
+          "topic": "Unseen reading fluency and accuracy",
+          "raw": "10/15",
+          "percent": "66.7%"
+        },
+        "listening_comprehension": {
+          "header": "Listening Comprehension",
+          "topic": "Listening, recall, and response",
+          "raw": "10/10",
+          "percent": "100%"
+        },
+        "comprehension": {
+          "header": "Comprehension",
+          "topic": "Reading comprehension and test comprehension",
+          "percent": "73.5%"
+        },
+        "read_and_view": {
+          "header": "Read and View",
+          "topic": "Class reading and viewing tasks",
+          "percent": "100%"
+        },
+        "writing": {
+          "header": "Writing",
+          "topic": "Written English tasks",
+          "percent": "86.7%"
+        }
+      },
+      "inferredRiskAreas": []
+    },
+    {
+      "name": "Ayana Macingwane",
+      "class": "4S",
+      "marks": {
+        "Overall": "89.4%"
+      },
+      "summaryScores": {
+        "language": "95.2%",
+        "oral": "83.3%",
+        "reading": "92%",
+        "writing": "86.7%",
+        "achievementLevel": 7
+      },
+      "assessmentBreakdown": {
+        "language_test": {
+          "header": "Language Test",
+          "topic": "Language conventions and formal English test work",
+          "raw": "23.5/25",
+          "percent": "94%"
+        },
+        "spelling": {
+          "header": "Spelling",
+          "topic": "Weekly spelling accuracy across the term",
+          "percent": "100%"
+        },
+        "speaking": {
+          "header": "Speaking",
+          "topic": "Prepared oral speaking task",
+          "raw": "16/20",
+          "percent": "80%"
+        },
+        "unprepared_reading": {
+          "header": "Unprepared Reading",
+          "topic": "Unseen reading fluency and accuracy",
+          "raw": "11/15",
+          "percent": "73.3%"
+        },
+        "listening_comprehension": {
+          "header": "Listening Comprehension",
+          "topic": "Listening, recall, and response",
+          "raw": "10/10",
+          "percent": "100%"
+        },
+        "comprehension": {
+          "header": "Comprehension",
+          "topic": "Reading comprehension and test comprehension",
+          "percent": "84%"
+        },
+        "read_and_view": {
+          "header": "Read and View",
+          "topic": "Class reading and viewing tasks",
+          "percent": "100%"
+        },
+        "writing": {
+          "header": "Writing",
+          "topic": "Written English tasks",
+          "percent": "86.7%"
+        }
+      },
+      "inferredRiskAreas": []
+    },
+    {
+      "name": "Shiba Masoga",
+      "class": "4S",
+      "marks": {
+        "Overall": "78.3%"
+      },
+      "summaryScores": {
+        "language": "81.7%",
+        "oral": "70%",
+        "reading": "70.7%",
+        "writing": "86.7%",
+        "achievementLevel": 6
+      },
+      "assessmentBreakdown": {
+        "language_test": {
+          "header": "Language Test",
+          "topic": "Language conventions and formal English test work",
+          "raw": "19.5/25",
+          "percent": "78%"
+        },
+        "spelling": {
+          "header": "Spelling",
+          "topic": "Weekly spelling accuracy across the term",
+          "percent": "96.7%"
+        },
+        "speaking": {
+          "header": "Speaking",
+          "topic": "Prepared oral speaking task",
+          "raw": "15/20",
+          "percent": "75%"
+        },
+        "unprepared_reading": {
+          "header": "Unprepared Reading",
+          "topic": "Unseen reading fluency and accuracy",
+          "percent": "60%"
+        },
+        "listening_comprehension": {
+          "header": "Listening Comprehension",
+          "topic": "Listening, recall, and response",
+          "percent": "70%"
+        },
+        "comprehension": {
+          "header": "Comprehension",
+          "topic": "Reading comprehension and test comprehension",
+          "percent": "68%"
+        },
+        "read_and_view": {
+          "header": "Read and View",
+          "topic": "Class reading and viewing tasks",
+          "percent": "73.4%"
+        },
+        "writing": {
+          "header": "Writing",
+          "topic": "Written English tasks",
+          "percent": "86.7%"
+        }
+      },
+      "inferredRiskAreas": []
+    },
+    {
+      "name": "Likuye Mdludlu",
+      "class": "4S",
+      "marks": {
+        "Overall": "78%"
+      },
+      "summaryScores": {
+        "language": "59.8%",
+        "oral": "72.5%",
+        "reading": "82.8%",
+        "writing": "86.7%",
+        "achievementLevel": 6
+      },
+      "assessmentBreakdown": {
+        "language_test": {
+          "header": "Language Test",
+          "topic": "Language conventions and formal English test work",
+          "raw": "14.5/25",
+          "percent": "58%"
+        },
+        "spelling": {
+          "header": "Spelling",
+          "topic": "Weekly spelling accuracy across the term",
+          "percent": "66.8%"
+        },
+        "speaking": {
+          "header": "Speaking",
+          "topic": "Prepared oral speaking task",
+          "raw": "15/20",
+          "percent": "75%"
+        },
+        "unprepared_reading": {
+          "header": "Unprepared Reading",
+          "topic": "Unseen reading fluency and accuracy",
+          "percent": "60%"
+        },
+        "listening_comprehension": {
+          "header": "Listening Comprehension",
+          "topic": "Listening, recall, and response",
+          "percent": "80%"
+        },
+        "comprehension": {
+          "header": "Comprehension",
+          "topic": "Reading comprehension and test comprehension",
+          "percent": "82%"
+        },
+        "read_and_view": {
+          "header": "Read and View",
+          "topic": "Class reading and viewing tasks",
+          "percent": "83.5%"
+        },
+        "writing": {
+          "header": "Writing",
+          "topic": "Written English tasks",
+          "percent": "86.7%"
+        }
+      },
+      "inferredRiskAreas": []
+    },
+    {
+      "name": "Niyole Mhlauli",
+      "class": "4S",
+      "marks": {
+        "Overall": "86.8%"
+      },
+      "summaryScores": {
+        "language": "84.9%",
+        "oral": "76.7%",
+        "reading": "93.1%",
+        "writing": "86.7%",
+        "achievementLevel": 7
+      },
+      "assessmentBreakdown": {
+        "language_test": {
+          "header": "Language Test",
+          "topic": "Language conventions and formal English test work",
+          "raw": "20.5/25",
+          "percent": "82%"
+        },
+        "spelling": {
+          "header": "Spelling",
+          "topic": "Weekly spelling accuracy across the term",
+          "percent": "96.7%"
+        },
+        "speaking": {
+          "header": "Speaking",
+          "topic": "Prepared oral speaking task",
+          "raw": "15/20",
+          "percent": "75%"
+        },
+        "unprepared_reading": {
+          "header": "Unprepared Reading",
+          "topic": "Unseen reading fluency and accuracy",
+          "raw": "10/15",
+          "percent": "66.7%"
+        },
+        "listening_comprehension": {
+          "header": "Listening Comprehension",
+          "topic": "Listening, recall, and response",
+          "raw": "9/10",
+          "percent": "90%"
+        },
+        "comprehension": {
+          "header": "Comprehension",
+          "topic": "Reading comprehension and test comprehension",
+          "percent": "96%"
+        },
+        "read_and_view": {
+          "header": "Read and View",
+          "topic": "Class reading and viewing tasks",
+          "percent": "90.1%"
+        },
+        "writing": {
+          "header": "Writing",
+          "topic": "Written English tasks",
+          "percent": "86.7%"
+        }
+      },
+      "inferredRiskAreas": []
+    },
+    {
+      "name": "Yanda Mlalandle",
+      "class": "4S",
+      "marks": {
+        "Overall": "88.3%"
+      },
+      "summaryScores": {
+        "language": "88.1%",
+        "oral": "79.2%",
+        "reading": "94.9%",
+        "writing": "86.7%",
+        "achievementLevel": 7
+      },
+      "assessmentBreakdown": {
+        "language_test": {
+          "header": "Language Test",
+          "topic": "Language conventions and formal English test work",
+          "raw": "21.5/25",
+          "percent": "88%"
+        },
+        "spelling": {
+          "header": "Spelling",
+          "topic": "Weekly spelling accuracy across the term",
+          "percent": "96.6%"
+        },
+        "speaking": {
+          "header": "Speaking",
+          "topic": "Prepared oral speaking task",
+          "raw": "16/20",
+          "percent": "80%"
+        },
+        "unprepared_reading": {
+          "header": "Unprepared Reading",
+          "topic": "Unseen reading fluency and accuracy",
+          "raw": "10/15",
+          "percent": "66.7%"
+        },
+        "listening_comprehension": {
+          "header": "Listening Comprehension",
+          "topic": "Listening, recall, and response",
+          "raw": "9/10",
+          "percent": "90%"
+        },
+        "comprehension": {
+          "header": "Comprehension",
+          "topic": "Reading comprehension and test comprehension",
+          "percent": "96.5%"
+        },
+        "read_and_view": {
+          "header": "Read and View",
+          "topic": "Class reading and viewing tasks",
+          "percent": "93.3%"
+        },
+        "writing": {
+          "header": "Writing",
+          "topic": "Written English tasks",
+          "percent": "86.7%"
+        }
+      },
+      "inferredRiskAreas": []
+    },
+    {
+      "name": "Madison Muller",
+      "class": "4S",
+      "marks": {
+        "Overall": "84.1%"
+      },
+      "summaryScores": {
+        "language": "88.4%",
+        "oral": "86.7%",
+        "reading": "90.3%",
+        "writing": "75%",
+        "achievementLevel": 7
+      },
+      "assessmentBreakdown": {
+        "language_test": {
+          "header": "Language Test",
+          "topic": "Language conventions and formal English test work",
+          "raw": "22/25",
+          "percent": "88%"
+        },
+        "spelling": {
+          "header": "Spelling",
+          "topic": "Weekly spelling accuracy across the term",
+          "percent": "90.1%"
+        },
+        "speaking": {
+          "header": "Speaking",
+          "topic": "Prepared oral speaking task",
+          "raw": "18/20",
+          "percent": "90%"
+        },
+        "unprepared_reading": {
+          "header": "Unprepared Reading",
+          "topic": "Unseen reading fluency and accuracy",
+          "raw": "10/15",
+          "percent": "66.7%"
+        },
+        "listening_comprehension": {
+          "header": "Listening Comprehension",
+          "topic": "Listening, recall, and response",
+          "raw": "10/10",
+          "percent": "100%"
+        },
+        "comprehension": {
+          "header": "Comprehension",
+          "topic": "Reading comprehension and test comprehension",
+          "percent": "84%"
+        },
+        "read_and_view": {
+          "header": "Read and View",
+          "topic": "Class reading and viewing tasks",
+          "percent": "96.6%"
+        },
+        "writing": {
+          "header": "Writing",
+          "topic": "Written English tasks",
+          "percent": "75%"
+        }
+      },
+      "inferredRiskAreas": []
+    },
+    {
+      "name": "Zimi Ndongeni",
+      "class": "4S",
+      "marks": {
+        "Overall": "72.3%"
+      },
+      "summaryScores": {
+        "language": "65.3%",
+        "oral": "70%",
+        "reading": "74.8%",
+        "writing": "75%",
+        "achievementLevel": 6
+      },
+      "assessmentBreakdown": {
+        "language_test": {
+          "header": "Language Test",
+          "topic": "Language conventions and formal English test work",
+          "raw": "15/25",
+          "percent": "60%"
+        },
+        "spelling": {
+          "header": "Spelling",
+          "topic": "Weekly spelling accuracy across the term",
+          "percent": "86.7%"
+        },
+        "speaking": {
+          "header": "Speaking",
+          "topic": "Prepared oral speaking task",
+          "raw": "13/20",
+          "percent": "65%"
+        },
+        "unprepared_reading": {
+          "header": "Unprepared Reading",
+          "topic": "Unseen reading fluency and accuracy",
+          "percent": "60%"
+        },
+        "listening_comprehension": {
+          "header": "Listening Comprehension",
+          "topic": "Listening, recall, and response",
+          "percent": "90%"
+        },
+        "comprehension": {
+          "header": "Comprehension",
+          "topic": "Reading comprehension and test comprehension",
+          "percent": "59.5%"
+        },
+        "read_and_view": {
+          "header": "Read and View",
+          "topic": "Class reading and viewing tasks",
+          "percent": "90%"
+        },
+        "writing": {
+          "header": "Writing",
+          "topic": "Written English tasks",
+          "percent": "75%"
+        }
+      },
+      "inferredRiskAreas": []
+    },
+    {
+      "name": "Ukho Ndyulo",
+      "class": "4S",
+      "marks": {
+        "Overall": "84.1%"
+      },
+      "summaryScores": {
+        "language": "87.2%",
+        "oral": "72.5%",
+        "reading": "85.1%",
+        "writing": "86.7%",
+        "achievementLevel": 7
+      },
+      "assessmentBreakdown": {
+        "language_test": {
+          "header": "Language Test",
+          "topic": "Language conventions and formal English test work",
+          "raw": "21/25",
+          "percent": "84%"
+        },
+        "spelling": {
+          "header": "Spelling",
+          "topic": "Weekly spelling accuracy across the term",
+          "percent": "100%"
+        },
+        "speaking": {
+          "header": "Speaking",
+          "topic": "Prepared oral speaking task",
+          "raw": "14/20",
+          "percent": "70%"
+        },
+        "unprepared_reading": {
+          "header": "Unprepared Reading",
+          "topic": "Unseen reading fluency and accuracy",
+          "percent": "60%"
+        },
+        "listening_comprehension": {
+          "header": "Listening Comprehension",
+          "topic": "Listening, recall, and response",
+          "percent": "90%"
+        },
+        "comprehension": {
+          "header": "Comprehension",
+          "topic": "Reading comprehension and test comprehension",
+          "percent": "77%"
+        },
+        "read_and_view": {
+          "header": "Read and View",
+          "topic": "Class reading and viewing tasks",
+          "percent": "93.2%"
+        },
+        "writing": {
+          "header": "Writing",
+          "topic": "Written English tasks",
+          "percent": "86.7%"
+        }
+      },
+      "inferredRiskAreas": []
+    },
+    {
+      "name": "Ngcwele Sikukula",
+      "class": "4S",
+      "marks": {
+        "Overall": "84.4%"
+      },
+      "summaryScores": {
+        "language": "80.1%",
+        "oral": "76.7%",
+        "reading": "88.7%",
+        "writing": "86.7%",
+        "achievementLevel": null
+      },
+      "assessmentBreakdown": {
+        "language_test": {
+          "header": "Language Test",
+          "topic": "Language conventions and formal English test work",
+          "raw": "19/25",
+          "percent": "76%"
+        },
+        "spelling": {
+          "header": "Spelling",
+          "topic": "Weekly spelling accuracy across the term",
+          "percent": "96.7%"
+        },
+        "speaking": {
+          "header": "Speaking",
+          "topic": "Prepared oral speaking task",
+          "raw": "15/20",
+          "percent": "75%"
+        },
+        "unprepared_reading": {
+          "header": "Unprepared Reading",
+          "topic": "Unseen reading fluency and accuracy",
+          "raw": "10/15",
+          "percent": "66.7%"
+        },
+        "listening_comprehension": {
+          "header": "Listening Comprehension",
+          "topic": "Listening, recall, and response",
+          "percent": "90%"
+        },
+        "comprehension": {
+          "header": "Comprehension",
+          "topic": "Reading comprehension and test comprehension",
+          "percent": "84%"
+        },
+        "read_and_view": {
+          "header": "Read and View",
+          "topic": "Class reading and viewing tasks",
+          "percent": "93.4%"
+        },
+        "writing": {
+          "header": "Writing",
+          "topic": "Written English tasks",
+          "percent": "86.7%"
+        }
+      },
+      "inferredRiskAreas": []
+    },
+    {
+      "name": "Olo Siyongwana",
+      "class": "4S",
+      "marks": {
+        "Overall": "71.2%"
+      },
+      "summaryScores": {
+        "language": "60.5%",
+        "oral": "76.7%",
+        "reading": "74.9%",
+        "writing": "71.7%",
+        "achievementLevel": null
+      },
+      "assessmentBreakdown": {
+        "language_test": {
+          "header": "Language Test",
+          "topic": "Language conventions and formal English test work",
+          "raw": "16/25",
+          "percent": "64%"
+        },
+        "spelling": {
+          "header": "Spelling",
+          "topic": "Weekly spelling accuracy across the term",
+          "percent": "46.7%"
+        },
+        "speaking": {
+          "header": "Speaking",
+          "topic": "Prepared oral speaking task",
+          "raw": "16/20",
+          "percent": "80%"
+        },
+        "unprepared_reading": {
+          "header": "Unprepared Reading",
+          "topic": "Unseen reading fluency and accuracy",
+          "raw": "10/15",
+          "percent": "66.7%"
+        },
+        "listening_comprehension": {
+          "header": "Listening Comprehension",
+          "topic": "Listening, recall, and response",
+          "percent": "80%"
+        },
+        "comprehension": {
+          "header": "Comprehension",
+          "topic": "Reading comprehension and test comprehension",
+          "percent": "89.5%"
+        },
+        "read_and_view": {
+          "header": "Read and View",
+          "topic": "Class reading and viewing tasks",
+          "percent": "80.2%"
+        },
+        "writing": {
+          "header": "Writing",
+          "topic": "Written English tasks",
+          "percent": "71.7%"
+        }
+      },
+      "inferredRiskAreas": []
+    },
+    {
+      "name": "Nola-Maria Smith",
+      "class": "4S",
+      "marks": {
+        "Overall": "79.9%"
+      },
+      "summaryScores": {
+        "language": "77.5%",
+        "oral": "81.7%",
+        "reading": "86%",
+        "writing": "75%",
+        "achievementLevel": 7
+      },
+      "assessmentBreakdown": {
+        "language_test": {
+          "header": "Language Test",
+          "topic": "Language conventions and formal English test work",
+          "raw": "19/25",
+          "percent": "76%"
+        },
+        "spelling": {
+          "header": "Spelling",
+          "topic": "Weekly spelling accuracy across the term",
+          "percent": "83.5%"
+        },
+        "speaking": {
+          "header": "Speaking",
+          "topic": "Prepared oral speaking task",
+          "raw": "17/20",
+          "percent": "85%"
+        },
+        "unprepared_reading": {
+          "header": "Unprepared Reading",
+          "topic": "Unseen reading fluency and accuracy",
+          "raw": "10/15",
+          "percent": "66.7%"
+        },
+        "listening_comprehension": {
+          "header": "Listening Comprehension",
+          "topic": "Listening, recall, and response",
+          "raw": "9/10",
+          "percent": "90%"
+        },
+        "comprehension": {
+          "header": "Comprehension",
+          "topic": "Reading comprehension and test comprehension",
+          "percent": "78.5%"
+        },
+        "read_and_view": {
+          "header": "Read and View",
+          "topic": "Class reading and viewing tasks",
+          "percent": "93.4%"
+        },
+        "writing": {
+          "header": "Writing",
+          "topic": "Written English tasks",
+          "percent": "75%"
+        }
+      },
+      "inferredRiskAreas": []
+    },
+    {
+      "name": "Buqaqawuli Somtsewu",
+      "class": "4S",
+      "marks": {
+        "Overall": "68.2%"
+      },
+      "summaryScores": {
+        "language": "61.1%",
+        "oral": "73.3%",
+        "reading": "66.4%",
+        "writing": "71.7%",
+        "achievementLevel": 5
+      },
+      "assessmentBreakdown": {
+        "language_test": {
+          "header": "Language Test",
+          "topic": "Language conventions and formal English test work",
+          "raw": "14.5/25",
+          "percent": "58%"
+        },
+        "spelling": {
+          "header": "Spelling",
+          "topic": "Weekly spelling accuracy across the term",
+          "percent": "73.4%"
+        },
+        "speaking": {
+          "header": "Speaking",
+          "topic": "Prepared oral speaking task",
+          "raw": "14/20",
+          "percent": "70%"
+        },
+        "unprepared_reading": {
+          "header": "Unprepared Reading",
+          "topic": "Unseen reading fluency and accuracy",
+          "raw": "11/15",
+          "percent": "73.3%"
+        },
+        "listening_comprehension": {
+          "header": "Listening Comprehension",
+          "topic": "Listening, recall, and response",
+          "raw": "6/10",
+          "percent": "80%"
+        },
+        "comprehension": {
+          "header": "Comprehension",
+          "topic": "Reading comprehension and test comprehension",
+          "percent": "49.5%"
+        },
+        "read_and_view": {
+          "header": "Read and View",
+          "topic": "Class reading and viewing tasks",
+          "percent": "83.3%"
+        },
+        "writing": {
+          "header": "Writing",
+          "topic": "Written English tasks",
+          "percent": "71.7%"
+        }
+      },
+      "inferredRiskAreas": []
+    },
+    {
+      "name": "Ntando Zengethwa",
+      "class": "4S",
+      "marks": {
+        "Overall": "82%"
+      },
+      "summaryScores": {
+        "language": "62.8%",
+        "oral": "80.8%",
+        "reading": "89.9%",
+        "writing": "86.7%",
+        "achievementLevel": 7
+      },
+      "assessmentBreakdown": {
+        "language_test": {
+          "header": "Language Test",
+          "topic": "Language conventions and formal English test work",
+          "raw": "14/25",
+          "percent": "56%"
+        },
+        "spelling": {
+          "header": "Spelling",
+          "topic": "Weekly spelling accuracy across the term",
+          "percent": "89.9%"
+        },
+        "speaking": {
+          "header": "Speaking",
+          "topic": "Prepared oral speaking task",
+          "raw": "16/20",
+          "percent": "80%"
+        },
+        "unprepared_reading": {
+          "header": "Unprepared Reading",
+          "topic": "Unseen reading fluency and accuracy",
+          "raw": "11/15",
+          "percent": "73.3%"
+        },
+        "listening_comprehension": {
+          "header": "Listening Comprehension",
+          "topic": "Listening, recall, and response",
+          "raw": "9/10",
+          "percent": "90%"
+        },
+        "comprehension": {
+          "header": "Comprehension",
+          "topic": "Reading comprehension and test comprehension",
+          "percent": "93%"
+        },
+        "read_and_view": {
+          "header": "Read and View",
+          "topic": "Class reading and viewing tasks",
+          "percent": "86.7%"
+        },
+        "writing": {
+          "header": "Writing",
+          "topic": "Written English tasks",
+          "percent": "86.7%"
+        }
+      },
+      "inferredRiskAreas": []
+    }
+  ]
+}

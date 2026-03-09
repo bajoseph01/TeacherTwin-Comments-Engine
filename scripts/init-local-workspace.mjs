@@ -9,6 +9,7 @@ Usage:
 
 What it does:
   - creates a clean ignored local workspace for teacher data and generated outputs
+  - creates incoming, profiles, exports, reference, and scratch folders
   - respects TEACHERTWIN_LOCAL_ROOT, TEACHERTWIN_PROFILE_DIR, and TEACHERTWIN_EXPORT_DIR from .env.local
 `;
 
@@ -65,6 +66,7 @@ const main = async () => {
   const exportDir = path.resolve(env.TEACHERTWIN_EXPORT_DIR || path.join(rootDir, 'exports'));
   const managedDirs = [
     path.join(rootDir, 'incoming'),
+    path.join(rootDir, 'reference'),
     path.join(rootDir, 'scratch'),
     profileDir,
     exportDir,

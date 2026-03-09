@@ -15,7 +15,7 @@ Generate report comments in this Codex chat, verify them locally, and export `.d
 1. Build or load teacher profile from local source files.
 2. Ingest marksheet source into local text/structured data.
 3. Prepare a Codex batch package from persona + structured marks.
-4. Generate comments in chat (Codex writes `exports/<batch>.json`).
+4. Generate comments in chat (Codex writes `workspace/exports/<batch>.json`).
 5. Run verification script.
 6. Export `.docx` from verified JSON.
 
@@ -25,6 +25,12 @@ Prepare Codex chat batch:
 
 ```powershell
 npm run codex:prepare -- --teacher "Teacher Name" --subject "Subject" --persona "workspace\profiles\teacher_name.json" --marks-json "workspace\exports\subject_term_marks_structured.json" --batch-label "Gr5_Term1_2026"
+```
+
+For stricter subject-specific review, add a custom warning threshold. Example for Maths:
+
+```powershell
+npm run codex:prepare -- --teacher "Teacher Name" --subject "Mathematics" --persona "workspace\profiles\teacher_name.json" --marks-json "workspace\exports\subject_term_marks_structured.json" --batch-label "Gr5_Term1_2026" --review-threshold 60
 ```
 
 Outputs:
@@ -42,26 +48,43 @@ npm run profile:offline -- --teacher "Teacher Name" --profile "teacher_name" --s
 Verify comment batch:
 
 ```powershell
-npm run verify:comments -- --comments-json "exports\subject_term_comments.json" --report-json "exports\subject_term_verify_report.json"
+npm run verify:comments -- --comments-json "workspace\exports\subject_term_comments.json" --report-json "workspace\exports\subject_term_verify_report.json"
 ```
 
 Verify with marks cross-check:
 
 ```powershell
-npm run verify:comments -- --comments-json "exports\subject_term_comments.json" --marks-json "exports\subject_term_marks_structured.json" --report-json "exports\subject_term_verify_report.json"
+npm run verify:comments -- --comments-json "workspace\exports\subject_term_comments.json" --marks-json "workspace\exports\subject_term_marks_structured.json" --report-json "workspace\exports\subject_term_verify_report.json"
+```
+
+Verify with a stricter review threshold:
+
+```powershell
+npm run verify:comments -- --comments-json "workspace\exports\subject_term_comments.json" --marks-json "workspace\exports\subject_term_marks_structured.json" --review-threshold 60 --report-json "workspace\exports\subject_term_verify_report.json"
 ```
 
 Export `.docx` (no model call):
 
 ```powershell
-npm run generate:docx -- --comments-json "exports\subject_term_comments.json" --teacher "Teacher Name" --subject "Subject" --outdir "exports"
+npm run generate:docx -- --comments-json "workspace\exports\subject_term_comments.json" --teacher "Teacher Name" --subject "Subject" --outdir "workspace\exports"
 ```
+
+## Curated repo-visible copies
+
+Keep the operational workflow inside `workspace/`.
+
+Only copy the final or reusable files you want visible in git into a curated repo-facing folder such as:
+
+1. `exports/<teacher>_Comments/final`
+2. `exports/<teacher>_Comments/batches`
+3. `exports/<teacher>_Comments/reference`
 
 ## Verification policy before export
 
 1. Zero verification errors.
 2. All learner names accounted for.
 3. Flagged risk learners include explicit parent-facing support language.
+   For example, a Maths batch can use `--review-threshold 60` so learners below `60%` are treated as warning cases even though the default review threshold remains `55%`.
 4. No comments referencing evidence absent from marks/source files.
 5. No obvious batch-level rhythm where most comments use the same sentence count, development position, and closing pattern.
 6. Manual pass on pronouns, closings, and high-risk learners before final DOCX.

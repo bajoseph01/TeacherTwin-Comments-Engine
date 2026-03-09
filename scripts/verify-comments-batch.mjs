@@ -3,11 +3,11 @@ import path from 'node:path';
 import process from 'node:process';
 
 const FAILING_THRESHOLD = 50;
-const BORDERLINE_THRESHOLD = 55;
+const DEFAULT_REVIEW_THRESHOLD = 55;
 
 const usage = `
 Usage:
-  npm run verify:comments -- --comments-json "<path-to-comments.json>" [--marks-json "<path-to-marks.json>"] [--report-json "<path-to-report.json>"]
+  npm run verify:comments -- --comments-json "<path-to-comments.json>" [--marks-json "<path-to-marks.json>"] [--review-threshold "<percent>"] [--report-json "<path-to-report.json>"]
 
 What it checks:
   - comment batch shape and required fields
@@ -41,6 +41,19 @@ const parseArgs = (argv) => {
   return options;
 };
 
+const parseThresholdOption = (value, fallback, label) => {
+  if (value === undefined || value === null || String(value).trim() === '') {
+    return fallback;
+  }
+
+  const parsed = Number(value);
+  if (!Number.isFinite(parsed) || parsed <= 0 || parsed > 100) {
+    throw new Error(`${label} must be a number between 0 and 100.`);
+  }
+
+  return parsed;
+};
+
 const normalizeName = (value) =>
   String(value || '')
     .toLowerCase()
@@ -55,7 +68,7 @@ const parseNumericMark = (value) => {
   return Number.isFinite(parsed) ? parsed : null;
 };
 
-const detectRiskAreasFromMarks = (marks) => {
+const detectRiskAreasFromMarks = (marks, { reviewThreshold = DEFAULT_REVIEW_THRESHOLD } = {}) => {
   const riskAreas = [];
   Object.entries(marks || {}).forEach(([label, raw]) => {
     const numeric = parseNumericMark(raw);
@@ -64,15 +77,15 @@ const detectRiskAreasFromMarks = (marks) => {
       riskAreas.push(`${label} (${numeric}%) - below pass mark`);
       return;
     }
-    if (numeric <= BORDERLINE_THRESHOLD) {
-      riskAreas.push(`${label} (${numeric}%) - close to pass threshold`);
+    if (numeric < reviewThreshold) {
+      riskAreas.push(`${label} (${numeric}%) - below review threshold (${reviewThreshold}%)`);
     }
   });
   return riskAreas;
 };
 
 const hasAlertLanguage = (text) =>
-  /parent alert|immediate support|priority|urgent|risk area|below pass|at risk|support required|discussed at home/i.test(String(text || ''));
+  /parent alert|immediate support|priority|urgent|risk area|below pass|below review threshold|at risk|support required|discussed at home/i.test(String(text || ''));
 
 const collectComment = (row) =>
   String(row?.generatedComment || row?.comment || '')
@@ -214,6 +227,11 @@ const main = async () => {
   const commentsPath = path.resolve(options['comments-json']);
   const marksPath = options['marks-json'] ? path.resolve(options['marks-json']) : null;
   const reportPath = options['report-json'] ? path.resolve(options['report-json']) : null;
+  const reviewThreshold = parseThresholdOption(
+    options['review-threshold'],
+    DEFAULT_REVIEW_THRESHOLD,
+    'Review threshold',
+  );
 
   const comments = await loadJson(commentsPath);
   const batchErrors = validateBatchShape(comments);
@@ -223,6 +241,10 @@ const main = async () => {
     warnings: [],
     checks: [],
     summary: {},
+    thresholds: {
+      failingThreshold: FAILING_THRESHOLD,
+      reviewThreshold,
+    },
   };
 
   if (batchErrors.length > 0) {
@@ -294,7 +316,7 @@ const main = async () => {
           return;
         }
 
-        const computedRisks = detectRiskAreasFromMarks(marks);
+        const computedRisks = detectRiskAreasFromMarks(marks, { reviewThreshold });
         const hasRiskByMarks = computedRisks.length > 0;
         const comment = collectComment(row);
         const hasAlert = hasAlertLanguage(comment);
@@ -324,6 +346,8 @@ const main = async () => {
     errorCount: findings.errors.length,
     warningCount: findings.warnings.length,
     marksCrossCheckEnabled: Boolean(marksPath),
+    reviewThreshold,
+    failingThreshold: FAILING_THRESHOLD,
   };
 
   if (reportPath) {
@@ -336,6 +360,7 @@ const main = async () => {
   console.log(`Errors: ${findings.summary.errorCount}`);
   console.log(`Warnings: ${findings.summary.warningCount}`);
   console.log(`Marks cross-check: ${findings.summary.marksCrossCheckEnabled ? 'enabled' : 'disabled'}`);
+  console.log(`Review threshold: below ${reviewThreshold}%`);
 
   if (findings.errors.length > 0) {
     findings.errors.forEach((item) => console.log(`ERROR: ${item}`));

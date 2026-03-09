@@ -3,7 +3,7 @@ import path from 'node:path';
 import process from 'node:process';
 
 const FAILING_THRESHOLD = 50;
-const BORDERLINE_THRESHOLD = 55;
+const DEFAULT_REVIEW_THRESHOLD = 55;
 const DEFAULT_STRUCTURE_DIVERSITY = {
   goals: [
     'Do not let the full batch settle into one repeated sentence rhythm.',
@@ -31,7 +31,7 @@ const DEFAULT_STRUCTURE_DIVERSITY = {
 
 const usage = `
 Usage:
-  npm run codex:prepare -- --teacher "Teacher Name" --subject "Subject" --persona "<path-to-profile.json>" --marks-json "<path-to-marks.json>" [--context-json "<path-to-context.json>"] [--batch-label "<label>"] [--outdir "<output-folder>"]
+  npm run codex:prepare -- --teacher "Teacher Name" --subject "Subject" --persona "<path-to-profile.json>" --marks-json "<path-to-marks.json>" [--context-json "<path-to-context.json>"] [--batch-label "<label>"] [--review-threshold "<percent>"] [--outdir "<output-folder>"]
 
 What it does:
   - packages a teacher persona plus structured marks into a Codex-chat-ready batch
@@ -79,6 +79,19 @@ const parseArgs = (argv) => {
     }
   }
   return options;
+};
+
+const parseThresholdOption = (value, fallback, label) => {
+  if (value === undefined || value === null || String(value).trim() === '') {
+    return fallback;
+  }
+
+  const parsed = Number(value);
+  if (!Number.isFinite(parsed) || parsed <= 0 || parsed > 100) {
+    throw new Error(`${label} must be a number between 0 and 100.`);
+  }
+
+  return parsed;
 };
 
 const loadEnvFile = async () => {
@@ -132,7 +145,7 @@ const parseNumericMark = (value) => {
   return Number.isFinite(parsed) ? parsed : null;
 };
 
-const detectRiskAreasFromMarks = (marks) => {
+const detectRiskAreasFromMarks = (marks, { reviewThreshold = DEFAULT_REVIEW_THRESHOLD } = {}) => {
   const riskAreas = [];
   Object.entries(marks || {}).forEach(([label, raw]) => {
     const numeric = parseNumericMark(raw);
@@ -141,8 +154,8 @@ const detectRiskAreasFromMarks = (marks) => {
       riskAreas.push(`${label} (${numeric}%) - below pass mark`);
       return;
     }
-    if (numeric <= BORDERLINE_THRESHOLD) {
-      riskAreas.push(`${label} (${numeric}%) - close to pass threshold`);
+    if (numeric < reviewThreshold) {
+      riskAreas.push(`${label} (${numeric}%) - below review threshold (${reviewThreshold}%)`);
     }
   });
   return riskAreas;
@@ -279,9 +292,9 @@ const normalizeStructureVariation = ({ persona, subjectPersona, subjectContext }
   };
 };
 
-const buildCommentTemplate = (marksRows) =>
+const buildCommentTemplate = (marksRows, { reviewThreshold }) =>
   marksRows.map((row) => {
-    const inferredRiskAreas = detectRiskAreasFromMarks(row.marks);
+    const inferredRiskAreas = detectRiskAreasFromMarks(row.marks, { reviewThreshold });
     return {
       name: String(row.name || '').trim(),
       class: String(row.class || '').trim(),
@@ -437,8 +450,8 @@ const buildStructureVariationMarkdown = (structureVariation) => {
   return `## Batch Structure Diversity\n\n${lines.join('\n')}`;
 };
 
-const buildLearnerMarkdown = (row, index) => {
-  const riskAreas = detectRiskAreasFromMarks(row.marks);
+const buildLearnerMarkdown = (row, index, { reviewThreshold }) => {
+  const riskAreas = detectRiskAreasFromMarks(row.marks, { reviewThreshold });
   const riskText = riskAreas.length > 0 ? `\n   - riskHints: ${riskAreas.join('; ')}` : '';
   const classText = row.class ? ` | class: ${row.class}` : '';
   const summaryScoresText = formatSummaryScores(row.summaryScores);
@@ -457,9 +470,10 @@ const buildPromptMarkdown = ({
   subjectPersona,
   subjectContext,
   structureVariation,
+  reviewThreshold,
 }) => {
   const learnerLines = marksRows.map((row, index) => {
-    return buildLearnerMarkdown(row, index);
+    return buildLearnerMarkdown(row, index, { reviewThreshold });
   });
   const subjectPersonaMarkdown = buildSubjectPersonaMarkdown(subjectPersona);
   const contextMarkdown = buildContextMarkdown(subjectContext);
@@ -484,7 +498,7 @@ Write one polished report comment per learner for ${teacherName}.
 7. If section-level evidence is present, name 1 to 2 genuine strengths from the strongest available sections and exactly 1 main development area from the weakest meaningful section.
 8. Ignore blank or omitted assessment sections completely.
 9. When the subject context flags Review 2 as a Grade 4 rounding skill, frame weaker Review 2 performance as a developmental foundation still being learned.
-10. If a learner has any risk area below 50% or between 50% and 55% inclusive, include explicit parent-facing support language.
+10. If a learner has any mark below ${FAILING_THRESHOLD}% or any additional review-threshold area below ${reviewThreshold}%, include explicit parent-facing support language.
 11. Return valid JSON only in this structure:
 
 \`\`\`json
@@ -504,6 +518,7 @@ Write one polished report comment per learner for ${teacherName}.
 - Teacher: ${teacherName}
 - Subject: ${subjectName}
 - Batch: ${batchLabel}
+- Review threshold: below ${reviewThreshold}%
 - Tone: ${persona.tone || ''}
 - Vocabulary: ${Array.isArray(persona.vocabulary) ? persona.vocabulary.join(', ') : ''}
 - Structure: ${persona.structure || ''}
@@ -527,6 +542,11 @@ const main = async () => {
   const personaPath = String(options.persona || '').trim();
   const marksJsonPath = String(options['marks-json'] || '').trim();
   const contextJsonPath = String(options['context-json'] || '').trim();
+  const reviewThreshold = parseThresholdOption(
+    options['review-threshold'],
+    DEFAULT_REVIEW_THRESHOLD,
+    'Review threshold',
+  );
 
   if (!teacherName || !subjectName || !personaPath || !marksJsonPath) {
     console.error('Missing required arguments.');
@@ -572,7 +592,7 @@ const main = async () => {
       || `${subjectName}_${teacherName}`,
   );
   const batchSlug = slugify(batchLabel);
-  const commentsTemplate = buildCommentTemplate(marksRows);
+  const commentsTemplate = buildCommentTemplate(marksRows, { reviewThreshold });
   const packet = {
     createdAt: new Date().toISOString(),
     mode: 'codex-operator-batch',
@@ -582,6 +602,10 @@ const main = async () => {
     personaPath: path.resolve(personaPath),
     marksJsonPath: path.resolve(marksJsonPath),
     contextJsonPath: contextJsonPath ? path.resolve(contextJsonPath) : null,
+    thresholds: {
+      failingThreshold: FAILING_THRESHOLD,
+      reviewThreshold,
+    },
     persona: normalizedPersona,
     subjectPersona,
     subjectContext,
@@ -592,7 +616,7 @@ const main = async () => {
       marks: row.marks && typeof row.marks === 'object' ? row.marks : {},
       summaryScores: row.summaryScores && typeof row.summaryScores === 'object' ? row.summaryScores : undefined,
       assessmentBreakdown: row.assessmentBreakdown && typeof row.assessmentBreakdown === 'object' ? row.assessmentBreakdown : undefined,
-      inferredRiskAreas: detectRiskAreasFromMarks(row.marks),
+      inferredRiskAreas: detectRiskAreasFromMarks(row.marks, { reviewThreshold }),
     })),
   };
   const promptMarkdown = buildPromptMarkdown({
@@ -604,6 +628,7 @@ const main = async () => {
     subjectPersona,
     subjectContext,
     structureVariation,
+    reviewThreshold,
   });
 
   await fs.mkdir(outdir, { recursive: true });

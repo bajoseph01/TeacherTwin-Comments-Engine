@@ -50,9 +50,18 @@ This keeps future local files under:
 1. `workspace/incoming`
 2. `workspace/profiles`
 3. `workspace/exports`
-4. `workspace/scratch`
+4. `workspace/reference`
+5. `workspace/scratch`
 
-Existing `Saved Profiles/` and `exports/` paths still work.
+Use `workspace/exports` for operational batch files and `workspace/reference` for raw extracts, context files, and local legacy examples.
+
+Keep repo-visible handoff snapshots separate under `exports/<teacher>_Comments/`, for example:
+
+1. `exports/bjoseph_Comments/final`
+2. `exports/bjoseph_Comments/batches`
+3. `exports/bjoseph_Comments/reference`
+
+Existing `Saved Profiles/` and direct `exports/` paths still work for backwards compatibility.
 
 ## Run Locally
 
@@ -76,16 +85,20 @@ Add `--batch-label` when you want grade- or term-specific filenames:
 
 `npm run generate:docx -- --comments-json "workspace\exports\offline-comments.json" --teacher "Teacher Name" --subject "Subject" --batch-label "Gr5_Term1_2026"`
 
-Output files are created in `exports/`:
+Output files are created in `workspace/exports` when `TEACHERTWIN_LOCAL_ROOT=workspace`; otherwise they fall back to `exports/`.
 
 1. Modern Word `.docx`
 2. Matching `.json` with generated comments
+
+Promote only the final or reusable files you intentionally want visible in the repo into `exports/<teacher>_Comments/`.
 
 ## Prepare A Codex Chat Batch
 
 Use this when you want the repo to package the marks and teacher profile for a human-in-the-loop Codex session:
 
-`npm run codex:prepare -- --teacher "Teacher Name" --subject "Subject" --persona "Saved Profiles\<profile>.json" --marks-json "exports\<marks>.json" --batch-label "Gr5_Term1_2026"`
+`npm run codex:prepare -- --teacher "Teacher Name" --subject "Subject" --persona "workspace\profiles\<profile>.json" --marks-json "workspace\exports\<marks>.json" --batch-label "Gr5_Term1_2026"`
+
+Add `--review-threshold 60` when a subject batch should flag learners below `60%` for stronger warning language and review.
 
 This creates:
 
@@ -141,9 +154,11 @@ The minimal profile stays review-gated with `isReady: false` until the human rev
 
 Use the verification gate before final export:
 
-`npm run verify:comments -- --comments-json "exports\<batch>.json" --report-json "exports\<batch>_verify_report.json"`
+`npm run verify:comments -- --comments-json "workspace\exports\<batch>.json" --report-json "workspace\exports\<batch>_verify_report.json"`
 
 Add `--marks-json` when you have structured marks for stronger risk-threshold cross-checking.
+
+Add `--review-threshold 60` when a batch should treat learners below `60%` as warning cases instead of using the default `55%` review threshold.
 
 ## Deployment
 

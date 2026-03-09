@@ -1,0 +1,1255 @@
+[
+    {
+        "name":  "Akeem Ally",
+        "class":  "4S",
+        "gender":  "M",
+        "marks":  {
+                      "Overall":  "82%"
+                  },
+        "summaryScores":  {
+                              "achievementLevel":  7,
+                              "classwork":  "81.5%",
+                              "tests":  "82.6%"
+                          },
+        "assessmentBreakdown":  {
+                                    "review_1":  {
+                                                     "header":  "Review 1",
+                                                     "topic":  "Place Value, Ordering Numbers, Comparing Numbers up to 4 digits",
+                                                     "raw":  "19/24",
+                                                     "percent":  "79.17%"
+                                                 },
+                                    "review_2":  {
+                                                     "header":  "Review 2",
+                                                     "topic":  "Rounding Numbers up to 4 digits to 10, 100, 1000",
+                                                     "raw":  "21/25",
+                                                     "percent":  "84%"
+                                                 },
+                                    "investigation":  {
+                                                          "header":  "Investigation",
+                                                          "topic":  "Word Sums / Number patterns",
+                                                          "raw":  "17/21",
+                                                          "percent":  "80.95%"
+                                                      },
+                                    "times_tables_1":  {
+                                                           "header":  "TimesTables1",
+                                                           "topic":  "Times tables fluency",
+                                                           "raw":  "20/20",
+                                                           "percent":  "100%"
+                                                       },
+                                    "term_test":  {
+                                                      "header":  "Term Test",
+                                                      "topic":  "Combination of all concepts",
+                                                      "raw":  "30.5/40",
+                                                      "percent":  "76.25%"
+                                                  },
+                                    "times_tables_2":  {
+                                                           "header":  "TimesTables2",
+                                                           "topic":  "Times tables fluency",
+                                                           "raw":  "19/20",
+                                                           "percent":  "95%"
+                                                       }
+                                },
+        "sourceAudit":  {
+                            "overallRepeated":  "82%",
+                            "achievementRepeated":  7
+                        }
+    },
+    {
+        "name":  "Jama Booi",
+        "class":  "4S",
+        "gender":  "M",
+        "marks":  {
+                      "Overall":  "90.1%"
+                  },
+        "summaryScores":  {
+                              "achievementLevel":  7,
+                              "classwork":  "84.7%",
+                              "tests":  "98.3%"
+                          },
+        "assessmentBreakdown":  {
+                                    "review_1":  {
+                                                     "header":  "Review 1",
+                                                     "topic":  "Place Value, Ordering Numbers, Comparing Numbers up to 4 digits",
+                                                     "raw":  "20/24",
+                                                     "percent":  "83.33%"
+                                                 },
+                                    "review_2":  {
+                                                     "header":  "Review 2",
+                                                     "topic":  "Rounding Numbers up to 4 digits to 10, 100, 1000",
+                                                     "raw":  "21/25",
+                                                     "percent":  "84%"
+                                                 },
+                                    "investigation":  {
+                                                          "header":  "Investigation",
+                                                          "topic":  "Word Sums / Number patterns",
+                                                          "raw":  "18/21",
+                                                          "percent":  "85.71%"
+                                                      },
+                                    "times_tables_1":  {
+                                                           "header":  "TimesTables1",
+                                                           "topic":  "Times tables fluency",
+                                                           "raw":  "20/20",
+                                                           "percent":  "100%"
+                                                       },
+                                    "term_test":  {
+                                                      "header":  "Term Test",
+                                                      "topic":  "Combination of all concepts",
+                                                      "raw":  "39/40",
+                                                      "percent":  "97.5%"
+                                                  },
+                                    "times_tables_2":  {
+                                                           "header":  "TimesTables2",
+                                                           "topic":  "Times tables fluency",
+                                                           "raw":  "20/20",
+                                                           "percent":  "100%"
+                                                       }
+                                },
+        "sourceAudit":  {
+                            "overallRepeated":  "90.1%",
+                            "achievementRepeated":  7
+                        }
+    },
+    {
+        "name":  "Micah Coutts",
+        "class":  "4S",
+        "gender":  "M",
+        "marks":  {
+                      "Overall":  "92.1%"
+                  },
+        "summaryScores":  {
+                              "achievementLevel":  7,
+                              "classwork":  "90.3%",
+                              "tests":  "94.8%"
+                          },
+        "assessmentBreakdown":  {
+                                    "review_1":  {
+                                                     "header":  "Review 1",
+                                                     "topic":  "Place Value, Ordering Numbers, Comparing Numbers up to 4 digits",
+                                                     "raw":  "21/24",
+                                                     "percent":  "87.5%"
+                                                 },
+                                    "review_2":  {
+                                                     "header":  "Review 2",
+                                                     "topic":  "Rounding Numbers up to 4 digits to 10, 100, 1000",
+                                                     "raw":  "23/25",
+                                                     "percent":  "92%"
+                                                 },
+                                    "investigation":  {
+                                                          "header":  "Investigation",
+                                                          "topic":  "Word Sums / Number patterns",
+                                                          "raw":  "19/21",
+                                                          "percent":  "90.48%"
+                                                      },
+                                    "times_tables_1":  {
+                                                           "header":  "TimesTables1",
+                                                           "topic":  "Times tables fluency",
+                                                           "raw":  "20/20",
+                                                           "percent":  "100%"
+                                                       },
+                                    "term_test":  {
+                                                      "header":  "Term Test",
+                                                      "topic":  "Combination of all concepts",
+                                                      "raw":  "37/40",
+                                                      "percent":  "92.5%"
+                                                  },
+                                    "times_tables_2":  {
+                                                           "header":  "TimesTables2",
+                                                           "topic":  "Times tables fluency",
+                                                           "raw":  "20/20",
+                                                           "percent":  "100%"
+                                                       }
+                                },
+        "sourceAudit":  {
+                            "overallRepeated":  "92.1%",
+                            "achievementRepeated":  7
+                        }
+    },
+    {
+        "name":  "Caitlin de Beer",
+        "class":  "4S",
+        "gender":  "F",
+        "marks":  {
+                      "Overall":  "85.1%"
+                  },
+        "summaryScores":  {
+                              "achievementLevel":  7,
+                              "classwork":  "80.3%",
+                              "tests":  "92.3%"
+                          },
+        "assessmentBreakdown":  {
+                                    "review_1":  {
+                                                     "header":  "Review 1",
+                                                     "topic":  "Place Value, Ordering Numbers, Comparing Numbers up to 4 digits",
+                                                     "raw":  "19/24",
+                                                     "percent":  "79.17%"
+                                                 },
+                                    "review_2":  {
+                                                     "header":  "Review 2",
+                                                     "topic":  "Rounding Numbers up to 4 digits to 10, 100, 1000",
+                                                     "raw":  "20/25",
+                                                     "percent":  "80%"
+                                                 },
+                                    "investigation":  {
+                                                          "header":  "Investigation",
+                                                          "topic":  "Word Sums / Number patterns",
+                                                          "raw":  "17/21",
+                                                          "percent":  "80.95%"
+                                                      },
+                                    "times_tables_1":  {
+                                                           "header":  "TimesTables1",
+                                                           "topic":  "Times tables fluency",
+                                                           "raw":  "19/20",
+                                                           "percent":  "95%"
+                                                       },
+                                    "term_test":  {
+                                                      "header":  "Term Test",
+                                                      "topic":  "Combination of all concepts",
+                                                      "raw":  "36/40",
+                                                      "percent":  "90%"
+                                                  },
+                                    "times_tables_2":  {
+                                                           "header":  "TimesTables2",
+                                                           "topic":  "Times tables fluency",
+                                                           "raw":  "20/20",
+                                                           "percent":  "100%"
+                                                       }
+                                },
+        "sourceAudit":  {
+                            "overallRepeated":  "85.1%",
+                            "achievementRepeated":  7
+                        }
+    },
+    {
+        "name":  "Vidya Govender",
+        "class":  "4S",
+        "gender":  "F",
+        "marks":  {
+                      "Overall":  "70.4%"
+                  },
+        "summaryScores":  {
+                              "achievementLevel":  6,
+                              "classwork":  "66.2%",
+                              "tests":  "76.8%"
+                          },
+        "assessmentBreakdown":  {
+                                    "review_1":  {
+                                                     "header":  "Review 1",
+                                                     "topic":  "Place Value, Ordering Numbers, Comparing Numbers up to 4 digits",
+                                                     "raw":  "15/24",
+                                                     "percent":  "62.5%"
+                                                 },
+                                    "review_2":  {
+                                                     "header":  "Review 2",
+                                                     "topic":  "Rounding Numbers up to 4 digits to 10, 100, 1000",
+                                                     "raw":  "17/25",
+                                                     "percent":  "68%"
+                                                 },
+                                    "investigation":  {
+                                                          "header":  "Investigation",
+                                                          "topic":  "Word Sums / Number patterns",
+                                                          "raw":  "14/21",
+                                                          "percent":  "66.67%"
+                                                      },
+                                    "times_tables_1":  {
+                                                           "header":  "TimesTables1",
+                                                           "topic":  "Times tables fluency",
+                                                           "raw":  "17/20",
+                                                           "percent":  "85%"
+                                                       },
+                                    "term_test":  {
+                                                      "header":  "Term Test",
+                                                      "topic":  "Combination of all concepts",
+                                                      "raw":  "28/40",
+                                                      "percent":  "70%"
+                                                  },
+                                    "times_tables_2":  {
+                                                           "header":  "TimesTables2",
+                                                           "topic":  "Times tables fluency",
+                                                           "raw":  "20/20",
+                                                           "percent":  "100%"
+                                                       }
+                                },
+        "sourceAudit":  {
+                            "overallRepeated":  "70.4%",
+                            "achievementRepeated":  6
+                        }
+    },
+    {
+        "name":  "Noah Jordan",
+        "class":  "4S",
+        "gender":  "M",
+        "marks":  {
+                      "Overall":  "70.3%"
+                  },
+        "summaryScores":  {
+                              "achievementLevel":  6,
+                              "classwork":  "65.6%",
+                              "tests":  "77.4%"
+                          },
+        "assessmentBreakdown":  {
+                                    "review_1":  {
+                                                     "header":  "Review 1",
+                                                     "topic":  "Place Value, Ordering Numbers, Comparing Numbers up to 4 digits",
+                                                     "raw":  "20/24",
+                                                     "percent":  "83.33%"
+                                                 },
+                                    "review_2":  {
+                                                     "header":  "Review 2",
+                                                     "topic":  "Rounding Numbers up to 4 digits to 10, 100, 1000",
+                                                     "raw":  "11/25",
+                                                     "percent":  "44%"
+                                                 },
+                                    "investigation":  {
+                                                          "header":  "Investigation",
+                                                          "topic":  "Word Sums / Number patterns",
+                                                          "raw":  "15/21",
+                                                          "percent":  "71.43%"
+                                                      },
+                                    "times_tables_1":  {
+                                                           "header":  "TimesTables1",
+                                                           "topic":  "Times tables fluency",
+                                                           "raw":  "16/20",
+                                                           "percent":  "80%"
+                                                       },
+                                    "term_test":  {
+                                                      "header":  "Term Test",
+                                                      "topic":  "Combination of all concepts",
+                                                      "raw":  "30.5/40",
+                                                      "percent":  "76.25%"
+                                                  },
+                                    "times_tables_2":  {
+                                                           "header":  "TimesTables2",
+                                                           "topic":  "Times tables fluency",
+                                                           "raw":  "16/20",
+                                                           "percent":  "80%"
+                                                       }
+                                },
+        "sourceAudit":  {
+                            "overallRepeated":  "70.3%",
+                            "achievementRepeated":  6
+                        }
+    },
+    {
+        "name":  "Ngcwalisa Kumbaca",
+        "class":  "4S",
+        "gender":  "F",
+        "marks":  {
+                      "Overall":  "82.8%"
+                  },
+        "summaryScores":  {
+                              "achievementLevel":  7,
+                              "classwork":  "81.1%",
+                              "tests":  "85.4%"
+                          },
+        "assessmentBreakdown":  {
+                                    "review_1":  {
+                                                     "header":  "Review 1",
+                                                     "topic":  "Place Value, Ordering Numbers, Comparing Numbers up to 4 digits",
+                                                     "raw":  "20/24",
+                                                     "percent":  "83.33%"
+                                                 },
+                                    "review_2":  {
+                                                     "header":  "Review 2",
+                                                     "topic":  "Rounding Numbers up to 4 digits to 10, 100, 1000",
+                                                     "raw":  "20/25",
+                                                     "percent":  "80%"
+                                                 },
+                                    "investigation":  {
+                                                          "header":  "Investigation",
+                                                          "topic":  "Word Sums / Number patterns",
+                                                          "raw":  "17/21",
+                                                          "percent":  "80.95%"
+                                                      },
+                                    "times_tables_1":  {
+                                                           "header":  "TimesTables1",
+                                                           "topic":  "Times tables fluency",
+                                                           "raw":  "19/20",
+                                                           "percent":  "95%"
+                                                       },
+                                    "term_test":  {
+                                                      "header":  "Term Test",
+                                                      "topic":  "Combination of all concepts",
+                                                      "raw":  "32.5/40",
+                                                      "percent":  "81.25%"
+                                                  },
+                                    "times_tables_2":  {
+                                                           "header":  "TimesTables2",
+                                                           "topic":  "Times tables fluency",
+                                                           "raw":  "19/20",
+                                                           "percent":  "95%"
+                                                       }
+                                },
+        "sourceAudit":  {
+                            "overallRepeated":  "82.8%",
+                            "achievementRepeated":  7
+                        }
+    },
+    {
+        "name":  "Carlo Lavezzari Prieto",
+        "class":  "4S",
+        "gender":  "M",
+        "marks":  {
+                      "Overall":  "97.6%"
+                  },
+        "summaryScores":  {
+                              "achievementLevel":  7,
+                              "classwork":  "100%",
+                              "tests":  "93.9%"
+                          },
+        "assessmentBreakdown":  {
+                                    "review_2":  {
+                                                     "header":  "Review 2",
+                                                     "topic":  "Rounding Numbers up to 4 digits to 10, 100, 1000",
+                                                     "raw":  "25/25",
+                                                     "percent":  "100%"
+                                                 },
+                                    "investigation":  {
+                                                          "header":  "Investigation",
+                                                          "topic":  "Word Sums / Number patterns",
+                                                          "raw":  "21/21",
+                                                          "percent":  "100%"
+                                                      },
+                                    "times_tables_1":  {
+                                                           "header":  "TimesTables1",
+                                                           "topic":  "Times tables fluency",
+                                                           "raw":  "20/20",
+                                                           "percent":  "100%"
+                                                       },
+                                    "term_test":  {
+                                                      "header":  "Term Test",
+                                                      "topic":  "Combination of all concepts",
+                                                      "raw":  "36.5/40",
+                                                      "percent":  "91.25%"
+                                                  },
+                                    "times_tables_2":  {
+                                                           "header":  "TimesTables2",
+                                                           "topic":  "Times tables fluency",
+                                                           "raw":  "20/20",
+                                                           "percent":  "100%"
+                                                       }
+                                },
+        "sourceAudit":  {
+                            "overallRepeated":  "97.6%",
+                            "achievementRepeated":  7
+                        }
+    },
+    {
+        "name":  "Thenji Mabandla",
+        "class":  "4S",
+        "gender":  "F",
+        "marks":  {
+                      "Overall":  "55.4%"
+                  },
+        "summaryScores":  {
+                              "achievementLevel":  4,
+                              "classwork":  "56%",
+                              "tests":  "54.5%"
+                          },
+        "assessmentBreakdown":  {
+                                    "review_1":  {
+                                                     "header":  "Review 1",
+                                                     "topic":  "Place Value, Ordering Numbers, Comparing Numbers up to 4 digits",
+                                                     "raw":  "10/24",
+                                                     "percent":  "41.67%"
+                                                 },
+                                    "review_2":  {
+                                                     "header":  "Review 2",
+                                                     "topic":  "Rounding Numbers up to 4 digits to 10, 100, 1000",
+                                                     "raw":  "4/25",
+                                                     "percent":  "16%"
+                                                 },
+                                    "investigation":  {
+                                                          "header":  "Investigation",
+                                                          "topic":  "Word Sums / Number patterns",
+                                                          "raw":  "18/21",
+                                                          "percent":  "85.71%"
+                                                      },
+                                    "times_tables_1":  {
+                                                           "header":  "TimesTables1",
+                                                           "topic":  "Times tables fluency",
+                                                           "raw":  "10/20",
+                                                           "percent":  "50%"
+                                                       },
+                                    "term_test":  {
+                                                      "header":  "Term Test",
+                                                      "topic":  "Combination of all concepts",
+                                                      "raw":  "23/40",
+                                                      "percent":  "57.5%"
+                                                  },
+                                    "times_tables_2":  {
+                                                           "header":  "TimesTables2",
+                                                           "topic":  "Times tables fluency",
+                                                           "raw":  "9/20",
+                                                           "percent":  "45%"
+                                                       }
+                                },
+        "sourceAudit":  {
+                            "overallRepeated":  "55.4%",
+                            "achievementRepeated":  4
+                        }
+    },
+    {
+        "name":  "Mya Mac Ewan",
+        "class":  "4S",
+        "gender":  "F",
+        "marks":  {
+                      "Overall":  "75.2%"
+                  },
+        "summaryScores":  {
+                              "achievementLevel":  6,
+                              "classwork":  "67.6%",
+                              "tests":  "86.5%"
+                          },
+        "assessmentBreakdown":  {
+                                    "review_1":  {
+                                                     "header":  "Review 1",
+                                                     "topic":  "Place Value, Ordering Numbers, Comparing Numbers up to 4 digits",
+                                                     "raw":  "21/24",
+                                                     "percent":  "87.5%"
+                                                 },
+                                    "review_2":  {
+                                                     "header":  "Review 2",
+                                                     "topic":  "Rounding Numbers up to 4 digits to 10, 100, 1000",
+                                                     "raw":  "14/25",
+                                                     "percent":  "56%"
+                                                 },
+                                    "investigation":  {
+                                                          "header":  "Investigation",
+                                                          "topic":  "Word Sums / Number patterns",
+                                                          "raw":  "14/21",
+                                                          "percent":  "66.67%"
+                                                      },
+                                    "times_tables_1":  {
+                                                           "header":  "TimesTables1",
+                                                           "topic":  "Times tables fluency",
+                                                           "raw":  "18/20",
+                                                           "percent":  "90%"
+                                                       },
+                                    "term_test":  {
+                                                      "header":  "Term Test",
+                                                      "topic":  "Combination of all concepts",
+                                                      "raw":  "34/40",
+                                                      "percent":  "85%"
+                                                  },
+                                    "times_tables_2":  {
+                                                           "header":  "TimesTables2",
+                                                           "topic":  "Times tables fluency",
+                                                           "raw":  "18/20",
+                                                           "percent":  "90%"
+                                                       }
+                                },
+        "sourceAudit":  {
+                            "overallRepeated":  "75.2%",
+                            "achievementRepeated":  6
+                        }
+    },
+    {
+        "name":  "Ayana Macingwane",
+        "class":  "4S",
+        "gender":  "F",
+        "marks":  {
+                      "Overall":  "96.8%"
+                  },
+        "summaryScores":  {
+                              "achievementLevel":  7,
+                              "classwork":  "99.2%",
+                              "tests":  "93.1%"
+                          },
+        "assessmentBreakdown":  {
+                                    "review_1":  {
+                                                     "header":  "Review 1",
+                                                     "topic":  "Place Value, Ordering Numbers, Comparing Numbers up to 4 digits",
+                                                     "raw":  "23/24",
+                                                     "percent":  "95.83%"
+                                                 },
+                                    "review_2":  {
+                                                     "header":  "Review 2",
+                                                     "topic":  "Rounding Numbers up to 4 digits to 10, 100, 1000",
+                                                     "raw":  "25/25",
+                                                     "percent":  "100%"
+                                                 },
+                                    "investigation":  {
+                                                          "header":  "Investigation",
+                                                          "topic":  "Word Sums / Number patterns",
+                                                          "raw":  "21/21",
+                                                          "percent":  "100%"
+                                                      },
+                                    "times_tables_1":  {
+                                                           "header":  "TimesTables1",
+                                                           "topic":  "Times tables fluency",
+                                                           "raw":  "19/20",
+                                                           "percent":  "95%"
+                                                       },
+                                    "term_test":  {
+                                                      "header":  "Term Test",
+                                                      "topic":  "Combination of all concepts",
+                                                      "raw":  "36.5/40",
+                                                      "percent":  "91.25%"
+                                                  },
+                                    "times_tables_2":  {
+                                                           "header":  "TimesTables2",
+                                                           "topic":  "Times tables fluency",
+                                                           "raw":  "20/20",
+                                                           "percent":  "100%"
+                                                       }
+                                },
+        "sourceAudit":  {
+                            "overallRepeated":  "96.8%",
+                            "achievementRepeated":  7
+                        }
+    },
+    {
+        "name":  "Shiba Masoga",
+        "class":  "4S",
+        "gender":  "M",
+        "marks":  {
+                      "Overall":  "81.2%"
+                  },
+        "summaryScores":  {
+                              "achievementLevel":  7,
+                              "classwork":  "76%",
+                              "tests":  "89%"
+                          },
+        "assessmentBreakdown":  {
+                                    "review_1":  {
+                                                     "header":  "Review 1",
+                                                     "topic":  "Place Value, Ordering Numbers, Comparing Numbers up to 4 digits",
+                                                     "raw":  "21/24",
+                                                     "percent":  "87.5%"
+                                                 },
+                                    "review_2":  {
+                                                     "header":  "Review 2",
+                                                     "topic":  "Rounding Numbers up to 4 digits to 10, 100, 1000",
+                                                     "raw":  "17/25",
+                                                     "percent":  "68%"
+                                                 },
+                                    "investigation":  {
+                                                          "header":  "Investigation",
+                                                          "topic":  "Word Sums / Number patterns",
+                                                          "raw":  "16/21",
+                                                          "percent":  "76.19%"
+                                                      },
+                                    "times_tables_1":  {
+                                                           "header":  "TimesTables1",
+                                                           "topic":  "Times tables fluency",
+                                                           "raw":  "17/20",
+                                                           "percent":  "85%"
+                                                       },
+                                    "term_test":  {
+                                                      "header":  "Term Test",
+                                                      "topic":  "Combination of all concepts",
+                                                      "raw":  "35/40",
+                                                      "percent":  "87.5%"
+                                                  },
+                                    "times_tables_2":  {
+                                                           "header":  "TimesTables2",
+                                                           "topic":  "Times tables fluency",
+                                                           "raw":  "20/20",
+                                                           "percent":  "100%"
+                                                       }
+                                },
+        "sourceAudit":  {
+                            "overallRepeated":  "81.2%",
+                            "achievementRepeated":  7
+                        }
+    },
+    {
+        "name":  "Likuye Mdludlu",
+        "class":  "4S",
+        "gender":  "F",
+        "marks":  {
+                      "Overall":  "77.3%"
+                  },
+        "summaryScores":  {
+                              "achievementLevel":  6,
+                              "classwork":  "85.2%",
+                              "tests":  "65.5%"
+                          },
+        "assessmentBreakdown":  {
+                                    "review_1":  {
+                                                     "header":  "Review 1",
+                                                     "topic":  "Place Value, Ordering Numbers, Comparing Numbers up to 4 digits",
+                                                     "raw":  "22/24",
+                                                     "percent":  "91.67%"
+                                                 },
+                                    "review_2":  {
+                                                     "header":  "Review 2",
+                                                     "topic":  "Rounding Numbers up to 4 digits to 10, 100, 1000",
+                                                     "raw":  "20/25",
+                                                     "percent":  "80%"
+                                                 },
+                                    "investigation":  {
+                                                          "header":  "Investigation",
+                                                          "topic":  "Word Sums / Number patterns",
+                                                          "raw":  "18/21",
+                                                          "percent":  "85.71%"
+                                                      },
+                                    "times_tables_1":  {
+                                                           "header":  "TimesTables1",
+                                                           "topic":  "Times tables fluency",
+                                                           "raw":  "19/20",
+                                                           "percent":  "95%"
+                                                       },
+                                    "term_test":  {
+                                                      "header":  "Term Test",
+                                                      "topic":  "Combination of all concepts",
+                                                      "raw":  "22/40",
+                                                      "percent":  "55%"
+                                                  },
+                                    "times_tables_2":  {
+                                                           "header":  "TimesTables2",
+                                                           "topic":  "Times tables fluency",
+                                                           "raw":  "17/20",
+                                                           "percent":  "85%"
+                                                       }
+                                },
+        "sourceAudit":  {
+                            "overallRepeated":  "77.3%",
+                            "achievementRepeated":  6
+                        }
+    },
+    {
+        "name":  "Niyole Mhlauli",
+        "class":  "4S",
+        "gender":  "F",
+        "marks":  {
+                      "Overall":  "92.3%"
+                  },
+        "summaryScores":  {
+                              "achievementLevel":  7,
+                              "classwork":  "94.4%",
+                              "tests":  "89.3%"
+                          },
+        "assessmentBreakdown":  {
+                                    "review_1":  {
+                                                     "header":  "Review 1",
+                                                     "topic":  "Place Value, Ordering Numbers, Comparing Numbers up to 4 digits",
+                                                     "raw":  "23/24",
+                                                     "percent":  "95.83%"
+                                                 },
+                                    "review_2":  {
+                                                     "header":  "Review 2",
+                                                     "topic":  "Rounding Numbers up to 4 digits to 10, 100, 1000",
+                                                     "raw":  "23/25",
+                                                     "percent":  "92%"
+                                                 },
+                                    "investigation":  {
+                                                          "header":  "Investigation",
+                                                          "topic":  "Word Sums / Number patterns",
+                                                          "raw":  "20/21",
+                                                          "percent":  "95.24%"
+                                                      },
+                                    "times_tables_1":  {
+                                                           "header":  "TimesTables1",
+                                                           "topic":  "Times tables fluency",
+                                                           "raw":  "16/20",
+                                                           "percent":  "80%"
+                                                       },
+                                    "term_test":  {
+                                                      "header":  "Term Test",
+                                                      "topic":  "Combination of all concepts",
+                                                      "raw":  "36/40",
+                                                      "percent":  "90%"
+                                                  },
+                                    "times_tables_2":  {
+                                                           "header":  "TimesTables2",
+                                                           "topic":  "Times tables fluency",
+                                                           "raw":  "19/20",
+                                                           "percent":  "95%"
+                                                       }
+                                },
+        "sourceAudit":  {
+                            "overallRepeated":  "92.3%",
+                            "achievementRepeated":  7
+                        }
+    },
+    {
+        "name":  "Yanda Mlalandle",
+        "class":  "4S",
+        "gender":  "F",
+        "marks":  {
+                      "Overall":  "83.5%"
+                  },
+        "summaryScores":  {
+                              "achievementLevel":  7,
+                              "classwork":  "86.4%",
+                              "tests":  "79.3%"
+                          },
+        "assessmentBreakdown":  {
+                                    "review_1":  {
+                                                     "header":  "Review 1",
+                                                     "topic":  "Place Value, Ordering Numbers, Comparing Numbers up to 4 digits",
+                                                     "raw":  "22/24",
+                                                     "percent":  "91.67%"
+                                                 },
+                                    "review_2":  {
+                                                     "header":  "Review 2",
+                                                     "topic":  "Rounding Numbers up to 4 digits to 10, 100, 1000",
+                                                     "raw":  "21/25",
+                                                     "percent":  "84%"
+                                                 },
+                                    "investigation":  {
+                                                          "header":  "Investigation",
+                                                          "topic":  "Word Sums / Number patterns",
+                                                          "raw":  "18/21",
+                                                          "percent":  "85.71%"
+                                                      },
+                                    "times_tables_1":  {
+                                                           "header":  "TimesTables1",
+                                                           "topic":  "Times tables fluency",
+                                                           "raw":  "19/20",
+                                                           "percent":  "95%"
+                                                       },
+                                    "term_test":  {
+                                                      "header":  "Term Test",
+                                                      "topic":  "Combination of all concepts",
+                                                      "raw":  "29/40",
+                                                      "percent":  "72.5%"
+                                                  },
+                                    "times_tables_2":  {
+                                                           "header":  "TimesTables2",
+                                                           "topic":  "Times tables fluency",
+                                                           "raw":  "19/20",
+                                                           "percent":  "95%"
+                                                       }
+                                },
+        "sourceAudit":  {
+                            "overallRepeated":  "83.5%",
+                            "achievementRepeated":  7
+                        }
+    },
+    {
+        "name":  "Madison Muller",
+        "class":  "4S",
+        "gender":  "F",
+        "marks":  {
+                      "Overall":  "88.3%"
+                  },
+        "summaryScores":  {
+                              "achievementLevel":  7,
+                              "classwork":  "91.2%",
+                              "tests":  "84%"
+                          },
+        "assessmentBreakdown":  {
+                                    "review_1":  {
+                                                     "header":  "Review 1",
+                                                     "topic":  "Place Value, Ordering Numbers, Comparing Numbers up to 4 digits",
+                                                     "raw":  "22/24",
+                                                     "percent":  "91.67%"
+                                                 },
+                                    "review_2":  {
+                                                     "header":  "Review 2",
+                                                     "topic":  "Rounding Numbers up to 4 digits to 10, 100, 1000",
+                                                     "raw":  "23/25",
+                                                     "percent":  "92%"
+                                                 },
+                                    "investigation":  {
+                                                          "header":  "Investigation",
+                                                          "topic":  "Word Sums / Number patterns",
+                                                          "raw":  "19/21",
+                                                          "percent":  "90.48%"
+                                                      },
+                                    "times_tables_1":  {
+                                                           "header":  "TimesTables1",
+                                                           "topic":  "Times tables fluency",
+                                                           "raw":  "17/20",
+                                                           "percent":  "85%"
+                                                       },
+                                    "term_test":  {
+                                                      "header":  "Term Test",
+                                                      "topic":  "Combination of all concepts",
+                                                      "raw":  "33/40",
+                                                      "percent":  "82.5%"
+                                                  },
+                                    "times_tables_2":  {
+                                                           "header":  "TimesTables2",
+                                                           "topic":  "Times tables fluency",
+                                                           "raw":  "18/20",
+                                                           "percent":  "90%"
+                                                       }
+                                },
+        "sourceAudit":  {
+                            "overallRepeated":  "88.3%",
+                            "achievementRepeated":  7
+                        }
+    },
+    {
+        "name":  "Zimi Ndongeni",
+        "class":  "4S",
+        "gender":  "F",
+        "marks":  {
+                      "Overall":  "79.3%"
+                  },
+        "summaryScores":  {
+                              "achievementLevel":  6,
+                              "classwork":  "79.9%",
+                              "tests":  "78.4%"
+                          },
+        "assessmentBreakdown":  {
+                                    "review_1":  {
+                                                     "header":  "Review 1",
+                                                     "topic":  "Place Value, Ordering Numbers, Comparing Numbers up to 4 digits",
+                                                     "raw":  "20/24",
+                                                     "percent":  "83.33%"
+                                                 },
+                                    "review_2":  {
+                                                     "header":  "Review 2",
+                                                     "topic":  "Rounding Numbers up to 4 digits to 10, 100, 1000",
+                                                     "raw":  "19/25",
+                                                     "percent":  "76%"
+                                                 },
+                                    "investigation":  {
+                                                          "header":  "Investigation",
+                                                          "topic":  "Word Sums / Number patterns",
+                                                          "raw":  "17/21",
+                                                          "percent":  "80.95%"
+                                                      },
+                                    "times_tables_1":  {
+                                                           "header":  "TimesTables1",
+                                                           "topic":  "Times tables fluency",
+                                                           "raw":  "16/20",
+                                                           "percent":  "80%"
+                                                       },
+                                    "term_test":  {
+                                                      "header":  "Term Test",
+                                                      "topic":  "Combination of all concepts",
+                                                      "raw":  "31.5/40",
+                                                      "percent":  "78.75%"
+                                                  },
+                                    "times_tables_2":  {
+                                                           "header":  "TimesTables2",
+                                                           "topic":  "Times tables fluency",
+                                                           "raw":  "15/20",
+                                                           "percent":  "75%"
+                                                       }
+                                },
+        "sourceAudit":  {
+                            "overallRepeated":  "79.3%",
+                            "achievementRepeated":  6
+                        }
+    },
+    {
+        "name":  "Ukho Ndyulo",
+        "class":  "4S",
+        "gender":  "M",
+        "marks":  {
+                      "Overall":  "66.7%"
+                  },
+        "summaryScores":  {
+                              "achievementLevel":  5,
+                              "classwork":  "60.8%",
+                              "tests":  "75.6%"
+                          },
+        "assessmentBreakdown":  {
+                                    "review_1":  {
+                                                     "header":  "Review 1",
+                                                     "topic":  "Place Value, Ordering Numbers, Comparing Numbers up to 4 digits",
+                                                     "raw":  "20/24",
+                                                     "percent":  "83.33%"
+                                                 },
+                                    "review_2":  {
+                                                     "header":  "Review 2",
+                                                     "topic":  "Rounding Numbers up to 4 digits to 10, 100, 1000",
+                                                     "raw":  "11/25",
+                                                     "percent":  "44%"
+                                                 },
+                                    "investigation":  {
+                                                          "header":  "Investigation",
+                                                          "topic":  "Word Sums / Number patterns",
+                                                          "raw":  "13/21",
+                                                          "percent":  "61.9%"
+                                                      },
+                                    "times_tables_1":  {
+                                                           "header":  "TimesTables1",
+                                                           "topic":  "Times tables fluency",
+                                                           "raw":  "20/20",
+                                                           "percent":  "100%"
+                                                       },
+                                    "term_test":  {
+                                                      "header":  "Term Test",
+                                                      "topic":  "Combination of all concepts",
+                                                      "raw":  "26.5/40",
+                                                      "percent":  "66.25%"
+                                                  },
+                                    "times_tables_2":  {
+                                                           "header":  "TimesTables2",
+                                                           "topic":  "Times tables fluency",
+                                                           "raw":  "19/20",
+                                                           "percent":  "95%"
+                                                       }
+                                },
+        "sourceAudit":  {
+                            "overallRepeated":  "66.7%",
+                            "achievementRepeated":  5
+                        }
+    },
+    {
+        "name":  "Ngcwele Sikukula",
+        "class":  "4S",
+        "gender":  "F",
+        "marks":  {
+                      "Overall":  "74%"
+                  },
+        "summaryScores":  {
+                              "achievementLevel":  6,
+                              "classwork":  "75.5%",
+                              "tests":  "71.6%"
+                          },
+        "assessmentBreakdown":  {
+                                    "review_1":  {
+                                                     "header":  "Review 1",
+                                                     "topic":  "Place Value, Ordering Numbers, Comparing Numbers up to 4 digits",
+                                                     "raw":  "19/24",
+                                                     "percent":  "79.17%"
+                                                 },
+                                    "review_2":  {
+                                                     "header":  "Review 2",
+                                                     "topic":  "Rounding Numbers up to 4 digits to 10, 100, 1000",
+                                                     "raw":  "18/25",
+                                                     "percent":  "72%"
+                                                 },
+                                    "investigation":  {
+                                                          "header":  "Investigation",
+                                                          "topic":  "Word Sums / Number patterns",
+                                                          "raw":  "16/21",
+                                                          "percent":  "76.19%"
+                                                      },
+                                    "term_test":  {
+                                                      "header":  "Term Test",
+                                                      "topic":  "Combination of all concepts",
+                                                      "raw":  "27.5/40",
+                                                      "percent":  "68.75%"
+                                                  },
+                                    "times_tables_2":  {
+                                                           "header":  "TimesTables2",
+                                                           "topic":  "Times tables fluency",
+                                                           "raw":  "17/20",
+                                                           "percent":  "85%"
+                                                       }
+                                },
+        "sourceAudit":  {
+                            "overallRepeated":  "74%",
+                            "achievementRepeated":  6
+                        }
+    },
+    {
+        "name":  "Olo Siyongwana",
+        "class":  "4S",
+        "gender":  "F",
+        "marks":  {
+                      "Overall":  "58.4%"
+                  },
+        "summaryScores":  {
+                              "achievementLevel":  4,
+                              "classwork":  "56.3%",
+                              "tests":  "61.5%"
+                          },
+        "assessmentBreakdown":  {
+                                    "review_1":  {
+                                                     "header":  "Review 1",
+                                                     "topic":  "Place Value, Ordering Numbers, Comparing Numbers up to 4 digits",
+                                                     "raw":  "16/24",
+                                                     "percent":  "66.67%"
+                                                 },
+                                    "review_2":  {
+                                                     "header":  "Review 2",
+                                                     "topic":  "Rounding Numbers up to 4 digits to 10, 100, 1000",
+                                                     "raw":  "12/25",
+                                                     "percent":  "48%"
+                                                 },
+                                    "investigation":  {
+                                                          "header":  "Investigation",
+                                                          "topic":  "Word Sums / Number patterns",
+                                                          "raw":  "12/21",
+                                                          "percent":  "57.14%"
+                                                      },
+                                    "times_tables_1":  {
+                                                           "header":  "TimesTables1",
+                                                           "topic":  "Times tables fluency",
+                                                           "raw":  "18/20",
+                                                           "percent":  "90%"
+                                                       },
+                                    "term_test":  {
+                                                      "header":  "Term Test",
+                                                      "topic":  "Combination of all concepts",
+                                                      "raw":  "21/40",
+                                                      "percent":  "52.5%"
+                                                  },
+                                    "times_tables_2":  {
+                                                           "header":  "TimesTables2",
+                                                           "topic":  "Times tables fluency",
+                                                           "raw":  "15/20",
+                                                           "percent":  "75%"
+                                                       }
+                                },
+        "sourceAudit":  {
+                            "overallRepeated":  "58.4%",
+                            "achievementRepeated":  4
+                        }
+    },
+    {
+        "name":  "Nola-Maria Smith",
+        "class":  "4S",
+        "gender":  "F",
+        "marks":  {
+                      "Overall":  "88.4%"
+                  },
+        "summaryScores":  {
+                              "achievementLevel":  7,
+                              "classwork":  "91.5%",
+                              "tests":  "83.8%"
+                          },
+        "assessmentBreakdown":  {
+                                    "review_1":  {
+                                                     "header":  "Review 1",
+                                                     "topic":  "Place Value, Ordering Numbers, Comparing Numbers up to 4 digits",
+                                                     "raw":  "21/24",
+                                                     "percent":  "87.5%"
+                                                 },
+                                    "review_2":  {
+                                                     "header":  "Review 2",
+                                                     "topic":  "Rounding Numbers up to 4 digits to 10, 100, 1000",
+                                                     "raw":  "24/25",
+                                                     "percent":  "96%"
+                                                 },
+                                    "investigation":  {
+                                                          "header":  "Investigation",
+                                                          "topic":  "Word Sums / Number patterns",
+                                                          "raw":  "19/21",
+                                                          "percent":  "90.48%"
+                                                      },
+                                    "times_tables_1":  {
+                                                           "header":  "TimesTables1",
+                                                           "topic":  "Times tables fluency",
+                                                           "raw":  "18/20",
+                                                           "percent":  "90%"
+                                                       },
+                                    "term_test":  {
+                                                      "header":  "Term Test",
+                                                      "topic":  "Combination of all concepts",
+                                                      "raw":  "32/40",
+                                                      "percent":  "80%"
+                                                  },
+                                    "times_tables_2":  {
+                                                           "header":  "TimesTables2",
+                                                           "topic":  "Times tables fluency",
+                                                           "raw":  "19/20",
+                                                           "percent":  "95%"
+                                                       }
+                                },
+        "sourceAudit":  {
+                            "overallRepeated":  "88.4%",
+                            "achievementRepeated":  7
+                        }
+    },
+    {
+        "name":  "Buqaqawuli Somtsewu",
+        "class":  "4S",
+        "gender":  "M",
+        "marks":  {
+                      "Overall":  "59%"
+                  },
+        "summaryScores":  {
+                              "achievementLevel":  4,
+                              "classwork":  "55.1%",
+                              "tests":  "64.8%"
+                          },
+        "assessmentBreakdown":  {
+                                    "review_1":  {
+                                                     "header":  "Review 1",
+                                                     "topic":  "Place Value, Ordering Numbers, Comparing Numbers up to 4 digits",
+                                                     "raw":  "16/24",
+                                                     "percent":  "66.67%"
+                                                 },
+                                    "review_2":  {
+                                                     "header":  "Review 2",
+                                                     "topic":  "Rounding Numbers up to 4 digits to 10, 100, 1000",
+                                                     "raw":  "9/25",
+                                                     "percent":  "36%"
+                                                 },
+                                    "investigation":  {
+                                                          "header":  "Investigation",
+                                                          "topic":  "Word Sums / Number patterns",
+                                                          "raw":  "13/21",
+                                                          "percent":  "61.9%"
+                                                      },
+                                    "times_tables_1":  {
+                                                           "header":  "TimesTables1",
+                                                           "topic":  "Times tables fluency",
+                                                           "raw":  "17/20",
+                                                           "percent":  "85%"
+                                                       },
+                                    "term_test":  {
+                                                      "header":  "Term Test",
+                                                      "topic":  "Combination of all concepts",
+                                                      "raw":  "22/40",
+                                                      "percent":  "55%"
+                                                  },
+                                    "times_tables_2":  {
+                                                           "header":  "TimesTables2",
+                                                           "topic":  "Times tables fluency",
+                                                           "raw":  "18/20",
+                                                           "percent":  "90%"
+                                                       }
+                                },
+        "sourceAudit":  {
+                            "overallRepeated":  "59%",
+                            "achievementRepeated":  4
+                        }
+    },
+    {
+        "name":  "Ntando Zengethwa",
+        "class":  "4S",
+        "gender":  "F",
+        "marks":  {
+                      "Overall":  "66.5%"
+                  },
+        "summaryScores":  {
+                              "achievementLevel":  5,
+                              "classwork":  "65.8%",
+                              "tests":  "67.4%"
+                          },
+        "assessmentBreakdown":  {
+                                    "review_1":  {
+                                                     "header":  "Review 1",
+                                                     "topic":  "Place Value, Ordering Numbers, Comparing Numbers up to 4 digits",
+                                                     "raw":  "16/24",
+                                                     "percent":  "66.67%"
+                                                 },
+                                    "review_2":  {
+                                                     "header":  "Review 2",
+                                                     "topic":  "Rounding Numbers up to 4 digits to 10, 100, 1000",
+                                                     "raw":  "14/25",
+                                                     "percent":  "56%"
+                                                 },
+                                    "investigation":  {
+                                                          "header":  "Investigation",
+                                                          "topic":  "Word Sums / Number patterns",
+                                                          "raw":  "15/21",
+                                                          "percent":  "71.43%"
+                                                      },
+                                    "times_tables_1":  {
+                                                           "header":  "TimesTables1",
+                                                           "topic":  "Times tables fluency",
+                                                           "raw":  "14/20",
+                                                           "percent":  "70%"
+                                                       },
+                                    "term_test":  {
+                                                      "header":  "Term Test",
+                                                      "topic":  "Combination of all concepts",
+                                                      "raw":  "26.5/40",
+                                                      "percent":  "66.25%"
+                                                  },
+                                    "times_tables_2":  {
+                                                           "header":  "TimesTables2",
+                                                           "topic":  "Times tables fluency",
+                                                           "raw":  "14/20",
+                                                           "percent":  "70%"
+                                                       }
+                                },
+        "sourceAudit":  {
+                            "overallRepeated":  "66.5%",
+                            "achievementRepeated":  5
+                        }
+    }
+]

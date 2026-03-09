@@ -24,6 +24,9 @@ workspace/
   profiles/
     buli_xhosa.json
     buli_xhosa_comprehensive.json
+  reference/
+    legacy_exports/
+    raw_extracts/
   exports/
     2026-03-07_isiXhosa_Beauty_Zumani_Report_Comments_Gr5.docx
     2026-03-07_isiXhosa_Beauty_Zumani_Report_Comments_Gr6.docx
@@ -32,7 +35,27 @@ workspace/
 
 `workspace/` is ignored by git.
 
-Existing `Saved Profiles/` and `exports/` paths are still supported for backwards compatibility.
+Use `workspace/exports` for active batch files and `workspace/reference` for raw extracts, reusable local context, and archived local examples.
+
+## Curated Repo-Visible Surface
+
+Only keep intentionally curated handoff assets in repo-visible `exports/` folders.
+
+Example:
+
+```text
+exports/
+  bjoseph_Comments/
+    final/
+    batches/
+      bj_4s_english_term1_2026/
+      bj_4w_english_term1_2026/
+      bj_4s_maths_term1_2026/
+    reference/
+      english/
+```
+
+Existing `Saved Profiles/` and direct `exports/` paths are still supported for backwards compatibility, but the preferred local operating flow is `workspace/` first and curated `exports/` only when needed.
 
 ## Recommended `.env.local`
 
@@ -73,4 +96,5 @@ Before commit and push:
 
 1. Run `git status --short`.
 2. Confirm no local learner data has become tracked.
-3. Keep generated `.docx`, extracted text, and teacher profiles inside ignored workspace paths.
+3. Keep generated `.docx`, extracted text, and teacher profiles inside ignored workspace paths unless you are intentionally promoting a curated handoff snapshot.
+4. If something must stay repo-visible, place it under a clearly named curated subfolder such as `exports/<teacher>_Comments/final`, `batches`, or `reference`.

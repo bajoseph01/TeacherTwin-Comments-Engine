@@ -1,0 +1,2711 @@
+[
+  {
+    "name": "Iyolatha Battie",
+    "class": "4W",
+    "gender": null,
+    "marks": {
+      "Overall": "88.1%"
+    },
+    "summaryScores": {
+      "language": "87.5%",
+      "oral": "75%",
+      "reading": "96.7%",
+      "writing": "86.7%",
+      "achievementLevel": 7
+    },
+    "assessmentBreakdown": {
+      "language_test": {
+        "header": "Language Test",
+        "topic": "Language conventions and formal English test work",
+        "raw": "21.5/25",
+        "percent": "86%"
+      },
+      "spelling": {
+        "header": "Spelling",
+        "topic": "Weekly spelling accuracy across the term",
+        "percent": "93.4%"
+      },
+      "speaking": {
+        "header": "Speaking",
+        "topic": "Prepared oral speaking task",
+        "raw": "15/20",
+        "percent": "75%"
+      },
+      "unprepared_reading": {
+        "header": "Unprepared Reading",
+        "topic": "Unseen reading fluency and accuracy",
+        "percent": "60%"
+      },
+      "listening_comprehension": {
+        "header": "Listening Comprehension",
+        "topic": "Listening, recall, and response",
+        "percent": "90%"
+      },
+      "comprehension": {
+        "header": "Comprehension",
+        "topic": "Reading comprehension and test comprehension",
+        "percent": "100%"
+      },
+      "read_and_view": {
+        "header": "Read and View",
+        "topic": "Class reading and viewing tasks",
+        "percent": "93.4%"
+      },
+      "writing": {
+        "header": "Writing",
+        "topic": "Written English tasks",
+        "percent": "86.7%"
+      }
+    },
+    "personalisationContext": {
+      "referenceName": "Iyolatha",
+      "confidence": "high",
+      "hobbiesInterests": "Hockey, netball, water polo, swimming; also singing.",
+      "uniqueDetail": "Uses emotional language such as 'filled with love and memories.'",
+      "writingStrengths": "Rich content; strong elaboration; expressive ideas.",
+      "writingNeeds": "Editing for sentence accuracy and clearer list punctuation."
+    },
+    "sourceAudit": {
+      "parsedOverall": "88.1%",
+      "computedOverall": "88.1%",
+      "overallReplacedWithComputed": false,
+      "categoryPercents": {
+        "language": "87.5%",
+        "oral": "75%",
+        "reading": "96.7%",
+        "writing": "86.7%"
+      },
+      "rawColumns": {
+        "gender": null,
+        "overall": 88.1,
+        "overallAchievement": 7,
+        "testRaw": 21.5,
+        "testPercent": 86,
+        "spell1Raw": null,
+        "spell2Raw": null,
+        "spell3Raw": 10,
+        "spellingPercent": 93.4,
+        "languagePercent": 87.5,
+        "languageAchievement": 7,
+        "speakingRaw": 15,
+        "speakingPercent": 75,
+        "unpreparedReadingRaw": null,
+        "unpreparedReadingPercent": 60,
+        "listeningRaw": null,
+        "listeningPercent": 90,
+        "oralPercent": 75,
+        "oralAchievement": 6,
+        "rcompRaw": 20,
+        "testCompRaw": 15,
+        "comprehensionPercent": 100,
+        "read1Raw": 9,
+        "read2Raw": null,
+        "read3Raw": 10,
+        "readViewPercent": 93.4,
+        "readingPercent": 96.7,
+        "readingAchievement": 7,
+        "written2Raw": 14,
+        "written1Raw": null,
+        "writingRawPercentLike": 86.7,
+        "writingPercent": 86.7,
+        "writingAchievement": null
+      }
+    }
+  },
+  {
+    "name": "Sienna Blane",
+    "class": "4W",
+    "gender": null,
+    "marks": {
+      "Overall": "84.5%"
+    },
+    "summaryScores": {
+      "language": "95.2%",
+      "oral": "88.3%",
+      "reading": "86.7%",
+      "writing": "75%",
+      "achievementLevel": 7
+    },
+    "assessmentBreakdown": {
+      "language_test": {
+        "header": "Language Test",
+        "topic": "Language conventions and formal English test work",
+        "raw": "23.5/25",
+        "percent": "94%"
+      },
+      "spelling": {
+        "header": "Spelling",
+        "topic": "Weekly spelling accuracy across the term",
+        "percent": "100%"
+      },
+      "speaking": {
+        "header": "Speaking",
+        "topic": "Prepared oral speaking task",
+        "raw": "18/20",
+        "percent": "90%"
+      },
+      "unprepared_reading": {
+        "header": "Unprepared Reading",
+        "topic": "Unseen reading fluency and accuracy",
+        "raw": "11/15",
+        "percent": "73.3%"
+      },
+      "listening_comprehension": {
+        "header": "Listening Comprehension",
+        "topic": "Listening, recall, and response",
+        "raw": "10/10",
+        "percent": "100%"
+      },
+      "comprehension": {
+        "header": "Comprehension",
+        "topic": "Reading comprehension and test comprehension",
+        "percent": "80%"
+      },
+      "read_and_view": {
+        "header": "Read and View",
+        "topic": "Class reading and viewing tasks",
+        "percent": "93.3%"
+      },
+      "writing": {
+        "header": "Writing",
+        "topic": "Written English tasks",
+        "percent": "75%"
+      }
+    },
+    "personalisationContext": {
+      "referenceName": "Sienna",
+      "confidence": "high",
+      "hobbiesInterests": "Playing marimba, playing with friends, making slime.",
+      "uniqueDetail": "Combines music interest with social play and creative play.",
+      "writingStrengths": "Simple, clear ideas; warm tone; good relevance to headings.",
+      "writingNeeds": "Grammar control and sentence expansion for fuller detail."
+    },
+    "sourceAudit": {
+      "parsedOverall": "84.5%",
+      "computedOverall": "84.5%",
+      "overallReplacedWithComputed": false,
+      "categoryPercents": {
+        "language": "95.2%",
+        "oral": "88.3%",
+        "reading": "86.7%",
+        "writing": "75%"
+      },
+      "rawColumns": {
+        "gender": null,
+        "overall": 84.5,
+        "overallAchievement": 7,
+        "testRaw": 23.5,
+        "testPercent": 94,
+        "spell1Raw": 10,
+        "spell2Raw": 10,
+        "spell3Raw": 10,
+        "spellingPercent": 100,
+        "languagePercent": 95.2,
+        "languageAchievement": 7,
+        "speakingRaw": 18,
+        "speakingPercent": 90,
+        "unpreparedReadingRaw": 11,
+        "unpreparedReadingPercent": 73.3,
+        "listeningRaw": 10,
+        "listeningPercent": 100,
+        "oralPercent": 88.3,
+        "oralAchievement": 7,
+        "rcompRaw": 16,
+        "testCompRaw": 12,
+        "comprehensionPercent": 80,
+        "read1Raw": 10,
+        "read2Raw": null,
+        "read3Raw": null,
+        "readViewPercent": 93.3,
+        "readingPercent": 86.7,
+        "readingAchievement": 7,
+        "written2Raw": 12,
+        "written1Raw": null,
+        "writingRawPercentLike": 75,
+        "writingPercent": 75,
+        "writingAchievement": null
+      }
+    }
+  },
+  {
+    "name": "Aripo Chinyamurindi",
+    "class": "4W",
+    "gender": null,
+    "marks": {
+      "Overall": "81.3%"
+    },
+    "summaryScores": {
+      "language": "92.5%",
+      "oral": "76.7%",
+      "reading": "87.3%",
+      "writing": "71.7%",
+      "achievementLevel": 7
+    },
+    "assessmentBreakdown": {
+      "language_test": {
+        "header": "Language Test",
+        "topic": "Language conventions and formal English test work",
+        "raw": "23.5/25",
+        "percent": "94%"
+      },
+      "spelling": {
+        "header": "Spelling",
+        "topic": "Weekly spelling accuracy across the term",
+        "percent": "86.6%"
+      },
+      "speaking": {
+        "header": "Speaking",
+        "topic": "Prepared oral speaking task",
+        "raw": "16/20",
+        "percent": "80%"
+      },
+      "unprepared_reading": {
+        "header": "Unprepared Reading",
+        "topic": "Unseen reading fluency and accuracy",
+        "raw": "10/15",
+        "percent": "66.7%"
+      },
+      "listening_comprehension": {
+        "header": "Listening Comprehension",
+        "topic": "Listening, recall, and response",
+        "raw": "8/10",
+        "percent": "80%"
+      },
+      "comprehension": {
+        "header": "Comprehension",
+        "topic": "Reading comprehension and test comprehension",
+        "percent": "94.5%"
+      },
+      "read_and_view": {
+        "header": "Read and View",
+        "topic": "Class reading and viewing tasks",
+        "percent": "80.1%"
+      },
+      "writing": {
+        "header": "Writing",
+        "topic": "Written English tasks",
+        "percent": "71.7%"
+      }
+    },
+    "personalisationContext": {
+      "referenceName": "Aripo",
+      "confidence": "high",
+      "hobbiesInterests": "Acting, playing piano, chess.",
+      "uniqueDetail": "Strong performing-arts and chess combination.",
+      "writingStrengths": "Concise but clear; relevant content; distinct interests.",
+      "writingNeeds": "Needs more elaboration and sentence variety."
+    },
+    "sourceAudit": {
+      "parsedOverall": "81.3%",
+      "computedOverall": "81.3%",
+      "overallReplacedWithComputed": false,
+      "categoryPercents": {
+        "language": "92.5%",
+        "oral": "76.7%",
+        "reading": "87.3%",
+        "writing": "71.7%"
+      },
+      "rawColumns": {
+        "gender": null,
+        "overall": 81.3,
+        "overallAchievement": 7,
+        "testRaw": 23.5,
+        "testPercent": 94,
+        "spell1Raw": 10,
+        "spell2Raw": null,
+        "spell3Raw": null,
+        "spellingPercent": 86.6,
+        "languagePercent": 92.5,
+        "languageAchievement": 7,
+        "speakingRaw": 16,
+        "speakingPercent": 80,
+        "unpreparedReadingRaw": 10,
+        "unpreparedReadingPercent": 66.7,
+        "listeningRaw": 8,
+        "listeningPercent": 80,
+        "oralPercent": 76.7,
+        "oralAchievement": 6,
+        "rcompRaw": 19,
+        "testCompRaw": 14,
+        "comprehensionPercent": 94.5,
+        "read1Raw": 9,
+        "read2Raw": null,
+        "read3Raw": null,
+        "readViewPercent": 80.1,
+        "readingPercent": 87.3,
+        "readingAchievement": 7,
+        "written2Raw": 11,
+        "written1Raw": null,
+        "writingRawPercentLike": 71.7,
+        "writingPercent": 71.7,
+        "writingAchievement": 6
+      }
+    }
+  },
+  {
+    "name": "Luke Deas",
+    "class": "4W",
+    "gender": "M",
+    "marks": {
+      "Overall": "86.9%"
+    },
+    "summaryScores": {
+      "language": "92%",
+      "oral": "77.5%",
+      "reading": "92.2%",
+      "writing": "83.3%",
+      "achievementLevel": null
+    },
+    "assessmentBreakdown": {
+      "language_test": {
+        "header": "Language Test",
+        "topic": "Language conventions and formal English test work",
+        "raw": "22.5/25",
+        "percent": "90%"
+      },
+      "spelling": {
+        "header": "Spelling",
+        "topic": "Weekly spelling accuracy across the term",
+        "percent": "100%"
+      },
+      "speaking": {
+        "header": "Speaking",
+        "topic": "Prepared oral speaking task",
+        "raw": "15/20",
+        "percent": "75%"
+      },
+      "unprepared_reading": {
+        "header": "Unprepared Reading",
+        "topic": "Unseen reading fluency and accuracy",
+        "percent": "60%"
+      },
+      "listening_comprehension": {
+        "header": "Listening Comprehension",
+        "topic": "Listening, recall, and response",
+        "raw": "10/10",
+        "percent": "100%"
+      },
+      "comprehension": {
+        "header": "Comprehension",
+        "topic": "Reading comprehension and test comprehension",
+        "percent": "94.5%"
+      },
+      "read_and_view": {
+        "header": "Read and View",
+        "topic": "Class reading and viewing tasks",
+        "percent": "89.9%"
+      },
+      "writing": {
+        "header": "Writing",
+        "topic": "Written English tasks",
+        "percent": "83.3%"
+      }
+    },
+    "personalisationContext": {
+      "referenceName": "Luke",
+      "confidence": "high",
+      "hobbiesInterests": "Maths, playing chess with dad, watching Ninja Sport Network, monkey bars.",
+      "uniqueDetail": "Maths and chess with dad create a clear personal snapshot.",
+      "writingStrengths": "Good factual detail; clear sense of interest; strong personal relevance.",
+      "writingNeeds": "Spelling and sentence punctuation."
+    },
+    "sourceAudit": {
+      "parsedOverall": "86.9%",
+      "computedOverall": "86.8%",
+      "overallReplacedWithComputed": false,
+      "categoryPercents": {
+        "language": "92%",
+        "oral": "77.5%",
+        "reading": "92.2%",
+        "writing": "83.3%"
+      },
+      "rawColumns": {
+        "gender": null,
+        "overall": 86.9,
+        "overallAchievement": null,
+        "testRaw": 22.5,
+        "testPercent": 90,
+        "spell1Raw": 10,
+        "spell2Raw": 10,
+        "spell3Raw": 10,
+        "spellingPercent": 100,
+        "languagePercent": 92,
+        "languageAchievement": 7,
+        "speakingRaw": 15,
+        "speakingPercent": 75,
+        "unpreparedReadingRaw": null,
+        "unpreparedReadingPercent": 60,
+        "listeningRaw": 10,
+        "listeningPercent": 100,
+        "oralPercent": 77.5,
+        "oralAchievement": 6,
+        "rcompRaw": 19,
+        "testCompRaw": 14,
+        "comprehensionPercent": 94.5,
+        "read1Raw": 10,
+        "read2Raw": null,
+        "read3Raw": null,
+        "readViewPercent": 89.9,
+        "readingPercent": 92.2,
+        "readingAchievement": 7,
+        "written2Raw": 13,
+        "written1Raw": null,
+        "writingRawPercentLike": 83.3,
+        "writingPercent": 83.3,
+        "writingAchievement": 7
+      }
+    }
+  },
+  {
+    "name": "Peyton Edwards",
+    "class": "4W",
+    "gender": "F",
+    "marks": {
+      "Overall": "76.7%"
+    },
+    "summaryScores": {
+      "language": "75.6%",
+      "oral": "72.5%",
+      "reading": "71.7%",
+      "writing": "83.3%",
+      "achievementLevel": null
+    },
+    "assessmentBreakdown": {
+      "language_test": {
+        "header": "Language Test",
+        "topic": "Language conventions and formal English test work",
+        "raw": "18/25",
+        "percent": "72%"
+      },
+      "spelling": {
+        "header": "Spelling",
+        "topic": "Weekly spelling accuracy across the term",
+        "percent": "90%"
+      },
+      "speaking": {
+        "header": "Speaking",
+        "topic": "Prepared oral speaking task",
+        "raw": "15/20",
+        "percent": "75%"
+      },
+      "unprepared_reading": {
+        "header": "Unprepared Reading",
+        "topic": "Unseen reading fluency and accuracy",
+        "percent": "60%"
+      },
+      "listening_comprehension": {
+        "header": "Listening Comprehension",
+        "topic": "Listening, recall, and response",
+        "percent": "80%"
+      },
+      "comprehension": {
+        "header": "Comprehension",
+        "topic": "Reading comprehension and test comprehension",
+        "percent": "80%"
+      },
+      "read_and_view": {
+        "header": "Read and View",
+        "topic": "Class reading and viewing tasks",
+        "percent": "63.4%"
+      },
+      "writing": {
+        "header": "Writing",
+        "topic": "Written English tasks",
+        "percent": "83.3%"
+      }
+    },
+    "personalisationContext": {
+      "referenceName": "Peyton",
+      "confidence": "high",
+      "hobbiesInterests": "Water polo, hockey, swimming, netball, dancing with Skyla, art.",
+      "uniqueDetail": "Mom works at Merrifield and dancing with Skyla stands out.",
+      "writingStrengths": "Lots of detail; expressive and conversational voice; meaningful personal content.",
+      "writingNeeds": "Sentence control and organisation of ideas."
+    },
+    "sourceAudit": {
+      "parsedOverall": "76.7%",
+      "computedOverall": "76.7%",
+      "overallReplacedWithComputed": false,
+      "categoryPercents": {
+        "language": "75.6%",
+        "oral": "72.5%",
+        "reading": "71.7%",
+        "writing": "83.3%"
+      },
+      "rawColumns": {
+        "gender": null,
+        "overall": 76.7,
+        "overallAchievement": null,
+        "testRaw": 18,
+        "testPercent": 72,
+        "spell1Raw": null,
+        "spell2Raw": 10,
+        "spell3Raw": null,
+        "spellingPercent": 90,
+        "languagePercent": 75.6,
+        "languageAchievement": 6,
+        "speakingRaw": 15,
+        "speakingPercent": 75,
+        "unpreparedReadingRaw": null,
+        "unpreparedReadingPercent": 60,
+        "listeningRaw": null,
+        "listeningPercent": 80,
+        "oralPercent": 72.5,
+        "oralAchievement": 6,
+        "rcompRaw": 16,
+        "testCompRaw": 12,
+        "comprehensionPercent": 80,
+        "read1Raw": null,
+        "read2Raw": null,
+        "read3Raw": null,
+        "readViewPercent": 63.4,
+        "readingPercent": 71.7,
+        "readingAchievement": 6,
+        "written2Raw": 13,
+        "written1Raw": null,
+        "writingRawPercentLike": 83.3,
+        "writingPercent": 83.3,
+        "writingAchievement": 7
+      }
+    }
+  },
+  {
+    "name": "Skyla Gaffney",
+    "class": "4W",
+    "gender": null,
+    "marks": {
+      "Overall": "85.9%"
+    },
+    "summaryScores": {
+      "language": "91.3%",
+      "oral": "84.2%",
+      "reading": "95.6%",
+      "writing": "75%",
+      "achievementLevel": 7
+    },
+    "assessmentBreakdown": {
+      "language_test": {
+        "header": "Language Test",
+        "topic": "Language conventions and formal English test work",
+        "raw": "22.5/25",
+        "percent": "90%"
+      },
+      "spelling": {
+        "header": "Spelling",
+        "topic": "Weekly spelling accuracy across the term",
+        "percent": "96.7%"
+      },
+      "speaking": {
+        "header": "Speaking",
+        "topic": "Prepared oral speaking task",
+        "raw": "17/20",
+        "percent": "85%"
+      },
+      "unprepared_reading": {
+        "header": "Unprepared Reading",
+        "topic": "Unseen reading fluency and accuracy",
+        "raw": "10/15",
+        "percent": "66.7%"
+      },
+      "listening_comprehension": {
+        "header": "Listening Comprehension",
+        "topic": "Listening, recall, and response",
+        "raw": "10/10",
+        "percent": "100%"
+      },
+      "comprehension": {
+        "header": "Comprehension",
+        "topic": "Reading comprehension and test comprehension",
+        "percent": "94.5%"
+      },
+      "read_and_view": {
+        "header": "Read and View",
+        "topic": "Class reading and viewing tasks",
+        "percent": "96.7%"
+      },
+      "writing": {
+        "header": "Writing",
+        "topic": "Written English tasks",
+        "percent": "75%"
+      }
+    },
+    "personalisationContext": {
+      "referenceName": "Skyla",
+      "confidence": "high",
+      "hobbiesInterests": "Sits on her dad’s lap and drives the car on the farm, swimming, playing with her friend.",
+      "uniqueDetail": "Memorable farm/car detail and proximity to friend.",
+      "writingStrengths": "Interesting personal detail; memorable voice; covers all headings meaningfully.",
+      "writingNeeds": "Punctuation, grammar, and tighter sentence structure."
+    },
+    "sourceAudit": {
+      "parsedOverall": "85.9%",
+      "computedOverall": "85.8%",
+      "overallReplacedWithComputed": false,
+      "categoryPercents": {
+        "language": "91.3%",
+        "oral": "84.2%",
+        "reading": "95.6%",
+        "writing": "75%"
+      },
+      "rawColumns": {
+        "gender": null,
+        "overall": 85.9,
+        "overallAchievement": 7,
+        "testRaw": 22.5,
+        "testPercent": 90,
+        "spell1Raw": 10,
+        "spell2Raw": null,
+        "spell3Raw": 10,
+        "spellingPercent": 96.7,
+        "languagePercent": 91.3,
+        "languageAchievement": 7,
+        "speakingRaw": 17,
+        "speakingPercent": 85,
+        "unpreparedReadingRaw": 10,
+        "unpreparedReadingPercent": 66.7,
+        "listeningRaw": 10,
+        "listeningPercent": 100,
+        "oralPercent": 84.2,
+        "oralAchievement": 7,
+        "rcompRaw": 19,
+        "testCompRaw": 14,
+        "comprehensionPercent": 94.5,
+        "read1Raw": 10,
+        "read2Raw": null,
+        "read3Raw": 10,
+        "readViewPercent": 96.7,
+        "readingPercent": 95.6,
+        "readingAchievement": 7,
+        "written2Raw": 12,
+        "written1Raw": null,
+        "writingRawPercentLike": 75,
+        "writingPercent": 75,
+        "writingAchievement": 6
+      }
+    }
+  },
+  {
+    "name": "Unako Jada",
+    "class": "4W",
+    "gender": null,
+    "marks": {
+      "Overall": "78.2%"
+    },
+    "summaryScores": {
+      "language": "71.3%",
+      "oral": "70%",
+      "reading": "81.1%",
+      "writing": "83.3%",
+      "achievementLevel": 6
+    },
+    "assessmentBreakdown": {
+      "language_test": {
+        "header": "Language Test",
+        "topic": "Language conventions and formal English test work",
+        "raw": "17.5/25",
+        "percent": "70%"
+      },
+      "spelling": {
+        "header": "Spelling",
+        "topic": "Weekly spelling accuracy across the term",
+        "percent": "76.7%"
+      },
+      "speaking": {
+        "header": "Speaking",
+        "topic": "Prepared oral speaking task",
+        "raw": "14/20",
+        "percent": "70%"
+      },
+      "unprepared_reading": {
+        "header": "Unprepared Reading",
+        "topic": "Unseen reading fluency and accuracy",
+        "percent": "60%"
+      },
+      "listening_comprehension": {
+        "header": "Listening Comprehension",
+        "topic": "Listening, recall, and response",
+        "raw": "8/10",
+        "percent": "80%"
+      },
+      "comprehension": {
+        "header": "Comprehension",
+        "topic": "Reading comprehension and test comprehension",
+        "percent": "85.5%"
+      },
+      "read_and_view": {
+        "header": "Read and View",
+        "topic": "Class reading and viewing tasks",
+        "percent": "76.7%"
+      },
+      "writing": {
+        "header": "Writing",
+        "topic": "Written English tasks",
+        "percent": "83.3%"
+      }
+    },
+    "personalisationContext": {
+      "referenceName": "Unako",
+      "confidence": "high",
+      "hobbiesInterests": "Singing after school, netball on Mondays, hockey on Thursdays.",
+      "uniqueDetail": "Funny beach 'merman' detail makes the writing memorable.",
+      "writingStrengths": "Creative storytelling; energetic voice; strong memorable detail.",
+      "writingNeeds": "Sentence control and editing for clarity."
+    },
+    "sourceAudit": {
+      "parsedOverall": "76.3%",
+      "computedOverall": "78.2%",
+      "overallReplacedWithComputed": true,
+      "categoryPercents": {
+        "language": "71.3%",
+        "oral": "70%",
+        "reading": "81.1%",
+        "writing": "83.3%"
+      },
+      "rawColumns": {
+        "gender": null,
+        "overall": 76.3,
+        "overallAchievement": 6,
+        "testRaw": 17.5,
+        "testPercent": 70,
+        "spell1Raw": null,
+        "spell2Raw": null,
+        "spell3Raw": 8,
+        "spellingPercent": 76.7,
+        "languagePercent": 71.3,
+        "languageAchievement": 6,
+        "speakingRaw": 14,
+        "speakingPercent": 70,
+        "unpreparedReadingRaw": null,
+        "unpreparedReadingPercent": 60,
+        "listeningRaw": 8,
+        "listeningPercent": 80,
+        "oralPercent": 70,
+        "oralAchievement": 6,
+        "rcompRaw": 17,
+        "testCompRaw": 13,
+        "comprehensionPercent": 85.5,
+        "read1Raw": 9,
+        "read2Raw": null,
+        "read3Raw": null,
+        "readViewPercent": 76.7,
+        "readingPercent": 81.1,
+        "readingAchievement": 7,
+        "written2Raw": 13,
+        "written1Raw": null,
+        "writingRawPercentLike": 83.3,
+        "writingPercent": 83.3,
+        "writingAchievement": 7
+      }
+    }
+  },
+  {
+    "name": "Pratik Karthikeyan",
+    "class": "4W",
+    "gender": "M",
+    "marks": {
+      "Overall": "87.3%"
+    },
+    "summaryScores": {
+      "language": "93.6%",
+      "oral": "77.5%",
+      "reading": "92.8%",
+      "writing": "83.3%",
+      "achievementLevel": 7
+    },
+    "assessmentBreakdown": {
+      "language_test": {
+        "header": "Language Test",
+        "topic": "Language conventions and formal English test work",
+        "raw": "23/25",
+        "percent": "92%"
+      },
+      "spelling": {
+        "header": "Spelling",
+        "topic": "Weekly spelling accuracy across the term",
+        "percent": "100%"
+      },
+      "speaking": {
+        "header": "Speaking",
+        "topic": "Prepared oral speaking task",
+        "raw": "15/20",
+        "percent": "75%"
+      },
+      "unprepared_reading": {
+        "header": "Unprepared Reading",
+        "topic": "Unseen reading fluency and accuracy",
+        "percent": "60%"
+      },
+      "listening_comprehension": {
+        "header": "Listening Comprehension",
+        "topic": "Listening, recall, and response",
+        "raw": "10/10",
+        "percent": "100%"
+      },
+      "comprehension": {
+        "header": "Comprehension",
+        "topic": "Reading comprehension and test comprehension",
+        "percent": "85.5%"
+      },
+      "read_and_view": {
+        "header": "Read and View",
+        "topic": "Class reading and viewing tasks",
+        "percent": "100%"
+      },
+      "writing": {
+        "header": "Writing",
+        "topic": "Written English tasks",
+        "percent": "83.3%"
+      }
+    },
+    "personalisationContext": {
+      "referenceName": "Pratik",
+      "confidence": "medium",
+      "hobbiesInterests": "Sketching cars, riding his bike, hide-and-seek with sister.",
+      "uniqueDetail": "Chess with dad and sketching cars stand out.",
+      "writingStrengths": "Clear sense of personality; engaging hobbies; good personal relevance.",
+      "writingNeeds": "Spelling and place-name clarity; stronger sentence endings."
+    },
+    "sourceAudit": {
+      "parsedOverall": "87.3%",
+      "computedOverall": "87.3%",
+      "overallReplacedWithComputed": false,
+      "categoryPercents": {
+        "language": "93.6%",
+        "oral": "77.5%",
+        "reading": "92.8%",
+        "writing": "83.3%"
+      },
+      "rawColumns": {
+        "gender": null,
+        "overall": 87.3,
+        "overallAchievement": 7,
+        "testRaw": 23,
+        "testPercent": 92,
+        "spell1Raw": null,
+        "spell2Raw": 10,
+        "spell3Raw": 10,
+        "spellingPercent": 100,
+        "languagePercent": 93.6,
+        "languageAchievement": 7,
+        "speakingRaw": 15,
+        "speakingPercent": 75,
+        "unpreparedReadingRaw": null,
+        "unpreparedReadingPercent": 60,
+        "listeningRaw": 10,
+        "listeningPercent": 100,
+        "oralPercent": 77.5,
+        "oralAchievement": 6,
+        "rcompRaw": 17,
+        "testCompRaw": 13,
+        "comprehensionPercent": 85.5,
+        "read1Raw": 10,
+        "read2Raw": 10,
+        "read3Raw": 10,
+        "readViewPercent": 100,
+        "readingPercent": 92.8,
+        "readingAchievement": 7,
+        "written2Raw": 13,
+        "written1Raw": null,
+        "writingRawPercentLike": 83.3,
+        "writingPercent": 83.3,
+        "writingAchievement": 7
+      }
+    }
+  },
+  {
+    "name": "Selethu Khalishwayo",
+    "class": "4W",
+    "gender": "M",
+    "marks": {
+      "Overall": "57.7%"
+    },
+    "summaryScores": {
+      "language": "46.6%",
+      "oral": "58.3%",
+      "reading": "68.1%",
+      "writing": "55%",
+      "achievementLevel": 4
+    },
+    "assessmentBreakdown": {
+      "language_test": {
+        "header": "Language Test",
+        "topic": "Language conventions and formal English test work",
+        "raw": "12.5/25",
+        "percent": "50%"
+      },
+      "spelling": {
+        "header": "Spelling",
+        "topic": "Weekly spelling accuracy across the term",
+        "percent": "33.2%"
+      },
+      "speaking": {
+        "header": "Speaking",
+        "topic": "Prepared oral speaking task",
+        "raw": "13/20",
+        "percent": "65%"
+      },
+      "unprepared_reading": {
+        "header": "Unprepared Reading",
+        "topic": "Unseen reading fluency and accuracy",
+        "percent": "53.3%"
+      },
+      "listening_comprehension": {
+        "header": "Listening Comprehension",
+        "topic": "Listening, recall, and response",
+        "raw": "5/10",
+        "percent": "50%"
+      },
+      "comprehension": {
+        "header": "Comprehension",
+        "topic": "Reading comprehension and test comprehension",
+        "percent": "66%"
+      },
+      "read_and_view": {
+        "header": "Read and View",
+        "topic": "Class reading and viewing tasks",
+        "percent": "70.2%"
+      },
+      "writing": {
+        "header": "Writing",
+        "topic": "Written English tasks",
+        "percent": "55%"
+      }
+    },
+    "personalisationContext": {
+      "referenceName": "Selethu",
+      "confidence": "medium",
+      "hobbiesInterests": "Rugby and soccer; does not like golf.",
+      "uniqueDetail": "Clear preference statement about sports and not liking golf.",
+      "writingStrengths": "Direct communication; clear interests; stays on topic.",
+      "writingNeeds": "Needs fuller paragraphs and more detail under each heading."
+    },
+    "sourceAudit": {
+      "parsedOverall": "57.7%",
+      "computedOverall": "57.7%",
+      "overallReplacedWithComputed": false,
+      "categoryPercents": {
+        "language": "46.6%",
+        "oral": "58.3%",
+        "reading": "68.1%",
+        "writing": "55%"
+      },
+      "rawColumns": {
+        "gender": null,
+        "overall": 57.7,
+        "overallAchievement": 4,
+        "testRaw": 12.5,
+        "testPercent": 50,
+        "spell1Raw": null,
+        "spell2Raw": null,
+        "spell3Raw": null,
+        "spellingPercent": 33.2,
+        "languagePercent": 46.6,
+        "languageAchievement": 3,
+        "speakingRaw": 13,
+        "speakingPercent": 65,
+        "unpreparedReadingRaw": null,
+        "unpreparedReadingPercent": 53.3,
+        "listeningRaw": 5,
+        "listeningPercent": 50,
+        "oralPercent": 58.3,
+        "oralAchievement": 4,
+        "rcompRaw": 12,
+        "testCompRaw": 12,
+        "comprehensionPercent": 66,
+        "read1Raw": null,
+        "read2Raw": null,
+        "read3Raw": null,
+        "readViewPercent": 70.2,
+        "readingPercent": 68.1,
+        "readingAchievement": 5,
+        "written2Raw": 9,
+        "written1Raw": null,
+        "writingRawPercentLike": 55,
+        "writingPercent": 55,
+        "writingAchievement": 4
+      }
+    }
+  },
+  {
+    "name": "Omphile Lefophana",
+    "class": "4W",
+    "gender": null,
+    "marks": {
+      "Overall": "67.5%"
+    },
+    "summaryScores": {
+      "language": "61.7%",
+      "oral": "67.5%",
+      "reading": "62.8%",
+      "writing": "75%",
+      "achievementLevel": 5
+    },
+    "assessmentBreakdown": {
+      "language_test": {
+        "header": "Language Test",
+        "topic": "Language conventions and formal English test work",
+        "raw": "14.5/25",
+        "percent": "58%"
+      },
+      "spelling": {
+        "header": "Spelling",
+        "topic": "Weekly spelling accuracy across the term",
+        "percent": "76.5%"
+      },
+      "speaking": {
+        "header": "Speaking",
+        "topic": "Prepared oral speaking task",
+        "raw": "14/20",
+        "percent": "70%"
+      },
+      "unprepared_reading": {
+        "header": "Unprepared Reading",
+        "topic": "Unseen reading fluency and accuracy",
+        "percent": "60%"
+      },
+      "listening_comprehension": {
+        "header": "Listening Comprehension",
+        "topic": "Listening, recall, and response",
+        "percent": "70%"
+      },
+      "comprehension": {
+        "header": "Comprehension",
+        "topic": "Reading comprehension and test comprehension",
+        "percent": "65.5%"
+      },
+      "read_and_view": {
+        "header": "Read and View",
+        "topic": "Class reading and viewing tasks",
+        "percent": "60.1%"
+      },
+      "writing": {
+        "header": "Writing",
+        "topic": "Written English tasks",
+        "percent": "75%"
+      }
+    },
+    "personalisationContext": null,
+    "sourceAudit": {
+      "parsedOverall": "67.5%",
+      "computedOverall": "67.6%",
+      "overallReplacedWithComputed": false,
+      "categoryPercents": {
+        "language": "61.7%",
+        "oral": "67.5%",
+        "reading": "62.8%",
+        "writing": "75%"
+      },
+      "rawColumns": {
+        "gender": null,
+        "overall": 67.5,
+        "overallAchievement": 5,
+        "testRaw": 14.5,
+        "testPercent": 58,
+        "spell1Raw": null,
+        "spell2Raw": null,
+        "spell3Raw": null,
+        "spellingPercent": 76.5,
+        "languagePercent": 61.7,
+        "languageAchievement": 5,
+        "speakingRaw": 14,
+        "speakingPercent": 70,
+        "unpreparedReadingRaw": null,
+        "unpreparedReadingPercent": 60,
+        "listeningRaw": null,
+        "listeningPercent": 70,
+        "oralPercent": 67.5,
+        "oralAchievement": 5,
+        "rcompRaw": 13,
+        "testCompRaw": 10,
+        "comprehensionPercent": 65.5,
+        "read1Raw": 5,
+        "read2Raw": null,
+        "read3Raw": null,
+        "readViewPercent": 60.1,
+        "readingPercent": 62.8,
+        "readingAchievement": 5,
+        "written2Raw": 12,
+        "written1Raw": null,
+        "writingRawPercentLike": 75,
+        "writingPercent": 75,
+        "writingAchievement": 6
+      }
+    }
+  },
+  {
+    "name": "Uluthando Lehlehla",
+    "class": "4W",
+    "gender": null,
+    "marks": {
+      "Overall": "76.6%"
+    },
+    "summaryScores": {
+      "language": "72%",
+      "oral": "77.5%",
+      "reading": "85%",
+      "writing": "71.7%",
+      "achievementLevel": 6
+    },
+    "assessmentBreakdown": {
+      "language_test": {
+        "header": "Language Test",
+        "topic": "Language conventions and formal English test work",
+        "raw": "17.5/25",
+        "percent": "70%"
+      },
+      "spelling": {
+        "header": "Spelling",
+        "topic": "Weekly spelling accuracy across the term",
+        "percent": "80.1%"
+      },
+      "speaking": {
+        "header": "Speaking",
+        "topic": "Prepared oral speaking task",
+        "raw": "16/20",
+        "percent": "80%"
+      },
+      "unprepared_reading": {
+        "header": "Unprepared Reading",
+        "topic": "Unseen reading fluency and accuracy",
+        "percent": "60%"
+      },
+      "listening_comprehension": {
+        "header": "Listening Comprehension",
+        "topic": "Listening, recall, and response",
+        "percent": "90%"
+      },
+      "comprehension": {
+        "header": "Comprehension",
+        "topic": "Reading comprehension and test comprehension",
+        "percent": "80%"
+      },
+      "read_and_view": {
+        "header": "Read and View",
+        "topic": "Class reading and viewing tasks",
+        "percent": "90%"
+      },
+      "writing": {
+        "header": "Writing",
+        "topic": "Written English tasks",
+        "percent": "71.7%"
+      }
+    },
+    "personalisationContext": {
+      "referenceName": "Uluthando",
+      "confidence": "high",
+      "hobbiesInterests": "Drawing, painting, swimming, gymnastics.",
+      "uniqueDetail": "Strong arts-and-sport combination.",
+      "writingStrengths": "Clear, relevant responses; neat personal profile.",
+      "writingNeeds": "Needs more elaboration and fuller sentences."
+    },
+    "sourceAudit": {
+      "parsedOverall": "76.6%",
+      "computedOverall": "76.6%",
+      "overallReplacedWithComputed": false,
+      "categoryPercents": {
+        "language": "72%",
+        "oral": "77.5%",
+        "reading": "85%",
+        "writing": "71.7%"
+      },
+      "rawColumns": {
+        "gender": null,
+        "overall": 76.6,
+        "overallAchievement": 6,
+        "testRaw": 17.5,
+        "testPercent": 70,
+        "spell1Raw": null,
+        "spell2Raw": null,
+        "spell3Raw": null,
+        "spellingPercent": 80.1,
+        "languagePercent": 72,
+        "languageAchievement": 6,
+        "speakingRaw": 16,
+        "speakingPercent": 80,
+        "unpreparedReadingRaw": null,
+        "unpreparedReadingPercent": 60,
+        "listeningRaw": null,
+        "listeningPercent": 90,
+        "oralPercent": 77.5,
+        "oralAchievement": 6,
+        "rcompRaw": 16,
+        "testCompRaw": 12,
+        "comprehensionPercent": 80,
+        "read1Raw": null,
+        "read2Raw": null,
+        "read3Raw": null,
+        "readViewPercent": 90,
+        "readingPercent": 85,
+        "readingAchievement": 7,
+        "written2Raw": 11,
+        "written1Raw": null,
+        "writingRawPercentLike": 71.7,
+        "writingPercent": 71.7,
+        "writingAchievement": 6
+      }
+    }
+  },
+  {
+    "name": "Oliver",
+    "class": "4W",
+    "gender": "M",
+    "marks": {
+      "Overall": "64%"
+    },
+    "summaryScores": {
+      "language": "46.4%",
+      "oral": "66.7%",
+      "reading": "74.9%",
+      "writing": "63.3%",
+      "achievementLevel": 5
+    },
+    "assessmentBreakdown": {
+      "language_test": {
+        "header": "Language Test",
+        "topic": "Language conventions and formal English test work",
+        "raw": "12/25",
+        "percent": "48%"
+      },
+      "spelling": {
+        "header": "Spelling",
+        "topic": "Weekly spelling accuracy across the term",
+        "percent": "39.9%"
+      },
+      "speaking": {
+        "header": "Speaking",
+        "topic": "Prepared oral speaking task",
+        "raw": "14/20",
+        "percent": "70%"
+      },
+      "unprepared_reading": {
+        "header": "Unprepared Reading",
+        "topic": "Unseen reading fluency and accuracy",
+        "raw": "10/15",
+        "percent": "66.7%"
+      },
+      "listening_comprehension": {
+        "header": "Listening Comprehension",
+        "topic": "Listening, recall, and response",
+        "raw": "6/10",
+        "percent": "60%"
+      },
+      "comprehension": {
+        "header": "Comprehension",
+        "topic": "Reading comprehension and test comprehension",
+        "percent": "80%"
+      },
+      "read_and_view": {
+        "header": "Read and View",
+        "topic": "Class reading and viewing tasks",
+        "percent": "69.8%"
+      },
+      "writing": {
+        "header": "Writing",
+        "topic": "Written English tasks",
+        "percent": "63.3%"
+      }
+    },
+    "personalisationContext": {
+      "referenceName": "Oliver",
+      "confidence": "high",
+      "hobbiesInterests": "The game 'Subnautica', flying a drone, likes his house.",
+      "uniqueDetail": "Drone and gaming details give a distinctive modern profile.",
+      "writingStrengths": "Humorous voice; memorable phrasing; clear interests.",
+      "writingNeeds": "Sentence formation and fuller development under headings."
+    },
+    "sourceAudit": {
+      "parsedOverall": "64%",
+      "computedOverall": "63.9%",
+      "overallReplacedWithComputed": false,
+      "categoryPercents": {
+        "language": "46.4%",
+        "oral": "66.7%",
+        "reading": "74.9%",
+        "writing": "63.3%"
+      },
+      "rawColumns": {
+        "gender": null,
+        "overall": 64,
+        "overallAchievement": 5,
+        "testRaw": 12,
+        "testPercent": 48,
+        "spell1Raw": null,
+        "spell2Raw": null,
+        "spell3Raw": null,
+        "spellingPercent": 39.9,
+        "languagePercent": 46.4,
+        "languageAchievement": 3,
+        "speakingRaw": 14,
+        "speakingPercent": 70,
+        "unpreparedReadingRaw": 10,
+        "unpreparedReadingPercent": 66.7,
+        "listeningRaw": 6,
+        "listeningPercent": 60,
+        "oralPercent": 66.7,
+        "oralAchievement": 5,
+        "rcompRaw": 16,
+        "testCompRaw": 12,
+        "comprehensionPercent": 80,
+        "read1Raw": null,
+        "read2Raw": null,
+        "read3Raw": null,
+        "readViewPercent": 69.8,
+        "readingPercent": 74.9,
+        "readingAchievement": 6,
+        "written2Raw": 10,
+        "written1Raw": null,
+        "writingRawPercentLike": 63.3,
+        "writingPercent": 63.3,
+        "writingAchievement": 5
+      }
+    }
+  },
+  {
+    "name": "Zingce Mbah",
+    "class": "4W",
+    "gender": null,
+    "marks": {
+      "Overall": "75.4%"
+    },
+    "summaryScores": {
+      "language": "51.9%",
+      "oral": "70%",
+      "reading": "80.5%",
+      "writing": "86.7%",
+      "achievementLevel": 6
+    },
+    "assessmentBreakdown": {
+      "language_test": {
+        "header": "Language Test",
+        "topic": "Language conventions and formal English test work",
+        "raw": "11/25",
+        "percent": "44%"
+      },
+      "spelling": {
+        "header": "Spelling",
+        "topic": "Weekly spelling accuracy across the term",
+        "percent": "83.3%"
+      },
+      "speaking": {
+        "header": "Speaking",
+        "topic": "Prepared oral speaking task",
+        "raw": "14/20",
+        "percent": "70%"
+      },
+      "unprepared_reading": {
+        "header": "Unprepared Reading",
+        "topic": "Unseen reading fluency and accuracy",
+        "percent": "60%"
+      },
+      "listening_comprehension": {
+        "header": "Listening Comprehension",
+        "topic": "Listening, recall, and response",
+        "percent": "80%"
+      },
+      "comprehension": {
+        "header": "Comprehension",
+        "topic": "Reading comprehension and test comprehension",
+        "percent": "94.5%"
+      },
+      "read_and_view": {
+        "header": "Read and View",
+        "topic": "Class reading and viewing tasks",
+        "percent": "66.5%"
+      },
+      "writing": {
+        "header": "Writing",
+        "topic": "Written English tasks",
+        "percent": "86.7%"
+      }
+    },
+    "personalisationContext": {
+      "referenceName": "Zingce",
+      "confidence": "medium",
+      "hobbiesInterests": "Dance, singing, netball, eating; favourite food is sushi.",
+      "uniqueDetail": "Favourite food being sushi stands out; family described as wild.",
+      "writingStrengths": "Distinctive voice; memorable details; strong personality.",
+      "writingNeeds": "Grammar polish and sentence structure refinement."
+    },
+    "sourceAudit": {
+      "parsedOverall": "75.4%",
+      "computedOverall": "75.4%",
+      "overallReplacedWithComputed": false,
+      "categoryPercents": {
+        "language": "51.9%",
+        "oral": "70%",
+        "reading": "80.5%",
+        "writing": "86.7%"
+      },
+      "rawColumns": {
+        "gender": null,
+        "overall": 75.4,
+        "overallAchievement": 6,
+        "testRaw": 11,
+        "testPercent": 44,
+        "spell1Raw": null,
+        "spell2Raw": null,
+        "spell3Raw": null,
+        "spellingPercent": 83.3,
+        "languagePercent": 51.9,
+        "languageAchievement": 4,
+        "speakingRaw": 14,
+        "speakingPercent": 70,
+        "unpreparedReadingRaw": null,
+        "unpreparedReadingPercent": 60,
+        "listeningRaw": null,
+        "listeningPercent": 80,
+        "oralPercent": 70,
+        "oralAchievement": 6,
+        "rcompRaw": 19,
+        "testCompRaw": 14,
+        "comprehensionPercent": 94.5,
+        "read1Raw": 9,
+        "read2Raw": null,
+        "read3Raw": null,
+        "readViewPercent": 66.5,
+        "readingPercent": 80.5,
+        "readingAchievement": 7,
+        "written2Raw": 14,
+        "written1Raw": null,
+        "writingRawPercentLike": 86.7,
+        "writingPercent": 86.7,
+        "writingAchievement": 7
+      }
+    }
+  },
+  {
+    "name": "Iyanna",
+    "class": "4W",
+    "gender": null,
+    "marks": {
+      "Overall": "84%"
+    },
+    "summaryScores": {
+      "language": "82%",
+      "oral": "79.2%",
+      "reading": "84.5%",
+      "writing": "86.7%",
+      "achievementLevel": 7
+    },
+    "assessmentBreakdown": {
+      "language_test": {
+        "header": "Language Test",
+        "topic": "Language conventions and formal English test work",
+        "raw": "20/25",
+        "percent": "80%"
+      },
+      "spelling": {
+        "header": "Spelling",
+        "topic": "Weekly spelling accuracy across the term",
+        "percent": "90.1%"
+      },
+      "speaking": {
+        "header": "Speaking",
+        "topic": "Prepared oral speaking task",
+        "raw": "16/20",
+        "percent": "80%"
+      },
+      "unprepared_reading": {
+        "header": "Unprepared Reading",
+        "topic": "Unseen reading fluency and accuracy",
+        "raw": "10/15",
+        "percent": "66.7%"
+      },
+      "listening_comprehension": {
+        "header": "Listening Comprehension",
+        "topic": "Listening, recall, and response",
+        "raw": "9/10",
+        "percent": "90%"
+      },
+      "comprehension": {
+        "header": "Comprehension",
+        "topic": "Reading comprehension and test comprehension",
+        "percent": "85.5%"
+      },
+      "read_and_view": {
+        "header": "Read and View",
+        "topic": "Class reading and viewing tasks",
+        "percent": "63.5%"
+      },
+      "writing": {
+        "header": "Writing",
+        "topic": "Written English tasks",
+        "percent": "86.7%"
+      }
+    },
+    "personalisationContext": {
+      "referenceName": "Iyanna",
+      "confidence": "high",
+      "hobbiesInterests": "Golf, swimming, art, drama, scouts, nature, camping.",
+      "uniqueDetail": "Scout identity and love for nature/camping are distinctive.",
+      "writingStrengths": "Strong detail; broad interests; mature elaboration.",
+      "writingNeeds": "Editing for grammar and sentence flow."
+    },
+    "sourceAudit": {
+      "parsedOverall": "84%",
+      "computedOverall": "84%",
+      "overallReplacedWithComputed": false,
+      "categoryPercents": {
+        "language": "82%",
+        "oral": "79.2%",
+        "reading": "84.5%",
+        "writing": "86.7%"
+      },
+      "rawColumns": {
+        "gender": null,
+        "overall": 84,
+        "overallAchievement": 7,
+        "testRaw": 20,
+        "testPercent": 80,
+        "spell1Raw": null,
+        "spell2Raw": null,
+        "spell3Raw": 10,
+        "spellingPercent": 90.1,
+        "languagePercent": 82,
+        "languageAchievement": 7,
+        "speakingRaw": 16,
+        "speakingPercent": 80,
+        "unpreparedReadingRaw": 10,
+        "unpreparedReadingPercent": 66.7,
+        "listeningRaw": 9,
+        "listeningPercent": 90,
+        "oralPercent": 79.2,
+        "oralAchievement": 6,
+        "rcompRaw": 17,
+        "testCompRaw": 13,
+        "comprehensionPercent": 85.5,
+        "read1Raw": 5,
+        "read2Raw": 10,
+        "read3Raw": 10,
+        "readViewPercent": 63.5,
+        "readingPercent": 84.5,
+        "readingAchievement": 7,
+        "written2Raw": 14,
+        "written1Raw": null,
+        "writingRawPercentLike": 86.7,
+        "writingPercent": 86.7,
+        "writingAchievement": 7
+      }
+    }
+  },
+  {
+    "name": "Hermione-M. Moorcroft",
+    "class": "4W",
+    "gender": null,
+    "marks": {
+      "Overall": "85.5%"
+    },
+    "summaryScores": {
+      "language": "77.2%",
+      "oral": "85.8%",
+      "reading": "89.5%",
+      "writing": "86.7%",
+      "achievementLevel": 7
+    },
+    "assessmentBreakdown": {
+      "language_test": {
+        "header": "Language Test",
+        "topic": "Language conventions and formal English test work",
+        "raw": "18.5/25",
+        "percent": "74%"
+      },
+      "spelling": {
+        "header": "Spelling",
+        "topic": "Weekly spelling accuracy across the term",
+        "percent": "90.1%"
+      },
+      "speaking": {
+        "header": "Speaking",
+        "topic": "Prepared oral speaking task",
+        "raw": "18/20",
+        "percent": "90%"
+      },
+      "unprepared_reading": {
+        "header": "Unprepared Reading",
+        "topic": "Unseen reading fluency and accuracy",
+        "raw": "11/15",
+        "percent": "73.3%"
+      },
+      "listening_comprehension": {
+        "header": "Listening Comprehension",
+        "topic": "Listening, recall, and response",
+        "raw": "9/10",
+        "percent": "90%"
+      },
+      "comprehension": {
+        "header": "Comprehension",
+        "topic": "Reading comprehension and test comprehension",
+        "percent": "85.5%"
+      },
+      "read_and_view": {
+        "header": "Read and View",
+        "topic": "Class reading and viewing tasks",
+        "percent": "93.4%"
+      },
+      "writing": {
+        "header": "Writing",
+        "topic": "Written English tasks",
+        "percent": "86.7%"
+      }
+    },
+    "personalisationContext": {
+      "referenceName": "Hermione",
+      "confidence": "high",
+      "hobbiesInterests": "Playing piano; soccer, netball, water polo, swimming, cross-country; reading Matilda, Dork Diaries, and Diary of a Wimpy Kid.",
+      "uniqueDetail": "Very strong music identity and specific reading choices.",
+      "writingStrengths": "Rich detail; expressive voice; broad interests.",
+      "writingNeeds": "Needs editing for run-on sentences and punctuation."
+    },
+    "sourceAudit": {
+      "parsedOverall": "85.5%",
+      "computedOverall": "85.5%",
+      "overallReplacedWithComputed": false,
+      "categoryPercents": {
+        "language": "77.2%",
+        "oral": "85.8%",
+        "reading": "89.5%",
+        "writing": "86.7%"
+      },
+      "rawColumns": {
+        "gender": null,
+        "overall": 85.5,
+        "overallAchievement": 7,
+        "testRaw": 18.5,
+        "testPercent": 74,
+        "spell1Raw": 10,
+        "spell2Raw": null,
+        "spell3Raw": 10,
+        "spellingPercent": 90.1,
+        "languagePercent": 77.2,
+        "languageAchievement": 6,
+        "speakingRaw": 18,
+        "speakingPercent": 90,
+        "unpreparedReadingRaw": 11,
+        "unpreparedReadingPercent": 73.3,
+        "listeningRaw": 9,
+        "listeningPercent": 90,
+        "oralPercent": 85.8,
+        "oralAchievement": 7,
+        "rcompRaw": 17,
+        "testCompRaw": 13,
+        "comprehensionPercent": 85.5,
+        "read1Raw": null,
+        "read2Raw": 10,
+        "read3Raw": 10,
+        "readViewPercent": 93.4,
+        "readingPercent": 89.5,
+        "readingAchievement": 7,
+        "written2Raw": 14,
+        "written1Raw": null,
+        "writingRawPercentLike": 86.7,
+        "writingPercent": 86.7,
+        "writingAchievement": 7
+      }
+    }
+  },
+  {
+    "name": "Ibanathi Nhlabalsi",
+    "class": "4W",
+    "gender": "M",
+    "marks": {
+      "Overall": "87.9%"
+    },
+    "summaryScores": {
+      "language": "87.2%",
+      "oral": "84.2%",
+      "reading": "95.6%",
+      "writing": "83.3%",
+      "achievementLevel": 7
+    },
+    "assessmentBreakdown": {
+      "language_test": {
+        "header": "Language Test",
+        "topic": "Language conventions and formal English test work",
+        "raw": "21/25",
+        "percent": "84%"
+      },
+      "spelling": {
+        "header": "Spelling",
+        "topic": "Weekly spelling accuracy across the term",
+        "percent": "100%"
+      },
+      "speaking": {
+        "header": "Speaking",
+        "topic": "Prepared oral speaking task",
+        "raw": "17/20",
+        "percent": "85%"
+      },
+      "unprepared_reading": {
+        "header": "Unprepared Reading",
+        "topic": "Unseen reading fluency and accuracy",
+        "raw": "10/15",
+        "percent": "66.7%"
+      },
+      "listening_comprehension": {
+        "header": "Listening Comprehension",
+        "topic": "Listening, recall, and response",
+        "raw": "10/10",
+        "percent": "100%"
+      },
+      "comprehension": {
+        "header": "Comprehension",
+        "topic": "Reading comprehension and test comprehension",
+        "percent": "94.5%"
+      },
+      "read_and_view": {
+        "header": "Read and View",
+        "topic": "Class reading and viewing tasks",
+        "percent": "96.7%"
+      },
+      "writing": {
+        "header": "Writing",
+        "topic": "Written English tasks",
+        "percent": "83.3%"
+      }
+    },
+    "personalisationContext": {
+      "referenceName": "IBA",
+      "confidence": "medium",
+      "hobbiesInterests": "Soccer, hockey, water polo, cricket, rugby; also listening to music.",
+      "uniqueDetail": "Detailed home description with two garages and pool.",
+      "writingStrengths": "Detailed content; strong factual information; many ideas.",
+      "writingNeeds": "Sentence punctuation and some grammar control."
+    },
+    "sourceAudit": {
+      "parsedOverall": "87.9%",
+      "computedOverall": "87.9%",
+      "overallReplacedWithComputed": false,
+      "categoryPercents": {
+        "language": "87.2%",
+        "oral": "84.2%",
+        "reading": "95.6%",
+        "writing": "83.3%"
+      },
+      "rawColumns": {
+        "gender": null,
+        "overall": 87.9,
+        "overallAchievement": 7,
+        "testRaw": 21,
+        "testPercent": 84,
+        "spell1Raw": 10,
+        "spell2Raw": 10,
+        "spell3Raw": 10,
+        "spellingPercent": 100,
+        "languagePercent": 87.2,
+        "languageAchievement": 7,
+        "speakingRaw": 17,
+        "speakingPercent": 85,
+        "unpreparedReadingRaw": 10,
+        "unpreparedReadingPercent": 66.7,
+        "listeningRaw": 10,
+        "listeningPercent": 100,
+        "oralPercent": 84.2,
+        "oralAchievement": 7,
+        "rcompRaw": 19,
+        "testCompRaw": 14,
+        "comprehensionPercent": 94.5,
+        "read1Raw": null,
+        "read2Raw": 10,
+        "read3Raw": 10,
+        "readViewPercent": 96.7,
+        "readingPercent": 95.6,
+        "readingAchievement": 7,
+        "written2Raw": 13,
+        "written1Raw": null,
+        "writingRawPercentLike": 83.3,
+        "writingPercent": 83.3,
+        "writingAchievement": 7
+      }
+    }
+  },
+  {
+    "name": "Olama Olagunju",
+    "class": "4W",
+    "gender": null,
+    "marks": {
+      "Overall": "74.7%"
+    },
+    "summaryScores": {
+      "language": "45.5%",
+      "oral": "72.5%",
+      "reading": "85%",
+      "writing": "83.3%",
+      "achievementLevel": 6
+    },
+    "assessmentBreakdown": {
+      "language_test": {
+        "header": "Language Test",
+        "topic": "Language conventions and formal English test work",
+        "raw": "9/25",
+        "percent": "36%"
+      },
+      "spelling": {
+        "header": "Spelling",
+        "topic": "Weekly spelling accuracy across the term",
+        "percent": "83.5%"
+      },
+      "speaking": {
+        "header": "Speaking",
+        "topic": "Prepared oral speaking task",
+        "raw": "14/20",
+        "percent": "70%"
+      },
+      "unprepared_reading": {
+        "header": "Unprepared Reading",
+        "topic": "Unseen reading fluency and accuracy",
+        "percent": "60%"
+      },
+      "listening_comprehension": {
+        "header": "Listening Comprehension",
+        "topic": "Listening, recall, and response",
+        "percent": "90%"
+      },
+      "comprehension": {
+        "header": "Comprehension",
+        "topic": "Reading comprehension and test comprehension",
+        "percent": "80%"
+      },
+      "read_and_view": {
+        "header": "Read and View",
+        "topic": "Class reading and viewing tasks",
+        "percent": "90%"
+      },
+      "writing": {
+        "header": "Writing",
+        "topic": "Written English tasks",
+        "percent": "83.3%"
+      }
+    },
+    "personalisationContext": {
+      "referenceName": "Olama",
+      "confidence": "medium",
+      "hobbiesInterests": "Cycling, gymnastics, swimming, running; does not like tennis; mentions cross-country and games such as Snakes and Ladders and ping pong.",
+      "uniqueDetail": "Interesting mix of sport and board games.",
+      "writingStrengths": "Plenty of content; energetic ideas; attempts elaboration.",
+      "writingNeeds": "Editing for clarity, spelling, and sentence organisation."
+    },
+    "sourceAudit": {
+      "parsedOverall": "74.7%",
+      "computedOverall": "74.6%",
+      "overallReplacedWithComputed": false,
+      "categoryPercents": {
+        "language": "45.5%",
+        "oral": "72.5%",
+        "reading": "85%",
+        "writing": "83.3%"
+      },
+      "rawColumns": {
+        "gender": null,
+        "overall": 74.7,
+        "overallAchievement": 6,
+        "testRaw": 9,
+        "testPercent": 36,
+        "spell1Raw": null,
+        "spell2Raw": null,
+        "spell3Raw": 10,
+        "spellingPercent": 83.5,
+        "languagePercent": 45.5,
+        "languageAchievement": 3,
+        "speakingRaw": 14,
+        "speakingPercent": 70,
+        "unpreparedReadingRaw": null,
+        "unpreparedReadingPercent": 60,
+        "listeningRaw": null,
+        "listeningPercent": 90,
+        "oralPercent": 72.5,
+        "oralAchievement": 6,
+        "rcompRaw": 16,
+        "testCompRaw": 12,
+        "comprehensionPercent": 80,
+        "read1Raw": null,
+        "read2Raw": null,
+        "read3Raw": null,
+        "readViewPercent": 90,
+        "readingPercent": 85,
+        "readingAchievement": 7,
+        "written2Raw": 13,
+        "written1Raw": null,
+        "writingRawPercentLike": 83.3,
+        "writingPercent": 83.3,
+        "writingAchievement": 7
+      }
+    }
+  },
+  {
+    "name": "Kacey Perna",
+    "class": "4W",
+    "gender": "M",
+    "marks": {
+      "Overall": "77.7%"
+    },
+    "summaryScores": {
+      "language": "75%",
+      "oral": "74.2%",
+      "reading": "88.3%",
+      "writing": "71.7%",
+      "achievementLevel": 6
+    },
+    "assessmentBreakdown": {
+      "language_test": {
+        "header": "Language Test",
+        "topic": "Language conventions and formal English test work",
+        "raw": "18/25"
+      },
+      "spelling": {
+        "header": "Spelling",
+        "topic": "Weekly spelling accuracy across the term",
+        "percent": "86.8%"
+      },
+      "speaking": {
+        "header": "Speaking",
+        "topic": "Prepared oral speaking task",
+        "raw": "14/20",
+        "percent": "70%"
+      },
+      "unprepared_reading": {
+        "header": "Unprepared Reading",
+        "topic": "Unseen reading fluency and accuracy",
+        "raw": "10/15",
+        "percent": "66.7%"
+      },
+      "listening_comprehension": {
+        "header": "Listening Comprehension",
+        "topic": "Listening, recall, and response",
+        "raw": "9/10",
+        "percent": "90%"
+      },
+      "comprehension": {
+        "header": "Comprehension",
+        "topic": "Reading comprehension and test comprehension",
+        "percent": "80%"
+      },
+      "read_and_view": {
+        "header": "Read and View",
+        "topic": "Class reading and viewing tasks",
+        "percent": "96.6%"
+      },
+      "writing": {
+        "header": "Writing",
+        "topic": "Written English tasks",
+        "percent": "71.7%"
+      }
+    },
+    "personalisationContext": {
+      "referenceName": "Kacey",
+      "confidence": "high",
+      "hobbiesInterests": "Playing with dad, boxing on a boxing bag, watching TV.",
+      "uniqueDetail": "Mentions her dad lives/drives in Joburg and visits.",
+      "writingStrengths": "Personal detail; clear topic relevance; attempts multiple ideas under each heading.",
+      "writingNeeds": "Sentence punctuation, capitals, and clearer sentence separation."
+    },
+    "sourceAudit": {
+      "parsedOverall": "77.7%",
+      "computedOverall": "77.7%",
+      "overallReplacedWithComputed": false,
+      "categoryPercents": {
+        "language": "75%",
+        "oral": "74.2%",
+        "reading": "88.3%",
+        "writing": "71.7%"
+      },
+      "rawColumns": {
+        "gender": null,
+        "overall": 77.7,
+        "overallAchievement": 6,
+        "testRaw": 18,
+        "testPercent": null,
+        "spell1Raw": null,
+        "spell2Raw": null,
+        "spell3Raw": 10,
+        "spellingPercent": 86.8,
+        "languagePercent": 75,
+        "languageAchievement": 6,
+        "speakingRaw": 14,
+        "speakingPercent": 70,
+        "unpreparedReadingRaw": 10,
+        "unpreparedReadingPercent": 66.7,
+        "listeningRaw": 9,
+        "listeningPercent": 90,
+        "oralPercent": 74.2,
+        "oralAchievement": 6,
+        "rcompRaw": 16,
+        "testCompRaw": 12,
+        "comprehensionPercent": 80,
+        "read1Raw": 10,
+        "read2Raw": 10,
+        "read3Raw": null,
+        "readViewPercent": 96.6,
+        "readingPercent": 88.3,
+        "readingAchievement": 7,
+        "written2Raw": 11,
+        "written1Raw": null,
+        "writingRawPercentLike": 71.7,
+        "writingPercent": 71.7,
+        "writingAchievement": 6
+      }
+    }
+  },
+  {
+    "name": "Ashmika Ramsunder",
+    "class": "4W",
+    "gender": null,
+    "marks": {
+      "Overall": "88.4%"
+    },
+    "summaryScores": {
+      "language": "93.5%",
+      "oral": "81.7%",
+      "reading": "90.3%",
+      "writing": "86.7%",
+      "achievementLevel": 7
+    },
+    "assessmentBreakdown": {
+      "language_test": {
+        "header": "Language Test",
+        "topic": "Language conventions and formal English test work",
+        "raw": "24/25",
+        "percent": "96%"
+      },
+      "spelling": {
+        "header": "Spelling",
+        "topic": "Weekly spelling accuracy across the term",
+        "percent": "83.4%"
+      },
+      "speaking": {
+        "header": "Speaking",
+        "topic": "Prepared oral speaking task",
+        "raw": "17/20",
+        "percent": "85%"
+      },
+      "unprepared_reading": {
+        "header": "Unprepared Reading",
+        "topic": "Unseen reading fluency and accuracy",
+        "raw": "10/15",
+        "percent": "66.7%"
+      },
+      "listening_comprehension": {
+        "header": "Listening Comprehension",
+        "topic": "Listening, recall, and response",
+        "raw": "9/10",
+        "percent": "90%"
+      },
+      "comprehension": {
+        "header": "Comprehension",
+        "topic": "Reading comprehension and test comprehension",
+        "percent": "85.5%"
+      },
+      "read_and_view": {
+        "header": "Read and View",
+        "topic": "Class reading and viewing tasks",
+        "percent": "95.1%"
+      },
+      "writing": {
+        "header": "Writing",
+        "topic": "Written English tasks",
+        "percent": "86.7%"
+      }
+    },
+    "personalisationContext": null,
+    "sourceAudit": {
+      "parsedOverall": "88.4%",
+      "computedOverall": "88.4%",
+      "overallReplacedWithComputed": false,
+      "categoryPercents": {
+        "language": "93.5%",
+        "oral": "81.7%",
+        "reading": "90.3%",
+        "writing": "86.7%"
+      },
+      "rawColumns": {
+        "gender": null,
+        "overall": 88.4,
+        "overallAchievement": 7,
+        "testRaw": 24,
+        "testPercent": 96,
+        "spell1Raw": null,
+        "spell2Raw": null,
+        "spell3Raw": null,
+        "spellingPercent": 83.4,
+        "languagePercent": 93.5,
+        "languageAchievement": 7,
+        "speakingRaw": 17,
+        "speakingPercent": 85,
+        "unpreparedReadingRaw": 10,
+        "unpreparedReadingPercent": 66.7,
+        "listeningRaw": 9,
+        "listeningPercent": 90,
+        "oralPercent": 81.7,
+        "oralAchievement": 7,
+        "rcompRaw": 17,
+        "testCompRaw": 13,
+        "comprehensionPercent": 85.5,
+        "read1Raw": null,
+        "read2Raw": null,
+        "read3Raw": 10,
+        "readViewPercent": 95.1,
+        "readingPercent": 90.3,
+        "readingAchievement": 7,
+        "written2Raw": 14,
+        "written1Raw": null,
+        "writingRawPercentLike": 86.7,
+        "writingPercent": 86.7,
+        "writingAchievement": 7
+      }
+    }
+  },
+  {
+    "name": "Amahle Tebe",
+    "class": "4W",
+    "gender": "M",
+    "marks": {
+      "Overall": "72.4%"
+    },
+    "summaryScores": {
+      "language": "81.7%",
+      "oral": "72.5%",
+      "reading": "76.7%",
+      "writing": "63.3%",
+      "achievementLevel": 6
+    },
+    "assessmentBreakdown": {
+      "language_test": {
+        "header": "Language Test",
+        "topic": "Language conventions and formal English test work",
+        "raw": "19.5/25",
+        "percent": "78%"
+      },
+      "spelling": {
+        "header": "Spelling",
+        "topic": "Weekly spelling accuracy across the term",
+        "percent": "96.6%"
+      },
+      "speaking": {
+        "header": "Speaking",
+        "topic": "Prepared oral speaking task",
+        "raw": "13/20",
+        "percent": "65%"
+      },
+      "unprepared_reading": {
+        "header": "Unprepared Reading",
+        "topic": "Unseen reading fluency and accuracy",
+        "percent": "60%"
+      },
+      "listening_comprehension": {
+        "header": "Listening Comprehension",
+        "topic": "Listening, recall, and response",
+        "raw": "10/10",
+        "percent": "100%"
+      },
+      "comprehension": {
+        "header": "Comprehension",
+        "topic": "Reading comprehension and test comprehension",
+        "percent": "60%"
+      },
+      "read_and_view": {
+        "header": "Read and View",
+        "topic": "Class reading and viewing tasks",
+        "percent": "93.4%"
+      },
+      "writing": {
+        "header": "Writing",
+        "topic": "Written English tasks",
+        "percent": "63.3%"
+      }
+    },
+    "personalisationContext": null,
+    "sourceAudit": {
+      "parsedOverall": "72.4%",
+      "computedOverall": "72.4%",
+      "overallReplacedWithComputed": false,
+      "categoryPercents": {
+        "language": "81.7%",
+        "oral": "72.5%",
+        "reading": "76.7%",
+        "writing": "63.3%"
+      },
+      "rawColumns": {
+        "gender": null,
+        "overall": 72.4,
+        "overallAchievement": 6,
+        "testRaw": 19.5,
+        "testPercent": 78,
+        "spell1Raw": 10,
+        "spell2Raw": 10,
+        "spell3Raw": null,
+        "spellingPercent": 96.6,
+        "languagePercent": 81.7,
+        "languageAchievement": 7,
+        "speakingRaw": 13,
+        "speakingPercent": 65,
+        "unpreparedReadingRaw": null,
+        "unpreparedReadingPercent": 60,
+        "listeningRaw": 10,
+        "listeningPercent": 100,
+        "oralPercent": 72.5,
+        "oralAchievement": 6,
+        "rcompRaw": 12,
+        "testCompRaw": null,
+        "comprehensionPercent": 60,
+        "read1Raw": null,
+        "read2Raw": null,
+        "read3Raw": 10,
+        "readViewPercent": 93.4,
+        "readingPercent": 76.7,
+        "readingAchievement": 6,
+        "written2Raw": 10,
+        "written1Raw": null,
+        "writingRawPercentLike": 63.3,
+        "writingPercent": 63.3,
+        "writingAchievement": 5
+      }
+    }
+  },
+  {
+    "name": "Culiwethu Tople",
+    "class": "4W",
+    "gender": null,
+    "marks": {
+      "Overall": "75.2%"
+    },
+    "summaryScores": {
+      "language": "73.1%",
+      "oral": "67.5%",
+      "reading": "71%",
+      "writing": "83.3%",
+      "achievementLevel": 6
+    },
+    "assessmentBreakdown": {
+      "language_test": {
+        "header": "Language Test",
+        "topic": "Language conventions and formal English test work",
+        "raw": "19.5/25",
+        "percent": "78%"
+      },
+      "spelling": {
+        "header": "Spelling",
+        "topic": "Weekly spelling accuracy across the term",
+        "percent": "53.4%"
+      },
+      "speaking": {
+        "header": "Speaking",
+        "topic": "Prepared oral speaking task",
+        "raw": "15/20",
+        "percent": "75%"
+      },
+      "unprepared_reading": {
+        "header": "Unprepared Reading",
+        "topic": "Unseen reading fluency and accuracy",
+        "percent": "60%"
+      },
+      "listening_comprehension": {
+        "header": "Listening Comprehension",
+        "topic": "Listening, recall, and response",
+        "percent": "60%"
+      },
+      "comprehension": {
+        "header": "Comprehension",
+        "topic": "Reading comprehension and test comprehension",
+        "percent": "75.5%"
+      },
+      "read_and_view": {
+        "header": "Read and View",
+        "topic": "Class reading and viewing tasks",
+        "percent": "66.5%"
+      },
+      "writing": {
+        "header": "Writing",
+        "topic": "Written English tasks",
+        "percent": "83.3%"
+      }
+    },
+    "personalisationContext": {
+      "referenceName": "Culiwethu",
+      "confidence": "high",
+      "hobbiesInterests": "Swimming, hockey, singing in room.",
+      "uniqueDetail": "Older sibling position and beach/family time are memorable.",
+      "writingStrengths": "Clear family context; good structure across headings.",
+      "writingNeeds": "Minor grammar and punctuation refinement."
+    },
+    "sourceAudit": {
+      "parsedOverall": "75.2%",
+      "computedOverall": "75.2%",
+      "overallReplacedWithComputed": false,
+      "categoryPercents": {
+        "language": "73.1%",
+        "oral": "67.5%",
+        "reading": "71%",
+        "writing": "83.3%"
+      },
+      "rawColumns": {
+        "gender": null,
+        "overall": 75.2,
+        "overallAchievement": 6,
+        "testRaw": 19.5,
+        "testPercent": 78,
+        "spell1Raw": null,
+        "spell2Raw": null,
+        "spell3Raw": null,
+        "spellingPercent": 53.4,
+        "languagePercent": 73.1,
+        "languageAchievement": 6,
+        "speakingRaw": 15,
+        "speakingPercent": 75,
+        "unpreparedReadingRaw": null,
+        "unpreparedReadingPercent": 60,
+        "listeningRaw": null,
+        "listeningPercent": 60,
+        "oralPercent": 67.5,
+        "oralAchievement": 5,
+        "rcompRaw": 15,
+        "testCompRaw": 11.5,
+        "comprehensionPercent": 75.5,
+        "read1Raw": 8,
+        "read2Raw": null,
+        "read3Raw": null,
+        "readViewPercent": 66.5,
+        "readingPercent": 71,
+        "readingAchievement": 6,
+        "written2Raw": 13,
+        "written1Raw": null,
+        "writingRawPercentLike": 83.3,
+        "writingPercent": 83.3,
+        "writingAchievement": 7
+      }
+    }
+  },
+  {
+    "name": "Paige Vosloo",
+    "class": "4W",
+    "gender": null,
+    "marks": {
+      "Overall": "75.9%"
+    },
+    "summaryScores": {
+      "language": "63.8%",
+      "oral": "79.2%",
+      "reading": "73.4%",
+      "writing": "83.3%",
+      "achievementLevel": 6
+    },
+    "assessmentBreakdown": {
+      "language_test": {
+        "header": "Language Test",
+        "topic": "Language conventions and formal English test work",
+        "raw": "16/25",
+        "percent": "64%"
+      },
+      "spelling": {
+        "header": "Spelling",
+        "topic": "Weekly spelling accuracy across the term",
+        "percent": "63.2%"
+      },
+      "speaking": {
+        "header": "Speaking",
+        "topic": "Prepared oral speaking task",
+        "raw": "17/20",
+        "percent": "85%"
+      },
+      "unprepared_reading": {
+        "header": "Unprepared Reading",
+        "topic": "Unseen reading fluency and accuracy",
+        "raw": "10/15",
+        "percent": "66.7%"
+      },
+      "listening_comprehension": {
+        "header": "Listening Comprehension",
+        "topic": "Listening, recall, and response",
+        "raw": "8/10",
+        "percent": "80%"
+      },
+      "comprehension": {
+        "header": "Comprehension",
+        "topic": "Reading comprehension and test comprehension",
+        "percent": "80%"
+      },
+      "read_and_view": {
+        "header": "Read and View",
+        "topic": "Class reading and viewing tasks",
+        "percent": "86.7%"
+      },
+      "writing": {
+        "header": "Writing",
+        "topic": "Written English tasks",
+        "percent": "83.3%"
+      }
+    },
+    "personalisationContext": {
+      "referenceName": "Paige",
+      "confidence": "high",
+      "hobbiesInterests": "Dancing, painting, and spending time with friends and family.",
+      "uniqueDetail": "Says dancing moves her body and painting calms her down.",
+      "writingStrengths": "Thoughtful explanation; self-awareness; clear ideas with detail.",
+      "writingNeeds": "Grammar polish and punctuation consistency."
+    },
+    "sourceAudit": {
+      "parsedOverall": "75.9%",
+      "computedOverall": "75.8%",
+      "overallReplacedWithComputed": false,
+      "categoryPercents": {
+        "language": "63.8%",
+        "oral": "79.2%",
+        "reading": "73.4%",
+        "writing": "83.3%"
+      },
+      "rawColumns": {
+        "gender": null,
+        "overall": 75.9,
+        "overallAchievement": 6,
+        "testRaw": 16,
+        "testPercent": 64,
+        "spell1Raw": null,
+        "spell2Raw": null,
+        "spell3Raw": null,
+        "spellingPercent": 63.2,
+        "languagePercent": 63.8,
+        "languageAchievement": 5,
+        "speakingRaw": 17,
+        "speakingPercent": 85,
+        "unpreparedReadingRaw": 10,
+        "unpreparedReadingPercent": 66.7,
+        "listeningRaw": 8,
+        "listeningPercent": 80,
+        "oralPercent": 79.2,
+        "oralAchievement": 6,
+        "rcompRaw": 12,
+        "testCompRaw": null,
+        "comprehensionPercent": 80,
+        "read1Raw": 10,
+        "read2Raw": null,
+        "read3Raw": null,
+        "readViewPercent": 86.7,
+        "readingPercent": 73.4,
+        "readingAchievement": 6,
+        "written2Raw": 13,
+        "written1Raw": null,
+        "writingRawPercentLike": 83.3,
+        "writingPercent": 83.3,
+        "writingAchievement": 7
+      }
+    }
+  },
+  {
+    "name": "Ibraheem Zaman",
+    "class": "4W",
+    "gender": "M",
+    "marks": {
+      "Overall": "65.9%"
+    },
+    "summaryScores": {
+      "language": "45.1%",
+      "oral": "60%",
+      "reading": "85.6%",
+      "writing": "63.3%",
+      "achievementLevel": 5
+    },
+    "assessmentBreakdown": {
+      "language_test": {
+        "header": "Language Test",
+        "topic": "Language conventions and formal English test work",
+        "raw": "11/25",
+        "percent": "44%"
+      },
+      "spelling": {
+        "header": "Spelling",
+        "topic": "Weekly spelling accuracy across the term",
+        "percent": "49.6%"
+      },
+      "speaking": {
+        "header": "Speaking",
+        "topic": "Prepared oral speaking task",
+        "raw": "11/20",
+        "percent": "55%"
+      },
+      "unprepared_reading": {
+        "header": "Unprepared Reading",
+        "topic": "Unseen reading fluency and accuracy",
+        "percent": "60%"
+      },
+      "listening_comprehension": {
+        "header": "Listening Comprehension",
+        "topic": "Listening, recall, and response",
+        "percent": "70%"
+      },
+      "comprehension": {
+        "header": "Comprehension",
+        "topic": "Reading comprehension and test comprehension",
+        "percent": "74.5%"
+      },
+      "read_and_view": {
+        "header": "Read and View",
+        "topic": "Class reading and viewing tasks",
+        "percent": "96.7%"
+      },
+      "writing": {
+        "header": "Writing",
+        "topic": "Written English tasks",
+        "percent": "63.3%"
+      }
+    },
+    "personalisationContext": null,
+    "sourceAudit": {
+      "parsedOverall": "65.9%",
+      "computedOverall": "65.9%",
+      "overallReplacedWithComputed": false,
+      "categoryPercents": {
+        "language": "45.1%",
+        "oral": "60%",
+        "reading": "85.6%",
+        "writing": "63.3%"
+      },
+      "rawColumns": {
+        "gender": null,
+        "overall": 65.9,
+        "overallAchievement": 5,
+        "testRaw": 11,
+        "testPercent": 44,
+        "spell1Raw": null,
+        "spell2Raw": null,
+        "spell3Raw": null,
+        "spellingPercent": 49.6,
+        "languagePercent": 45.1,
+        "languageAchievement": 3,
+        "speakingRaw": 11,
+        "speakingPercent": 55,
+        "unpreparedReadingRaw": null,
+        "unpreparedReadingPercent": 60,
+        "listeningRaw": null,
+        "listeningPercent": 70,
+        "oralPercent": 60,
+        "oralAchievement": null,
+        "rcompRaw": 15,
+        "testCompRaw": 11,
+        "comprehensionPercent": 74.5,
+        "read1Raw": null,
+        "read2Raw": 10,
+        "read3Raw": 10,
+        "readViewPercent": 96.7,
+        "readingPercent": 85.6,
+        "readingAchievement": 7,
+        "written2Raw": 10,
+        "written1Raw": null,
+        "writingRawPercentLike": 63.3,
+        "writingPercent": 63.3,
+        "writingAchievement": 5
+      }
+    }
+  },
+  {
+    "name": "Wona Zantsi",
+    "class": "4W",
+    "gender": null,
+    "marks": {
+      "Overall": "85.4%"
+    },
+    "summaryScores": {
+      "language": "88.1%",
+      "oral": "75%",
+      "reading": "91.1%",
+      "writing": "83.3%",
+      "achievementLevel": 7
+    },
+    "assessmentBreakdown": {
+      "language_test": {
+        "header": "Language Test",
+        "topic": "Language conventions and formal English test work",
+        "raw": "21.5/25",
+        "percent": "86%"
+      },
+      "spelling": {
+        "header": "Spelling",
+        "topic": "Weekly spelling accuracy across the term",
+        "percent": "96.7%"
+      },
+      "speaking": {
+        "header": "Speaking",
+        "topic": "Prepared oral speaking task",
+        "raw": "14/20",
+        "percent": "70%"
+      },
+      "unprepared_reading": {
+        "header": "Unprepared Reading",
+        "topic": "Unseen reading fluency and accuracy",
+        "percent": "60%"
+      },
+      "listening_comprehension": {
+        "header": "Listening Comprehension",
+        "topic": "Listening, recall, and response",
+        "raw": "10/10",
+        "percent": "100%"
+      },
+      "comprehension": {
+        "header": "Comprehension",
+        "topic": "Reading comprehension and test comprehension",
+        "percent": "85.5%"
+      },
+      "read_and_view": {
+        "header": "Read and View",
+        "topic": "Class reading and viewing tasks",
+        "percent": "96.7%"
+      },
+      "writing": {
+        "header": "Writing",
+        "topic": "Written English tasks",
+        "percent": "83.3%"
+      }
+    },
+    "personalisationContext": {
+      "referenceName": "Wona/Zantsi",
+      "confidence": "low",
+      "hobbiesInterests": "Cycling on many days of the week; netball, water polo, hockey.",
+      "uniqueDetail": "Funny line about never being late for a flight.",
+      "writingStrengths": "Creative personal detail; strong sporty identity.",
+      "writingNeeds": "Name unclear; sentence editing and grammar support needed."
+    },
+    "sourceAudit": {
+      "parsedOverall": "85.4%",
+      "computedOverall": "85.4%",
+      "overallReplacedWithComputed": false,
+      "categoryPercents": {
+        "language": "88.1%",
+        "oral": "75%",
+        "reading": "91.1%",
+        "writing": "83.3%"
+      },
+      "rawColumns": {
+        "gender": null,
+        "overall": 85.4,
+        "overallAchievement": 7,
+        "testRaw": 21.5,
+        "testPercent": 86,
+        "spell1Raw": null,
+        "spell2Raw": 10,
+        "spell3Raw": 10,
+        "spellingPercent": 96.7,
+        "languagePercent": 88.1,
+        "languageAchievement": 7,
+        "speakingRaw": 14,
+        "speakingPercent": 70,
+        "unpreparedReadingRaw": null,
+        "unpreparedReadingPercent": 60,
+        "listeningRaw": 10,
+        "listeningPercent": 100,
+        "oralPercent": 75,
+        "oralAchievement": null,
+        "rcompRaw": 17,
+        "testCompRaw": 13,
+        "comprehensionPercent": 85.5,
+        "read1Raw": null,
+        "read2Raw": 10,
+        "read3Raw": 10,
+        "readViewPercent": 96.7,
+        "readingPercent": 91.1,
+        "readingAchievement": 7,
+        "written2Raw": 13,
+        "written1Raw": null,
+        "writingRawPercentLike": 83.3,
+        "writingPercent": 83.3,
+        "writingAchievement": 7
+      }
+    }
+  }
+]

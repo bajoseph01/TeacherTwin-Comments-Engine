@@ -1,0 +1,18 @@
+{
+  "errors": [],
+  "warnings": [],
+  "checks": [],
+  "summary": {
+    "status": "passed",
+    "commentCount": 23,
+    "errorCount": 0,
+    "warningCount": 0,
+    "marksCrossCheckEnabled": true,
+    "reviewThreshold": 55,
+    "failingThreshold": 50
+  },
+  "thresholds": {
+    "failingThreshold": 50,
+    "reviewThreshold": 55
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "grade": "Grade 4W",
+  "term": "Term 1",
+  "subject": "English",
+  "draftingRules": {
+    "evidenceOnly": true,
+    "ignoreBlankAssessments": true,
+    "strengthsToMention": "Lead with 1 to 2 genuine strengths from the strongest English sections, then connect them to the learner's term voice or writing evidence where it is safe to do so for 4W only.",
+    "mainDevelopmentArea": "Use one main next step only, based on the weakest meaningful English section or the writing-needs note from the 4W voice reference when it aligns with the marks.",
+    "unsupportedClaimsToAvoid": [
+      "behaviour claims not shown in the marks or voice reference",
+      "private home details",
+      "comparisons to previous terms or future grades in a way that implies prior English reports"
+    ]
+  },
+  "assessmentInterpretation": {
+    "language_test": {
+      "header": "Language Test",
+      "meaning": "Use this for formal language-conventions performance, including grammar, punctuation, and written-language control.",
+      "presenceRule": "If this is weak, frame it as language accuracy or editing that still needs steady practice."
+    },
+    "spelling": {
+      "header": "Spelling",
+      "meaning": "Use this for spelling accuracy across the term.",
+      "presenceRule": "If this is stronger than the language test, you may note that basic word knowledge is stronger than full language accuracy."
+    },
+    "speaking": {
+      "header": "Speaking",
+      "meaning": "Use this for oral confidence and spoken expression."
+    },
+    "unprepared_reading": {
+      "header": "Unprepared Reading",
+      "meaning": "Use this for fluency, accuracy, and confidence when reading unseen text aloud."
+    },
+    "listening_comprehension": {
+      "header": "Listening Comprehension",
+      "meaning": "Use this for attentive listening and understanding spoken information."
+    },
+    "comprehension": {
+      "header": "Comprehension",
+      "meaning": "Use this for understanding written texts and answering about meaning."
+    },
+    "read_and_view": {
+      "header": "Read and View",
+      "meaning": "Use this for class reading and viewing tasks that show engagement with texts."
+    },
+    "writing": {
+      "header": "Writing",
+      "meaning": "Use this for written English tasks and written-expression quality."
+    }
+  },
+  "thresholdLanguage": [
+    {
+      "range": "85-100",
+      "preferredDescriptors": [
+        "very strong",
+        "confident",
+        "secure"
+      ]
+    },
+    {
+      "range": "70-84.9",
+      "preferredDescriptors": [
+        "good",
+        "steady",
+        "developing well"
+      ]
+    },
+    {
+      "range": "60-69.9",
+      "preferredDescriptors": [
+        "fair",
+        "in progress",
+        "starting to settle"
+      ]
+    },
+    {
+      "range": "0-59.9",
+      "preferredDescriptors": [
+        "needs more consistency",
+        "will benefit from support",
+        "still being developed"
+      ]
+    }
+  ],
+  "antiRepetition": {
+    "bannedExactOpeners": [
+      "has produced a pleasing English performance in this first term",
+      "has had a good first term in English"
+    ],
+    "maxUsesPerOpenerFamily": 4,
+    "adjacentRepeatPolicy": "Do not let neighbouring learners start with the same sentence skeleton or end with the same encouragement line.",
+    "openerFamilies": [
+      {
+        "pattern": "Name + strongest English section first"
+      },
+      {
+        "pattern": "Name + writing voice / personal detail first, then academic evidence"
+      },
+      {
+        "pattern": "Reading or oral confidence first, then writing next step"
+      },
+      {
+        "pattern": "Balanced sentence that joins two strengths before the development point"
+      }
+    ],
+    "closingFamilies": [
+      "short teacher-confidence close",
+      "encouraging learner-facing close",
+      "measured term-one confidence close without future-grade comparison"
+    ]
+  },
+  "structureVariation": {
+    "goals": [
+      "Keep the batch chat-first, warm, and personalised without losing marks accuracy.",
+      "Use one safe personal sentence for most learners, but skip it when the match is weak or too private."
+    ],
+    "shapeFamilies": [
+      "Academic-first then personal line then next step.",
+      "Personal line first when the writing voice evidence is especially strong, then academic evidence.",
+      "Reading/oral strength first, followed by writing-development advice.",
+      "Concise high-attainment shape with one fine-tuning target."
+    ],
+    "rotationRules": [
+      "Mix 3-, 4-, and 5-sentence comments across the class.",
+      "Do not give every learner a separate overall-result sentence.",
+      "Move the next-step sentence earlier in some comments and later in others."
+    ],
+    "closingRules": [
+      "Some comments should end with simple encouragement only.",
+      "Some comments should end with teacher confidence or pride, but not in every row."
+    ]
+  },
+  "englishVoiceRules": {
+    "termOneOnly": true,
+    "voiceReferenceScope": "Use only the 4W student voice reference for personalisation in this batch.",
+    "personalisationRule": "Add at most one clearly safe personal sentence or clause unless the marks and writing reference together justify two brief personal touches.",
+    "privacyRule": "Do not repeat exact addresses, exact house details, or highly specific family facts."
+  }
+}
