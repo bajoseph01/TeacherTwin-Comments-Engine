@@ -100,11 +100,16 @@ Use this when you want the repo to package the marks and teacher profile for a h
 
 Add `--review-threshold 60` when a subject batch should flag learners below `60%` for stronger warning language and review.
 
+Add `--voice-reference-json "<path-to-student-voice.json>"` when you have learner-safe personalisation data that should be matched onto the batch. This is useful for files such as `Saved Profiles\Gr6_Afrikaans Written Work Safe Profiles.json`.
+
 This creates:
 
 1. `*_codex_packet.json`
 2. `*_codex_prompt.md`
 3. `*_comments_template.json`
+4. `*_context.json` when context exists or is generated from the voice reference
+5. `*_voice_reference_canonical.json` when `--voice-reference-json` is supplied
+6. `*_voice_reference_matched.json` when `--voice-reference-json` is supplied
 
 The intended flow is:
 

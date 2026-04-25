@@ -31,13 +31,15 @@ const DEFAULT_STRUCTURE_DIVERSITY = {
 
 const usage = `
 Usage:
-  npm run codex:prepare -- --teacher "Teacher Name" --subject "Subject" --persona "<path-to-profile.json>" --marks-json "<path-to-marks.json>" [--context-json "<path-to-context.json>"] [--batch-label "<label>"] [--review-threshold "<percent>"] [--outdir "<output-folder>"]
+  npm run codex:prepare -- --teacher "Teacher Name" --subject "Subject" --persona "<path-to-profile.json>" --marks-json "<path-to-marks.json>" [--context-json "<path-to-context.json>"] [--voice-reference-json "<path-to-voice-reference.json>"] [--batch-label "<label>"] [--review-threshold "<percent>"] [--outdir "<output-folder>"]
 
 What it does:
   - packages a teacher persona plus structured marks into a Codex-chat-ready batch
+  - optionally matches learner-safe voice reference data onto the batch
   - writes a prompt markdown file for pasting into VS Code chat
   - writes a packet JSON snapshot for later review/audit
   - writes a comments template JSON matching the local verify/export workflow
+  - when voice reference data is supplied, writes reusable canonical, matched, and effective-context JSON snapshots
 
 Expected marks JSON format:
 [
@@ -138,6 +140,100 @@ const loadJson = async (filePath) => {
   return JSON.parse(raw.replace(/^\uFEFF/, ''));
 };
 
+const normalizeName = (value) =>
+  String(value || '')
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}]+/gu, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+const normalizeWhitespace = (value) =>
+  String(value || '')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+const uniqueStrings = (items) =>
+  [...new Set(
+    (Array.isArray(items) ? items : [])
+      .map((item) => normalizeWhitespace(item))
+      .filter(Boolean),
+  )];
+
+const joinLimited = (items, { limit = 0, separator = ', ' } = {}) => {
+  const normalized = uniqueStrings(items);
+  const sliced = limit > 0 ? normalized.slice(0, limit) : normalized;
+  return sliced.join(separator);
+};
+
+const firstNameFromDisplay = (value) =>
+  normalizeWhitespace(value)
+    .split(/\s+/)
+    .filter(Boolean)[0] || '';
+
+const compactObject = (value) =>
+  Object.fromEntries(
+    Object.entries(value || {}).filter(([, item]) => {
+      if (item === null || item === undefined) return false;
+      if (Array.isArray(item)) return item.length > 0;
+      return normalizeWhitespace(item).length > 0;
+    }),
+  );
+
+const mergeArraysUnique = (base, extra) => {
+  const merged = [];
+  const seen = new Set();
+
+  [...(Array.isArray(base) ? base : []), ...(Array.isArray(extra) ? extra : [])].forEach((item) => {
+    const key = typeof item === 'string'
+      ? normalizeWhitespace(item)
+      : JSON.stringify(item);
+    if (!key || seen.has(key)) return;
+    seen.add(key);
+    merged.push(typeof item === 'string' ? normalizeWhitespace(item) : item);
+  });
+
+  return merged;
+};
+
+const mergeContextObjects = (base, extra) => {
+  if (!base && !extra) return null;
+  if (!base) return extra;
+  if (!extra) return base;
+
+  const result = { ...base };
+  Object.entries(extra).forEach(([key, value]) => {
+    const current = result[key];
+
+    if (Array.isArray(current) || Array.isArray(value)) {
+      result[key] = mergeArraysUnique(current, value);
+      return;
+    }
+
+    if (
+      current
+      && typeof current === 'object'
+      && !Array.isArray(current)
+      && value
+      && typeof value === 'object'
+      && !Array.isArray(value)
+    ) {
+      result[key] = mergeContextObjects(current, value);
+      return;
+    }
+
+    if (
+      current === undefined
+      || current === null
+      || current === ''
+      || (Array.isArray(current) && current.length === 0)
+    ) {
+      result[key] = value;
+    }
+  });
+
+  return result;
+};
+
 const parseNumericMark = (value) => {
   const match = String(value || '').match(/-?\d+(\.\d+)?/);
   if (!match) return null;
@@ -186,6 +282,12 @@ const formatAssessmentBreakdown = (assessmentBreakdown) => {
       return `${header}${topicText}: ${percent}`;
     })
     .join(' | ');
+};
+
+const formatTeacherRemark = (row) => {
+  const direct = row?.teacherRemark || row?.teacherRemarks || row?.teacherNote || row?.teacherNotes || '';
+  const normalized = normalizeWhitespace(direct);
+  return normalized || '';
 };
 
 const inferSubjectKey = (value) => {
@@ -292,6 +394,359 @@ const normalizeStructureVariation = ({ persona, subjectPersona, subjectContext }
   };
 };
 
+const normalizePersonalisationContext = (context) => {
+  if (!context || typeof context !== 'object') return null;
+
+  const normalized = compactObject({
+    referenceName: context.referenceName || context.reference_name || '',
+    confidence: context.confidence || context.name_confidence || '',
+    hobbiesInterests: context.hobbiesInterests || context.hobbies_interests || '',
+    uniqueDetail: context.uniqueDetail || context.unique_detail || '',
+    writingStrengths: context.writingStrengths || context.writing_strengths || '',
+    writingNeeds: context.writingNeeds || context.writing_needs || '',
+    safeCommentHooks: uniqueStrings(context.safeCommentHooks || context.safe_comment_hooks || []),
+    afrReportSeed: context.afrReportSeed || context.afr_report_seed || '',
+    privacyNotes: uniqueStrings(context.privacyNotes || context.privacy_notes || []),
+  });
+
+  return Object.keys(normalized).length > 0 ? normalized : null;
+};
+
+const normalizeExistingReferenceEntry = (entry) => {
+  if (!entry || typeof entry !== 'object') return null;
+
+  const name = normalizeWhitespace(
+    entry.name
+    || entry.learner_name
+    || entry.personalisationContext?.referenceName
+    || entry.referenceName
+    || '',
+  );
+  if (!name) return null;
+
+  const personalisationContext = normalizePersonalisationContext(
+    entry.personalisationContext
+    || {
+      referenceName: entry.referenceName || firstNameFromDisplay(name),
+      confidence: entry.confidence || entry.name_confidence || '',
+      hobbiesInterests: entry.hobbiesInterests || entry.hobbies_interests || '',
+      uniqueDetail: entry.uniqueDetail || entry.unique_detail || '',
+      writingStrengths: entry.writingStrengths || entry.writing_strengths || '',
+      writingNeeds: entry.writingNeeds || entry.writing_needs || '',
+      safeCommentHooks: entry.safeCommentHooks || entry.safe_comment_hooks || [],
+      afrReportSeed: entry.afrReportSeed || entry.afr_report_seed || entry.comment_seed || '',
+      privacyNotes: entry.privacyNotes || entry.privacy_notes || [],
+    },
+  );
+
+  return {
+    name,
+    class: normalizeWhitespace(entry.class || ''),
+    personalisationContext,
+    sourceAudit: entry.sourceAudit && typeof entry.sourceAudit === 'object' ? entry.sourceAudit : undefined,
+  };
+};
+
+const buildSafeProfilePersonalisation = (profile) => {
+  const safeProfile = profile?.safe_profile || {};
+  const writingObservations = profile?.writing_observations || {};
+  const reportSupport = profile?.report_comment_support || {};
+
+  return normalizePersonalisationContext({
+    referenceName: firstNameFromDisplay(profile?.learner_name || profile?.name || ''),
+    confidence: profile?.name_confidence || '',
+    hobbiesInterests: joinLimited(safeProfile.interests_and_hobbies, { limit: 5 }),
+    uniqueDetail: joinLimited(safeProfile.memorable_safe_details, { limit: 2, separator: '; ' }),
+    writingStrengths: joinLimited(writingObservations.strengths, { limit: 3, separator: '; ' }),
+    writingNeeds: joinLimited(writingObservations.needs, { limit: 3, separator: '; ' }),
+    safeCommentHooks: uniqueStrings(reportSupport.safe_comment_hooks),
+    afrReportSeed: reportSupport.afr_report_seed || '',
+    privacyNotes: uniqueStrings(reportSupport.privacy_notes),
+  });
+};
+
+const normalizeVoiceReferenceInput = (input) => {
+  if (Array.isArray(input)) {
+    return {
+      sourceType: 'canonical-voice-reference',
+      projectName: '',
+      classGroup: '',
+      taskName: '',
+      entries: input.map(normalizeExistingReferenceEntry).filter(Boolean),
+    };
+  }
+
+  if (input && typeof input === 'object' && Array.isArray(input.profiles)) {
+    return {
+      sourceType: 'afrikaans-safe-profiles',
+      projectName: normalizeWhitespace(input.project_name || ''),
+      classGroup: normalizeWhitespace(input.class_group || ''),
+      taskName: normalizeWhitespace(input.task_name || ''),
+      entries: input.profiles
+        .map((profile) => {
+          const name = normalizeWhitespace(profile?.learner_name || profile?.name || '');
+          if (!name) return null;
+
+          return {
+            name,
+            class: '',
+            personalisationContext: buildSafeProfilePersonalisation(profile),
+            sourceAudit: compactObject({
+              sourceType: 'afrikaans-safe-profiles',
+              projectName: input.project_name || '',
+              classGroup: input.class_group || '',
+              sourceTask: profile?.source_task || input.task_name || '',
+              privacyNotes: uniqueStrings(profile?.report_comment_support?.privacy_notes),
+            }),
+          };
+        })
+        .filter(Boolean),
+    };
+  }
+
+  throw new Error('Voice reference JSON must be an array or an object with a profiles array.');
+};
+
+const buildVoiceReferenceLookup = (entries) => {
+  const exactName = new Map();
+  const aliasName = new Map();
+  const firstName = new Map();
+
+  const push = (map, key, entry) => {
+    if (!key) return;
+    const bucket = map.get(key) || [];
+    bucket.push(entry);
+    map.set(key, bucket);
+  };
+
+  entries.forEach((entry) => {
+    push(exactName, normalizeName(entry.name), entry);
+    push(aliasName, normalizeName(entry.personalisationContext?.referenceName || ''), entry);
+    push(firstName, normalizeName(firstNameFromDisplay(entry.name)), entry);
+  });
+
+  return { exactName, aliasName, firstName };
+};
+
+const findVoiceReferenceMatch = (row, lookup) => {
+  const normalizedLearnerName = normalizeName(row?.name);
+  const exactMatches = lookup.exactName.get(normalizedLearnerName) || [];
+  if (exactMatches.length === 1) {
+    return { entry: exactMatches[0], mode: 'exact-name' };
+  }
+
+  const aliasMatches = lookup.aliasName.get(normalizedLearnerName) || [];
+  if (aliasMatches.length === 1) {
+    return { entry: aliasMatches[0], mode: 'reference-name' };
+  }
+
+  const firstNameMatches = lookup.firstName.get(normalizeName(firstNameFromDisplay(row?.name))) || [];
+  if (firstNameMatches.length === 1) {
+    return { entry: firstNameMatches[0], mode: 'unique-first-name' };
+  }
+  if (firstNameMatches.length > 1) {
+    return { entry: null, mode: 'ambiguous-first-name' };
+  }
+
+  return { entry: null, mode: 'no-match' };
+};
+
+const applyVoiceReferenceToMarks = (marksRows, voiceReference) => {
+  if (!voiceReference) {
+    return {
+      enrichedRows: marksRows,
+      canonicalReference: null,
+      matchedRows: null,
+      summary: null,
+    };
+  }
+
+  const lookup = buildVoiceReferenceLookup(voiceReference.entries);
+  const unmatchedLearners = [];
+  const ambiguousLearners = [];
+  const matchedReferenceKeys = new Set();
+
+  const enrichedRows = marksRows.map((row) => {
+    const existingContext = normalizePersonalisationContext(row?.personalisationContext);
+    const match = existingContext ? { entry: null, mode: 'preexisting' } : findVoiceReferenceMatch(row, lookup);
+    const matchedContext = match.entry ? normalizePersonalisationContext(match.entry.personalisationContext) : null;
+    const personalisationContext = existingContext || matchedContext;
+
+    if (match.entry) {
+      matchedReferenceKeys.add(normalizeName(match.entry.name));
+    } else if (!existingContext) {
+      if (match.mode === 'ambiguous-first-name') {
+        ambiguousLearners.push(String(row?.name || '').trim());
+      } else {
+        unmatchedLearners.push(String(row?.name || '').trim());
+      }
+    }
+
+    const sourceAudit = {
+      ...(row?.sourceAudit && typeof row.sourceAudit === 'object' ? row.sourceAudit : {}),
+    };
+
+    if (voiceReference) {
+      sourceAudit.voiceReference = compactObject({
+        sourceType: voiceReference.sourceType,
+        projectName: voiceReference.projectName,
+        taskName: voiceReference.taskName,
+        matchedName: match.entry?.name || '',
+        matchMode: match.mode,
+        confidence: personalisationContext?.confidence || '',
+        privacyNotes: personalisationContext?.privacyNotes || [],
+      });
+    }
+
+    return {
+      ...row,
+      personalisationContext,
+      sourceAudit: Object.keys(sourceAudit).length > 0 ? sourceAudit : undefined,
+    };
+  });
+
+  const canonicalReference = voiceReference.entries.map((entry) => ({
+    name: entry.name,
+    class: entry.class || '',
+    personalisationContext: normalizePersonalisationContext(entry.personalisationContext),
+  }));
+
+  const matchedRows = enrichedRows.map((row) => {
+    const base = {
+      name: String(row?.name || '').trim(),
+      class: String(row?.class || '').trim(),
+      personalisationContext: normalizePersonalisationContext(row?.personalisationContext),
+    };
+
+    if (row?.sourceAudit?.voiceReference) {
+      return {
+        ...base,
+        sourceAudit: {
+          voiceReference: row.sourceAudit.voiceReference,
+        },
+      };
+    }
+
+    return base;
+  });
+
+  const unusedReferenceEntries = voiceReference.entries
+    .map((entry) => entry.name)
+    .filter((name) => !matchedReferenceKeys.has(normalizeName(name)));
+
+  return {
+    enrichedRows,
+    canonicalReference,
+    matchedRows,
+    summary: {
+      sourceType: voiceReference.sourceType,
+      projectName: voiceReference.projectName || '',
+      classGroup: voiceReference.classGroup || '',
+      taskName: voiceReference.taskName || '',
+      providedEntries: voiceReference.entries.length,
+      matchedLearners: matchedRows.filter((row) => row.personalisationContext).length,
+      unmatchedLearners: uniqueStrings(unmatchedLearners),
+      ambiguousLearners: uniqueStrings(ambiguousLearners),
+      unusedReferenceEntries: uniqueStrings(unusedReferenceEntries),
+    },
+  };
+};
+
+const buildGeneratedStudentVoiceContext = ({ subjectName, subjectKey, voiceReference }) => {
+  if (!voiceReference) return null;
+
+  const hasAfrikaansSeed = voiceReference.entries.some((entry) => entry.personalisationContext?.afrReportSeed);
+  const isAfrikaans = subjectKey === 'afrikaans' || hasAfrikaansSeed;
+
+  const context = {
+    grade: voiceReference.classGroup || undefined,
+    subject: subjectName || undefined,
+    studentVoiceRules: {
+      referenceSource: voiceReference.projectName || 'Matched student voice reference',
+      referenceTask: voiceReference.taskName || '',
+      personalisationRule: 'Add at most one clearly safe personal sentence or clause unless the marks and matched writing reference together justify two brief personal touches.',
+      confidenceRule: 'For medium-confidence matches, stay with broad interests or writing observations and avoid narrow identifying details.',
+      privacyRule: 'Do not mention exact family/home details, even when a local safe profile includes them.',
+      preferredEvidence: [
+        'interests and hobbies',
+        'memorable safe details',
+        'writing strengths',
+        'writing needs',
+      ],
+    },
+    structureVariation: {
+      goals: [
+        'Use personal details sparingly so the comment still reads as an academic report first.',
+      ],
+      shapeFamilies: [
+        'Academic-first then one short safe personal line.',
+        'Writing-voice line first when the matched reference is especially strong, then marks evidence.',
+        'Marks-only shape when the voice match is weak, absent, or medium-confidence.',
+      ],
+      rotationRules: [
+        'Do not force a personal detail into every comment.',
+        'Prefer marks-only drafting when the personalisation match is weak or ambiguous.',
+      ],
+      closingRules: [
+        'Keep personalisation subordinate to the academic close rather than replacing it.',
+      ],
+    },
+  };
+
+  if (isAfrikaans) {
+    context.draftingRules = {
+      evidenceOnly: true,
+      ignoreBlankAssessments: true,
+      strengthsToMention: 'Keep the academic evidence from the marks primary. When it fits naturally, add one short safe personal touch from the matched Afrikaans writing reference.',
+      mainDevelopmentArea: 'Use one main next step only. When a writing need from the matched Afrikaans reference aligns with the marks, it may guide the improvement sentence.',
+      unsupportedClaimsToAvoid: [
+        'private home details',
+        'exact family configurations or names',
+        'behaviour or personality claims not shown in the marks or safe writing reference',
+        'copying the Afrikaans seed sentence verbatim',
+      ],
+    };
+    context.studentVoiceRules.seedRule = 'Use the Afrikaans seed only as a wording hint in the teacher voice; do not paste it unchanged.';
+    context.studentVoiceRules.preferredEvidence = mergeArraysUnique(
+      context.studentVoiceRules.preferredEvidence,
+      ['afr_report_seed'],
+    );
+    context.structureVariation.goals = mergeArraysUnique(
+      context.structureVariation.goals,
+      ['When the matched Afrikaans seed is useful, adapt it naturally rather than pasting it unchanged.'],
+    );
+  }
+
+  return context;
+};
+
+const formatPersonalisationContext = (personalisationContext) => {
+  const context = normalizePersonalisationContext(personalisationContext);
+  if (!context) return '';
+
+  const lines = [];
+  const overviewBits = [];
+  if (context.confidence) overviewBits.push(`confidence: ${context.confidence}`);
+  if (context.hobbiesInterests) overviewBits.push(`interests: ${context.hobbiesInterests}`);
+  if (context.uniqueDetail) overviewBits.push(`safe detail: ${context.uniqueDetail}`);
+  if (overviewBits.length > 0) {
+    lines.push(`\n   - personalisation: ${overviewBits.join(' | ')}`);
+  }
+
+  const writingBits = [];
+  if (context.writingStrengths) writingBits.push(`strengths: ${context.writingStrengths}`);
+  if (context.writingNeeds) writingBits.push(`needs: ${context.writingNeeds}`);
+  if (writingBits.length > 0) {
+    lines.push(`\n   - writingReference: ${writingBits.join(' | ')}`);
+  }
+
+  if (context.afrReportSeed) {
+    lines.push(`\n   - afrSeed: ${context.afrReportSeed}`);
+  }
+
+  return lines.join('');
+};
+
 const buildCommentTemplate = (marksRows, { reviewThreshold }) =>
   marksRows.map((row) => {
     const inferredRiskAreas = detectRiskAreasFromMarks(row.marks, { reviewThreshold });
@@ -352,6 +807,9 @@ const buildContextMarkdown = (subjectContext) => {
   const titleBits = [subjectContext.grade, subjectContext.term, subjectContext.subject].filter(Boolean);
   if (titleBits.length > 0) {
     lines.push(`- Context: ${titleBits.join(' ')}`);
+  }
+  if (subjectContext.studentVoiceRules?.referenceTask) {
+    lines.push(`- Writing reference task: ${subjectContext.studentVoiceRules.referenceTask}`);
   }
 
   const draftingRules = subjectContext.draftingRules;
@@ -417,6 +875,29 @@ const buildContextMarkdown = (subjectContext) => {
     }
   }
 
+  const studentVoiceRules = subjectContext.studentVoiceRules;
+  if (studentVoiceRules && typeof studentVoiceRules === 'object') {
+    lines.push('- Student voice personalisation:');
+    if (studentVoiceRules.referenceSource) {
+      lines.push(`  - Reference source: ${studentVoiceRules.referenceSource}`);
+    }
+    if (studentVoiceRules.personalisationRule) {
+      lines.push(`  - ${studentVoiceRules.personalisationRule}`);
+    }
+    if (studentVoiceRules.confidenceRule) {
+      lines.push(`  - ${studentVoiceRules.confidenceRule}`);
+    }
+    if (studentVoiceRules.seedRule) {
+      lines.push(`  - ${studentVoiceRules.seedRule}`);
+    }
+    if (studentVoiceRules.privacyRule) {
+      lines.push(`  - ${studentVoiceRules.privacyRule}`);
+    }
+    if (Array.isArray(studentVoiceRules.preferredEvidence) && studentVoiceRules.preferredEvidence.length > 0) {
+      lines.push(`  - Prefer evidence such as: ${studentVoiceRules.preferredEvidence.join(', ')}`);
+    }
+  }
+
   if (lines.length === 0) return '';
   return `## Subject Context\n\n${lines.join('\n')}`;
 };
@@ -456,9 +937,12 @@ const buildLearnerMarkdown = (row, index, { reviewThreshold }) => {
   const classText = row.class ? ` | class: ${row.class}` : '';
   const summaryScoresText = formatSummaryScores(row.summaryScores);
   const assessmentText = formatAssessmentBreakdown(row.assessmentBreakdown);
+  const teacherRemarkText = formatTeacherRemark(row);
   const summaryLine = summaryScoresText ? `\n   - summaryScores: ${summaryScoresText}` : '';
   const assessmentLine = assessmentText ? `\n   - sectionEvidence: ${assessmentText}` : '';
-  return `${index + 1}. ${row.name}${classText} | ${formatMarksSummary(row.marks)}${summaryLine}${assessmentLine}${riskText}`;
+  const teacherRemarkLine = teacherRemarkText ? `\n   - teacherRemark: ${teacherRemarkText}` : '';
+  const personalisationText = formatPersonalisationContext(row.personalisationContext);
+  return `${index + 1}. ${row.name}${classText} | ${formatMarksSummary(row.marks)}${summaryLine}${assessmentLine}${teacherRemarkLine}${personalisationText}${riskText}`;
 };
 
 const buildPromptMarkdown = ({
@@ -489,8 +973,8 @@ Write one polished report comment per learner for ${teacherName}.
 
 ## Constraints
 
-1. Use only the evidence present in the persona, the optional subject context, and the learner marks provided below.
-2. Do not invent achievements, concerns, or behavioural claims that are not supported by the marks/persona/context.
+1. Use only the evidence present in the persona, the optional subject context, and the learner data provided below.
+2. Do not invent achievements, concerns, or behavioural claims that are not supported by the learner data, persona, or subject context.
 3. Keep each comment to one paragraph.
 4. Keep teacher voice consistent across the batch.
 5. Avoid robotic repetition across the batch; vary opener families, sentence count, sentence order, and closing style.
@@ -524,7 +1008,7 @@ Write one polished report comment per learner for ${teacherName}.
 - Structure: ${persona.structure || ''}
 - Formatting: ${persona.formatting || ''}
 
-${subjectPersonaMarkdown ? `${subjectPersonaMarkdown}\n\n` : ''}${contextMarkdown ? `${contextMarkdown}\n\n` : ''}${structureVariationMarkdown ? `${structureVariationMarkdown}\n\n` : ''}## Learner Marks
+${subjectPersonaMarkdown ? `${subjectPersonaMarkdown}\n\n` : ''}${contextMarkdown ? `${contextMarkdown}\n\n` : ''}${structureVariationMarkdown ? `${structureVariationMarkdown}\n\n` : ''}## Learner Data
 
 ${learnerLines.join('\n')}
 `;
@@ -542,6 +1026,7 @@ const main = async () => {
   const personaPath = String(options.persona || '').trim();
   const marksJsonPath = String(options['marks-json'] || '').trim();
   const contextJsonPath = String(options['context-json'] || '').trim();
+  const voiceReferenceJsonPath = String(options['voice-reference-json'] || '').trim();
   const reviewThreshold = parseThresholdOption(
     options['review-threshold'],
     DEFAULT_REVIEW_THRESHOLD,
@@ -566,13 +1051,27 @@ const main = async () => {
 
   const persona = await loadJson(personaPath);
   const marksRows = await loadJson(marksJsonPath);
+  if (!Array.isArray(marksRows) || marksRows.length === 0) {
+    console.error('Marks JSON must be a non-empty array.');
+    process.exit(1);
+  }
   const subjectContext = contextJsonPath ? await loadJson(contextJsonPath) : null;
   const subjectKey = inferSubjectKey(subjectName);
+  const voiceReferenceInput = voiceReferenceJsonPath ? await loadJson(voiceReferenceJsonPath) : null;
+  const voiceReference = voiceReferenceInput ? normalizeVoiceReferenceInput(voiceReferenceInput) : null;
+  const voiceReferenceAugmentation = applyVoiceReferenceToMarks(marksRows, voiceReference);
+  const effectiveMarksRows = voiceReferenceAugmentation.enrichedRows;
+  const generatedStudentVoiceContext = buildGeneratedStudentVoiceContext({
+    subjectName,
+    subjectKey,
+    voiceReference,
+  });
+  const effectiveSubjectContext = mergeContextObjects(subjectContext, generatedStudentVoiceContext);
   const subjectPersona = persona?.subject_variation?.[subjectKey] || null;
   const structureVariation = normalizeStructureVariation({
     persona,
     subjectPersona,
-    subjectContext,
+    subjectContext: effectiveSubjectContext,
   });
   const normalizedPersona = {
     tone: normalizeTone(persona?.tone),
@@ -581,18 +1080,19 @@ const main = async () => {
     formatting: normalizeFormatting(persona?.formatting),
   };
 
-  if (!Array.isArray(marksRows) || marksRows.length === 0) {
-    console.error('Marks JSON must be a non-empty array.');
-    process.exit(1);
-  }
-
   const batchLabel = sanitizeFilenamePart(
     options['batch-label']
       || path.basename(marksJsonPath, path.extname(marksJsonPath))
       || `${subjectName}_${teacherName}`,
   );
   const batchSlug = slugify(batchLabel);
-  const commentsTemplate = buildCommentTemplate(marksRows, { reviewThreshold });
+  const packetPath = path.join(outdir, `${batchSlug}_codex_packet.json`);
+  const promptPath = path.join(outdir, `${batchSlug}_codex_prompt.md`);
+  const templatePath = path.join(outdir, `${batchSlug}_comments_template.json`);
+  const contextSnapshotPath = effectiveSubjectContext ? path.join(outdir, `${batchSlug}_context.json`) : null;
+  const voiceReferenceCanonicalPath = voiceReference ? path.join(outdir, `${batchSlug}_voice_reference_canonical.json`) : null;
+  const voiceReferenceMatchedPath = voiceReference ? path.join(outdir, `${batchSlug}_voice_reference_matched.json`) : null;
+  const commentsTemplate = buildCommentTemplate(effectiveMarksRows, { reviewThreshold });
   const packet = {
     createdAt: new Date().toISOString(),
     mode: 'codex-operator-batch',
@@ -602,20 +1102,28 @@ const main = async () => {
     personaPath: path.resolve(personaPath),
     marksJsonPath: path.resolve(marksJsonPath),
     contextJsonPath: contextJsonPath ? path.resolve(contextJsonPath) : null,
+    effectiveContextJsonPath: contextSnapshotPath,
+    voiceReferenceJsonPath: voiceReferenceJsonPath ? path.resolve(voiceReferenceJsonPath) : null,
+    voiceReferenceCanonicalPath,
+    voiceReferenceMatchedPath,
     thresholds: {
       failingThreshold: FAILING_THRESHOLD,
       reviewThreshold,
     },
     persona: normalizedPersona,
     subjectPersona,
-    subjectContext,
+    subjectContext: effectiveSubjectContext,
     structureVariation,
-    learners: marksRows.map((row) => ({
+    voiceReferenceSummary: voiceReferenceAugmentation.summary,
+    learners: effectiveMarksRows.map((row) => ({
       name: String(row.name || '').trim(),
       class: String(row.class || '').trim(),
       marks: row.marks && typeof row.marks === 'object' ? row.marks : {},
       summaryScores: row.summaryScores && typeof row.summaryScores === 'object' ? row.summaryScores : undefined,
       assessmentBreakdown: row.assessmentBreakdown && typeof row.assessmentBreakdown === 'object' ? row.assessmentBreakdown : undefined,
+      teacherRemark: formatTeacherRemark(row) || undefined,
+      personalisationContext: normalizePersonalisationContext(row.personalisationContext),
+      sourceAudit: row.sourceAudit && typeof row.sourceAudit === 'object' ? row.sourceAudit : undefined,
       inferredRiskAreas: detectRiskAreasFromMarks(row.marks, { reviewThreshold }),
     })),
   };
@@ -624,27 +1132,49 @@ const main = async () => {
     subjectName,
     batchLabel,
     persona: normalizedPersona,
-    marksRows,
+    marksRows: effectiveMarksRows,
     subjectPersona,
-    subjectContext,
+    subjectContext: effectiveSubjectContext,
     structureVariation,
     reviewThreshold,
   });
 
   await fs.mkdir(outdir, { recursive: true });
 
-  const packetPath = path.join(outdir, `${batchSlug}_codex_packet.json`);
-  const promptPath = path.join(outdir, `${batchSlug}_codex_prompt.md`);
-  const templatePath = path.join(outdir, `${batchSlug}_comments_template.json`);
-
   await fs.writeFile(packetPath, `${JSON.stringify(packet, null, 2)}\n`, 'utf8');
   await fs.writeFile(promptPath, `${promptMarkdown}\n`, 'utf8');
   await fs.writeFile(templatePath, `${JSON.stringify(commentsTemplate, null, 2)}\n`, 'utf8');
+  if (contextSnapshotPath && effectiveSubjectContext) {
+    await fs.writeFile(contextSnapshotPath, `${JSON.stringify(effectiveSubjectContext, null, 2)}\n`, 'utf8');
+  }
+  if (voiceReferenceCanonicalPath && voiceReferenceAugmentation.canonicalReference) {
+    await fs.writeFile(
+      voiceReferenceCanonicalPath,
+      `${JSON.stringify(voiceReferenceAugmentation.canonicalReference, null, 2)}\n`,
+      'utf8',
+    );
+  }
+  if (voiceReferenceMatchedPath && voiceReferenceAugmentation.matchedRows) {
+    await fs.writeFile(
+      voiceReferenceMatchedPath,
+      `${JSON.stringify(voiceReferenceAugmentation.matchedRows, null, 2)}\n`,
+      'utf8',
+    );
+  }
 
   console.log(`Prepared Codex operator batch for ${teacherName}.`);
   console.log(`Packet JSON: ${packetPath}`);
   console.log(`Prompt Markdown: ${promptPath}`);
   console.log(`Comments Template: ${templatePath}`);
+  if (contextSnapshotPath && effectiveSubjectContext) {
+    console.log(`Context JSON: ${contextSnapshotPath}`);
+  }
+  if (voiceReferenceCanonicalPath && voiceReferenceAugmentation.canonicalReference) {
+    console.log(`Voice Reference Canonical JSON: ${voiceReferenceCanonicalPath}`);
+  }
+  if (voiceReferenceMatchedPath && voiceReferenceAugmentation.matchedRows) {
+    console.log(`Voice Reference Matched JSON: ${voiceReferenceMatchedPath}`);
+  }
 };
 
 main().catch((error) => {

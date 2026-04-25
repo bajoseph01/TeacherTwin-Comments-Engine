@@ -27,6 +27,12 @@ Prepare Codex chat batch:
 npm run codex:prepare -- --teacher "Teacher Name" --subject "Subject" --persona "workspace\profiles\teacher_name.json" --marks-json "workspace\exports\subject_term_marks_structured.json" --batch-label "Gr5_Term1_2026"
 ```
 
+When you have learner-safe student-voice data such as the Grade 6 Afrikaans written-work safe profiles, add it directly:
+
+```powershell
+npm run codex:prepare -- --teacher "Teacher Name" --subject "Afrikaans" --persona "workspace\profiles\teacher_name.json" --marks-json "workspace\exports\afrikaans_term_marks_structured.json" --voice-reference-json "Saved Profiles\Gr6_Afrikaans Written Work Safe Profiles.json" --batch-label "Gr6_Term1_2026"
+```
+
 For stricter subject-specific review, add a custom warning threshold. Example for Maths:
 
 ```powershell
@@ -38,6 +44,17 @@ Outputs:
 1. `*_codex_packet.json`
 2. `*_codex_prompt.md`
 3. `*_comments_template.json`
+4. `*_context.json` when subject context exists or is generated
+5. `*_voice_reference_canonical.json` when `--voice-reference-json` is supplied
+6. `*_voice_reference_matched.json` when `--voice-reference-json` is supplied
+
+Student-voice handling rules:
+
+1. Keep marks and assessment evidence primary.
+2. Use matched voice-reference details only as a safe secondary drafting layer.
+3. Add at most one brief personal sentence or clause unless the evidence clearly supports two short touches.
+4. For medium-confidence voice matches, stay with broad interests or writing-observation clues.
+5. Do not mention exact family/home details even if they exist in the local safe-profile source.
 
 Build offline profile:
 

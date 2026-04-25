@@ -1,0 +1,106 @@
+# Mel Maths Voice Rewrite and Future-Proofing Plan
+
+## Summary
+
+Rewrite the current 4W Mel Maths batch with an evidence-first, less-robotic style that still sounds like Mel, then harden the local chat-first workflow so future Mel and B. Joseph Maths batches do not regress into repetitive opener patterns.
+
+The implementation will separate three concerns:
+
+1. Teacher voice variation from Mel’s authentic Maths comments
+2. Grade/term assessment meaning from the Term 1 Maths headers
+3. Batch-level anti-repetition controls during drafting
+
+## Key Changes
+
+### 1. Rewrite strategy for the current 4W Mel batch
+
+Use the existing structured marks, but redraft every comment under these fixed rules:
+
+- Mention only assessed evidence that actually exists for that learner; blank columns stay invisible.
+- Mention 1 to 2 genuine strength areas from the learner’s strongest available assessment sections.
+- Mention exactly 1 main development area from the weakest meaningful available section.
+- Do not use unsupported behaviour claims like organisation, homework, participation, or focus unless those fields exist in source data.
+- Use a wider opening bank and rotate opener families across the batch.
+
+Opening families for marks-only Maths batches:
+- Direct strength opener: "`[Name] demonstrates a strong understanding of ...`"
+- Progress opener: "`[Name] has made steady progress in ...`"
+- Developmental opener: "`[Name] is growing in confidence with ...`"
+- Secure-performance opener: "`[Name] has shown secure understanding in ...`"
+- Balanced-capability opener: "`[Name] is capable of good work and has shown ...`"
+- Challenge-with-support opener for weaker rows: "`[Name] is still getting to grips with ...`"
+
+Batch diversity rules:
+- No exact reuse of "`has had a very good Mathematics term`"
+- No opener family used more than 3 times in one batch
+- No identical encouragement line repeated in adjacent comments
+- Rotate closing reflections among "`I am pleased with ...`", "`I am proud of ...`", "`I am very proud of ...`", and occasional no-reflection closes when the encouragement already lands well
+
+### 2. Grade 4 Term 1 Maths interpretation rules
+
+Use [term1_maths_assessment_headers.json](/d:/2026_Coding/TeacherTwin-Comments-Engine/workspace/reference/term1_maths_assessment_headers.json) as the subject-context base and expand it into a drafting context for future batches.
+
+Assessment interpretation defaults:
+- `Review 1`: place value, ordering, comparing, 4-digit number understanding
+- `Review 2`: rounding 4-digit numbers to 10, 100, 1000
+- `Investigation`: word sums and number patterns
+- `Term Test`: combined application of the term’s concepts
+- `TimesTables1/2`: times tables fluency only when present
+
+Review 2 rule:
+- Treat weaker `Review 2` performance as a Grade 4 foundational rounding skill still being learned, not as a generic weakness.
+- Phrase low `Review 2` results with developmental wording such as:
+  - "`is still getting to grips with rounding 4-digit numbers`"
+  - "`would benefit from continued practice in rounding to 10, 100, and 1000`"
+  - "`needs more confidence when rounding larger numbers accurately`"
+
+Assessment-language thresholds:
+- `>= 85%`: strong / very strong / secure / confident
+- `70% to 84.9%`: good / solid / steady understanding
+- `55% to 69.9%`: developing / growing in confidence / needs more consistency
+- `< 55%`: still getting to grips with / needs focused practice / needs a stronger foundation
+
+### 3. Reusable workflow changes for future batches
+
+Extend the chat-first batch-prep path so subject context and variation rules are carried into the prompt instead of living only in chat memory.
+
+Implementation changes:
+- Enrich [Melony_Willemse_comprehensive_profile_2026-03-07.json](/d:/2026_Coding/TeacherTwin-Comments-Engine/Saved%20Profiles/Melony_Willemse_comprehensive_profile_2026-03-07.json) with a Maths-specific variation bank:
+  - opener families
+  - closing families
+  - safe evidence-first phrasing
+  - banned repetitive skeletons
+- Extend [prepare-codex-batch.mjs](/d:/2026_Coding/TeacherTwin-Comments-Engine/scripts/prepare-codex-batch.mjs) to accept an optional `--context-json` file and include it in both the packet and the generated prompt.
+- Keep backward compatibility with the current simple marks-array format.
+- If `assessmentBreakdown` exists in the marks JSON, include it in the prompt so drafting can target specific skills instead of only `Overall`.
+
+Prompt additions:
+- explicit anti-repetition guardrail
+- explicit evidence-only guardrail
+- explicit Grade 4 Review 2 rounding note
+- explicit instruction to ignore blank assessment cells
+- explicit instruction to vary opener families and closing phrases across the full batch
+
+## Test Plan
+
+### Current 4W rewrite acceptance checks
+- No exact "`has had a very good Mathematics term`" opener remains.
+- No opener family appears more than 3 times across the 24 comments.
+- Learners with blank times tables columns do not get times tables mentioned.
+- Low `Review 2` learners are framed as still developing foundational Grade 4 rounding, not with generic robotic weakness language.
+- High performers get specific strengths plus one light next-step sentence, not inflated praise plus generic checking language only.
+- Comments read naturally aloud and do not sound templated in sequence.
+
+### Workflow regression checks
+- `prepare-codex-batch` still works with old marks JSON that only contains `name`, `class`, and `marks`.
+- When `assessmentBreakdown` is present, the generated prompt includes section-level evidence.
+- When `--context-json` is omitted, output remains backward compatible.
+- Verification still passes on the rewritten batch with zero errors.
+
+## Assumptions and Defaults
+
+- Scope is both: fix the current Mel 4W batch and make the improved method reusable for future Maths batches.
+- Evidence policy is strict marks-only by default; no unsupported behaviour claims.
+- `Review 2` is explicitly treated as a key Grade 4 rounding skill.
+- The rewrite should preserve Mel’s warmth and structure, but variation takes priority over repeating the same high-level sentence skeleton.
+- The immediate current-batch rewrite should use the existing structured marks file and not require a new parser first.

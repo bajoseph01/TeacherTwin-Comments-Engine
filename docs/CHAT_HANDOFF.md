@@ -51,6 +51,7 @@ The app is for teacher comment generation using a teacher persona plus marksheet
 22. B. Joseph English 4S and 4W batches have now both been completed locally end-to-end using structured marks JSON, matched student-voice reference context, local verification, and offline DOCX export.
 23. The current 4W English batch passed verification, but a later teacher review noted that Selethu's comment should likely be rewritten with stronger warning language because he is below `60%` overall; Oliver and Ibraheem are the main borderline watch cases if that batch is revised again.
 24. Repo-visible B. Joseph assets are now organized into `exports/bjoseph_Comments/final`, `exports/bjoseph_Comments/batches`, and `exports/bjoseph_Comments/reference`, while older root-level `exports` clutter and raw extraction intermediates have been relocated into ignored `workspace/reference/` folders.
+25. Codex batch prep can now consume learner-safe voice-reference JSON directly via `--voice-reference-json`, match it onto marks rows, inject safe personalisation lines into the generated prompt, and emit canonical, matched, and effective-context JSON snapshots for future batches.
 
 ## Key Files
 
@@ -231,6 +232,12 @@ Prepare Codex operator batch:
 
 ```powershell
 npm run codex:prepare -- --teacher "Teacher Name" --subject "Subject" --persona "workspace\profiles\<teacher_profile>.json" --marks-json "workspace\exports\<marks_batch>.json" --batch-label "Gr5_Term1_2026"
+```
+
+Prepare Codex operator batch with learner-safe personalisation reference data:
+
+```powershell
+npm run codex:prepare -- --teacher "Teacher Name" --subject "Afrikaans" --persona "workspace\profiles\<teacher_profile>.json" --marks-json "workspace\exports\<marks_batch>.json" --voice-reference-json "Saved Profiles\Gr6_Afrikaans Written Work Safe Profiles.json" --batch-label "Gr6_Term1_2026"
 ```
 
 Subject-specific stricter review threshold, for example Maths below `60%`:
